@@ -105,6 +105,17 @@ class Model:
         self.rx = 0.0
         self.ry = 0.0
         self.rz = 0.0
+        self.platform_event_0 = False
+        self.platform_event_1 = False
+        self.platform_event_2 = False
+        self.platform_event_3 = False
+        self.platform_event_4 = False
+        self.platform_event_5 = False
+        self.platform_event_6 = False
+        self.platform_event_7 = False
+        self.platform_event_8 = False
+        self.platform_event_9 = False
+
 
         '''internal variables'''
         self._target_X = 0
@@ -210,6 +221,16 @@ class Model:
             91: "output_event_args_7",
             92: "output_event_args_8",
             93: "output_event_args_9",
+            94: "platform_event_0",
+            95: "platform_event_1",
+            96: "platform_event_2",
+            97: "platform_event_3",
+            98: "platform_event_4",
+            99: "platform_event_5",
+            100: "platform_event_6",
+            101: "platform_event_7",
+            102: "platform_event_8",
+            103: "platform_event_9",
 
         }
 
@@ -335,6 +356,7 @@ class Model:
         print("moveCompleted platform event: " + str(moveCompleted))
 
 
+
         result = self.mapping.get_event("robotStopped",args=None)
         robotStopped = all(it == True for it in result)
         print("robotStopped platform event: " + str(robotStopped))
@@ -358,6 +380,8 @@ class Model:
         print("gripperClosed platform event: " + str(gripperClosed))
 
 
+        feasibleMoveDiscreteCommand = False
+        nonfeasibleMoveDiscreteCommand = False
         if (self._last_event == "moveDiscreteCommand"):
             args = {
                 "equation_0": [self._target_X,self.target_Y,self._target_Z],
@@ -366,12 +390,14 @@ class Model:
             feasibleMoveDiscreteCommand = all(it == True for it in result)
             print("feasibleMoveDiscreteCommand platform event: " + str(feasibleMoveDiscreteCommand))
 
+
             args = {
                 "equation_0": [self._target_X,self.target_Y,self._target_Z],
             }
             result = self.mapping.get_event("nonfeasibleMoveDiscreteCommand",args=args)
             nonfeasibleMoveDiscreteCommand = all(it == True for it in result)
             print("nonfeasibleMoveDiscreteCommand platform event: " + str(nonfeasibleMoveDiscreteCommand))
+
 
 
         # To be characterized first
@@ -390,10 +416,15 @@ class Model:
 
 
 
+
         # Forwarding the events in the platform to the d-model
-        self.output_event
-
-
+        self.platform_event_0 = moveCompleted
+        self.platform_event_1 = robotStopped
+        self.platform_event_2 = gripperOpened
+        self.platform_event_3 = gripperClosed
+        self.platform_event_4 = feasibleMoveDiscreteCommand
+        self.platform_event_5 = nonfeasibleMoveDiscreteCommand
+        self.platform_event_6 = collision
         self._last_event = self.output_event
 
         '''Resetting events'''
@@ -408,6 +439,16 @@ class Model:
         self.output_event_args_7 = ""
         self.output_event_args_8 = ""
         self.output_event_args_9 = ""
+        '''self.platform_event_0 = False
+        self.platform_event_1 = False
+        self.platform_event_2 = False
+        self.platform_event_3 = False
+        self.platform_event_4 = False
+        self.platform_event_5 = False
+        self.platform_event_6 = False
+        self.platform_event_7 = False
+        self.platform_event_8 = False
+        self.platform_event_9 = False'''
 
         return Fmi2Status.ok
 
@@ -548,6 +589,17 @@ class Model:
                 self.rx,
                 self.ry,
                 self.rz,
+                self.platform_event_0,
+                self.platform_event_1,
+                self.platform_event_2,
+                self.platform_event_3,
+                self.platform_event_4,
+                self.platform_event_5,
+                self.platform_event_6,
+                self.platform_event_7,
+                self.platform_event_8,
+                self.platform_event_9,
+
 
             )
         )
@@ -649,6 +701,16 @@ class Model:
             rx,
             ry,
             rz,
+            platform_event_0,
+            platform_event_1,
+            platform_event_2,
+            platform_event_3,
+            platform_event_4,
+            platform_event_5,
+            platform_event_6,
+            platform_event_7,
+            platform_event_8,
+            platform_event_9,
 
         ) = pickle.loads(bytes)
         self.args_equation_0 = args_equation_0
@@ -745,7 +807,16 @@ class Model:
         self.rx = rx
         self.ry = ry
         self.rz = rz
-
+        self.platform_event_0 = platform_event_0
+        self.platform_event_1 = platform_event_1
+        self.platform_event_2 = platform_event_2
+        self.platform_event_3 = platform_event_3
+        self.platform_event_4 = platform_event_4
+        self.platform_event_5 = platform_event_5
+        self.platform_event_6 = platform_event_6
+        self.platform_event_7 = platform_event_7
+        self.platform_event_8 = platform_event_8
+        self.platform_event_9 = platform_event_9
 
         return Fmi2Status.ok
 

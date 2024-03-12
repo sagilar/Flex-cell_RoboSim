@@ -137,7 +137,7 @@ for i in range(6):
 for i in range(6):
     print('self.t' + str(i) + ' = self.mapping.get_joint_force("j' + str(i) + '")')
 '''
-from robots_flexcell import robots
+'''from robots_flexcell import robots
 ur_robot_model = robots.UR5e_RoboSim_Simulation()
 ur_robot_model.set_motion_time(2.0)
 fk = ur_robot_model.compute_fk(0,0,0,0,0,0)
@@ -146,4 +146,16 @@ print(fk[:,3])
 print(fk[:,3][0])
 print(fk[0,0])
 print(fk[1,1])
-print(fk[2,2])
+print(fk[2,2])'''
+
+for i in range(10):
+    print(str(i+94) + ': "platform_event_' + str(i) + '",')
+
+for i in range(10):
+    print('self.platform_event_' + str(i) + ',')
+
+for i in range(10):
+    print('platform_event_' + str(i) + ',')
+
+for i in range(10):
+    print('self.platform_event_' + str(i) + ' = platform_event_' + str(i))

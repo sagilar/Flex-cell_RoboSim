@@ -1,0 +1,19 @@
+[package]
+name = "DiscreteGrippingArm"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = "0.4"
+simplelog = "0.11.2"
+rand = "0.8.5"
+serde = { version = "1.0.137", features = ["derive"] }
+serde_json = "1.0.82"
+clap = "3.2.8"
+ctrlc = { version = "3.2.2", features = ["termination"] }
+# this should be conditional on using matrices or not
+nalgebra = { version = "0.31.2", features = ["serde-serialize"] }
+strum = { version = "0.24", features = ["derive"] }
+parse-display = "0.6.0"

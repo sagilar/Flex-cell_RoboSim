@@ -6,74 +6,41 @@ class Model:
     def __init__(self) -> None:
         self.mapping = mpp.Mapping()
         self.mapping.start_simulation()
-        '''equations/actions + arguments'''
-        self.args_equation_0 = ""
-        self.args_equation_1 = ""
-        self.args_equation_2 = ""
-        self.args_equation_3 = ""
-        self.args_equation_4 = ""
-        self.args_equation_5 = ""
-        self.args_equation_6 = ""
-        self.args_equation_7 = ""
-        self.args_equation_8 = ""
-        self.args_equation_9 = ""
-        self.args_action_0 = ""
-        self.args_action_1 = ""
-        self.args_action_2 = ""
-        self.args_action_3 = ""
-        self.args_action_4 = ""
-        self.args_action_5 = ""
-        self.args_action_6 = ""
-        self.args_action_7 = ""
-        self.args_action_8 = ""
-        self.args_action_9 = ""
-        '''operations + arguments'''
-        self.operation = ""
-        self.args_operation_action_0 = ""
-        self.args_operation_action_1 = ""
-        self.args_operation_action_2 = ""
-        self.args_operation_action_3 = ""
-        self.args_operation_action_4 = ""
-        self.args_operation_action_5 = ""
-        self.args_operation_action_6 = ""
-        self.args_operation_action_7 = ""
-        self.args_operation_action_8 = ""
-        self.args_operation_action_9 = ""
         '''events : prototype for just one event (there may be many concurrent events)'''
         self.controller_event = ""
-        self.controller_event_args_0 = ""
-        self.controller_event_args_1 = ""
-        self.controller_event_args_2 = ""
-        self.controller_event_args_3 = ""
-        self.controller_event_args_4 = ""
-        self.controller_event_args_5 = ""
-        self.controller_event_args_6 = ""
-        self.controller_event_args_7 = ""
-        self.controller_event_args_8 = ""
-        self.controller_event_args_9 = ""
+        self.controller_event_args_0 = 0.0
+        self.controller_event_args_1 = 0.0
+        self.controller_event_args_2 = 0.0
+        self.controller_event_args_3 = 0.0
+        self.controller_event_args_4 = 0.0
+        self.controller_event_args_5 = 0.0
+        self.controller_event_args_6 = 0.0
+        self.controller_event_args_7 = 0.0
+        self.controller_event_args_8 = 0.0
+        self.controller_event_args_9 = 0.0
         self.d_model_event = ""
-        self.d_model_event_args_0 = ""
-        self.d_model_event_args_1 = ""
-        self.d_model_event_args_2 = ""
-        self.d_model_event_args_3 = ""
-        self.d_model_event_args_4 = ""
-        self.d_model_event_args_5 = ""
-        self.d_model_event_args_6 = ""
-        self.d_model_event_args_7 = ""
-        self.d_model_event_args_8 = ""
-        self.d_model_event_args_9 = ""
-        ''' Event forwarding -> d-model '''
+        self.d_model_event_args_0 = 0.0
+        self.d_model_event_args_1 = 0.0
+        self.d_model_event_args_2 = 0.0
+        self.d_model_event_args_3 = 0.0
+        self.d_model_event_args_4 = 0.0
+        self.d_model_event_args_5 = 0.0
+        self.d_model_event_args_6 = 0.0
+        self.d_model_event_args_7 = 0.0
+        self.d_model_event_args_8 = 0.0
+        self.d_model_event_args_9 = 0.0
+        ''' Event forwarding controller -> d-model '''
         self.output_event = ""
-        self.output_event_args_0 = ""
-        self.output_event_args_1 = ""
-        self.output_event_args_2 = ""
-        self.output_event_args_3 = ""
-        self.output_event_args_4 = ""
-        self.output_event_args_5 = ""
-        self.output_event_args_6 = ""
-        self.output_event_args_7 = ""
-        self.output_event_args_8 = ""
-        self.output_event_args_9 = ""
+        self.output_event_args_0 = 0.0
+        self.output_event_args_1 = 0.0
+        self.output_event_args_2 = 0.0
+        self.output_event_args_3 = 0.0
+        self.output_event_args_4 = 0.0
+        self.output_event_args_5 = 0.0
+        self.output_event_args_6 = 0.0
+        self.output_event_args_7 = 0.0
+        self.output_event_args_8 = 0.0
+        self.output_event_args_9 = 0.0
         '''data'''
         self.j0 = 0.0
         self.j1 = 0.0
@@ -105,6 +72,7 @@ class Model:
         self.rx = 0.0
         self.ry = 0.0
         self.rz = 0.0
+        ''' Event forwarding platform -> d-model '''
         self.platform_event_0 = False
         self.platform_event_1 = False
         self.platform_event_2 = False
@@ -122,121 +90,115 @@ class Model:
         self._target_Y = 0
         self._target_Z = 0
         self._last_event = ""
-
-
-
+        self._moveDiscreteCommand = False
+        self._closeGripperCommand = False
+        self._openGripperCommand = False
+        self._moveCompleted = False
+        self._robotStopped = False
+        self._gripperOpened = False
+        self._gripperClosed = False
+        self._feasibleMoveDiscreteCommand = False
+        self._nonfeasibleMoveDiscreteCommand = False
+        self._collision = False
 
         self.reference_to_attribute = {
-            0: "args_equation_0",
-            1: "args_equation_1",
-            2: "args_equation_2",
-            3: "args_equation_3",
-            4: "args_equation_4",
-            5: "args_equation_5",
-            6: "args_equation_6",
-            7: "args_equation_7",
-            8: "args_equation_8",
-            9: "args_equation_9",
-            10: "args_action_0",
-            11: "args_action_1",
-            12: "args_action_2",
-            13: "args_action_3",
-            14: "args_action_4",
-            15: "args_action_5",
-            16: "args_action_6",
-            17: "args_action_7",
-            18: "args_action_8",
-            19: "args_action_9",
-            20: "operation",
-            21: "args_operation_action_0",
-            22: "args_operation_action_1",
-            23: "args_operation_action_2",
-            24: "args_operation_action_3",
-            25: "args_operation_action_4",
-            26: "args_operation_action_5",
-            27: "args_operation_action_6",
-            28: "args_operation_action_7",
-            29: "args_operation_action_8",
-            30: "args_operation_action_9",
-            31: "controller_event",
-            32: "controller_event_args_0",
-            33: "controller_event_args_1",
-            34: "controller_event_args_2",
-            35: "controller_event_args_3",
-            36: "controller_event_args_4",
-            37: "controller_event_args_5",
-            38: "controller_event_args_6",
-            39: "controller_event_args_7",
-            40: "controller_event_args_8",
-            41: "controller_event_args_9",
-            42: "j0",
-            43: "j1",
-            44: "j2",
-            45: "j3",
-            46: "j4",
-            47: "j5",
-            48: "qd0",
-            49: "qd1",
-            50: "qd2",
-            51: "qd3",
-            52: "qd4",
-            53: "qd5",
-            54: "qdd0",
-            55: "qdd1",
-            56: "qdd2",
-            57: "qdd3",
-            58: "qdd4",
-            59: "qdd5",
-            60: "t0",
-            61: "t1",
-            62: "t2",
-            63: "t3",
-            64: "t4",
-            65: "t5",
-            66: "x",
-            67: "y",
-            68: "z",
-            69: "rx",
-            70: "ry",
-            71: "rz",
-            72: "d_model_event",
-            73: "d_model_event_args_0",
-            74: "d_model_event_args_1",
-            75: "d_model_event_args_2",
-            76: "d_model_event_args_3",
-            77: "d_model_event_args_4",
-            78: "d_model_event_args_5",
-            79: "d_model_event_args_6",
-            80: "d_model_event_args_7",
-            81: "d_model_event_args_8",
-            82: "d_model_event_args_9",
-            83: "output_event",
-            84: "output_event_args_0",
-            85: "output_event_args_1",
-            86: "output_event_args_2",
-            87: "output_event_args_3",
-            88: "output_event_args_4",
-            89: "output_event_args_5",
-            90: "output_event_args_6",
-            91: "output_event_args_7",
-            92: "output_event_args_8",
-            93: "output_event_args_9",
-            94: "platform_event_0",
-            95: "platform_event_1",
-            96: "platform_event_2",
-            97: "platform_event_3",
-            98: "platform_event_4",
-            99: "platform_event_5",
-            100: "platform_event_6",
-            101: "platform_event_7",
-            102: "platform_event_8",
-            103: "platform_event_9",
+            0: "controller_event",
+            1: "controller_event_args_0",
+            2: "controller_event_args_1",
+            3: "controller_event_args_2",
+            4: "controller_event_args_3",
+            5: "controller_event_args_4",
+            6: "controller_event_args_5",
+            7: "controller_event_args_6",
+            8: "controller_event_args_7",
+            9: "controller_event_args_8",
+            10: "controller_event_args_9",
+            11: "j0",
+            12: "j1",
+            13: "j2",
+            14: "j3",
+            15: "j4",
+            16: "j5",
+            17: "qd0",
+            18: "qd1",
+            19: "qd2",
+            20: "qd3",
+            21: "qd4",
+            22: "qd5",
+            23: "qdd0",
+            24: "qdd1",
+            25: "qdd2",
+            26: "qdd3",
+            27: "qdd4",
+            28: "qdd5",
+            29: "t0",
+            30: "t1",
+            31: "t2",
+            32: "t3",
+            33: "t4",
+            34: "t5",
+            35: "d_model_event",
+            36: "d_model_event_args_0",
+            37: "d_model_event_args_1",
+            38: "d_model_event_args_2",
+            39: "d_model_event_args_3",
+            40: "d_model_event_args_4",
+            41: "d_model_event_args_5",
+            42: "d_model_event_args_6",
+            43: "d_model_event_args_7",
+            44: "d_model_event_args_8",
+            45: "d_model_event_args_9",
+            46: "output_event",
+            47: "output_event_args_0",
+            48: "output_event_args_1",
+            49: "output_event_args_2",
+            50: "output_event_args_3",
+            51: "output_event_args_4",
+            52: "output_event_args_5",
+            53: "output_event_args_6",
+            54: "output_event_args_7",
+            55: "output_event_args_8",
+            56: "output_event_args_9",
+            57: "platform_event_0",
+            58: "platform_event_1",
+            59: "platform_event_2",
+            60: "platform_event_3",
+            61: "platform_event_4",
+            62: "platform_event_5",
+            63: "platform_event_6",
+            64: "platform_event_7",
+            65: "platform_event_8",
+            66: "platform_event_9",
 
         }
 
 
     def fmi2DoStep(self, current_time, step_size, no_step_prior):
+        '''Resetting outputs'''
+        self._moveDiscreteCommand = False
+        self._closeGripperCommand = False
+        self._openGripperCommand = False
+        self._moveCompleted = False
+        self._robotStopped = False
+        self._gripperOpened = False
+        self._gripperClosed = False
+        self._feasibleMoveDiscreteCommand = False
+        self._nonfeasibleMoveDiscreteCommand = False
+        self._collision = False
+        self.output_event = ""
+        self.output_event_args_0 = ""
+        self.output_event_args_1 = ""
+        self.output_event_args_2 = ""
+        self.output_event_args_3 = ""
+        self.output_event_args_4 = ""
+        self.output_event_args_5 = ""
+        self.output_event_args_6 = ""
+        self.output_event_args_7 = ""
+        self.output_event_args_8 = ""
+        self.output_event_args_9 = ""
+
         ''' Input coming from the controller'''
+
         print("Controller Event: " + self.controller_event)
         print("Arguments: " + str([self.controller_event_args_0,
                                    self.controller_event_args_1,
@@ -256,6 +218,8 @@ class Model:
             self.output_event_args_1 = self.controller_event_args_1
             self.output_event_args_2 = self.controller_event_args_2
 
+
+            self._moveDiscreteCommand = True
             self._target_X = self.controller_event_args_0
             self._target_Y = self.controller_event_args_1
             self._target_Z = self.controller_event_args_2
@@ -266,11 +230,14 @@ class Model:
             self.output_event_args_1 = self.controller_event_args_1
             self.output_event_args_2 = self.controller_event_args_2
 
+            self._closeGripperCommand = True
+
         elif(self.controller_event == "openGripperCommand"):
             self.output_event = self.controller_event
             self.output_event_args_0 = self.controller_event_args_0
             self.output_event_args_1 = self.controller_event_args_1
             self.output_event_args_2 = self.controller_event_args_2
+            self._openGripperCommand = True
         else:
             self.output_event = ""
             self.output_event_args_0 = ""
@@ -352,14 +319,14 @@ class Model:
 
         # Events
         result = self.mapping.get_event("moveCompleted",args=None)
-        moveCompleted = all(it == True for it in result)
-        print("moveCompleted platform event: " + str(moveCompleted))
+        self._moveCompleted = all(it == True for it in result)
+        print("moveCompleted platform event: " + str(self._moveCompleted))
 
 
 
         result = self.mapping.get_event("robotStopped",args=None)
-        robotStopped = all(it == True for it in result)
-        print("robotStopped platform event: " + str(robotStopped))
+        self._robotStopped = all(it == True for it in result)
+        print("robotStopped platform event: " + str(self._robotStopped))
 
 
         args = {
@@ -367,8 +334,8 @@ class Model:
             "equation_1": [0.05,0.083],
         }
         result = self.mapping.get_event("gripperOpened",args=args)
-        gripperOpened = all(it == True for it in result)
-        print("gripperOpened platform event: " + str(gripperOpened))
+        self._gripperOpened = all(it == True for it in result)
+        print("gripperOpened platform event: " + str(self._gripperOpened))
 
 
         args = {
@@ -376,29 +343,25 @@ class Model:
             "equation_1": [0.05,0.083],
         }
         result = self.mapping.get_event("gripperClosed",args=args)
-        gripperClosed = all(it == True for it in result)
-        print("gripperClosed platform event: " + str(gripperClosed))
+        self._gripperClosed = all(it == True for it in result)
+        print("gripperClosed platform event: " + str(self._gripperClosed))
 
 
-        feasibleMoveDiscreteCommand = False
-        nonfeasibleMoveDiscreteCommand = False
         if (self._last_event == "moveDiscreteCommand"):
             args = {
-                "equation_0": [self._target_X,self.target_Y,self._target_Z],
+                "equation_0": [self._target_X,self._target_Y,self._target_Z],
             }
             result = self.mapping.get_event("feasibleMoveDiscreteCommand",args=args)
-            feasibleMoveDiscreteCommand = all(it == True for it in result)
-            print("feasibleMoveDiscreteCommand platform event: " + str(feasibleMoveDiscreteCommand))
+            self._feasibleMoveDiscreteCommand = all(it == True for it in result)
+            print("feasibleMoveDiscreteCommand platform event: " + str(self._feasibleMoveDiscreteCommand))
 
 
             args = {
-                "equation_0": [self._target_X,self.target_Y,self._target_Z],
+                "equation_0": [self._target_X,self._target_Y,self._target_Z],
             }
             result = self.mapping.get_event("nonfeasibleMoveDiscreteCommand",args=args)
-            nonfeasibleMoveDiscreteCommand = all(it == True for it in result)
-            print("nonfeasibleMoveDiscreteCommand platform event: " + str(nonfeasibleMoveDiscreteCommand))
-
-
+            self._nonfeasibleMoveDiscreteCommand = all(it == True for it in result)
+            print("nonfeasibleMoveDiscreteCommand platform event: " + str(self._nonfeasibleMoveDiscreteCommand))
 
         # To be characterized first
         args = {
@@ -410,45 +373,27 @@ class Model:
             "equation_5": [self.qd5,self.t5,0.05,50]
         }
         result = self.mapping.get_event("collision",args=args)
-        collision = all(it == True for it in result)
-        print("collision platform event: " + str(collision))
+        self._collision = all(it == True for it in result)
+        print("collision platform event: " + str(self._collision))
 
 
 
 
 
         # Forwarding the events in the platform to the d-model
-        self.platform_event_0 = moveCompleted
-        self.platform_event_1 = robotStopped
-        self.platform_event_2 = gripperOpened
-        self.platform_event_3 = gripperClosed
-        self.platform_event_4 = feasibleMoveDiscreteCommand
-        self.platform_event_5 = nonfeasibleMoveDiscreteCommand
-        self.platform_event_6 = collision
-        self._last_event = self.output_event
+        self.platform_event_0 = self._moveDiscreteCommand
+        self.platform_event_1 = self._closeGripperCommand
+        self.platform_event_2 = self._openGripperCommand
+        self.platform_event_3 = self._moveCompleted
+        self.platform_event_4 = self._robotStopped
+        self.platform_event_5 = self._gripperOpened
+        self.platform_event_6 = self._gripperClosed
+        self.platform_event_7 = self._feasibleMoveDiscreteCommand
+        self.platform_event_8 = self._nonfeasibleMoveDiscreteCommand
+        self.platform_event_9 = self._collision
 
-        '''Resetting events'''
-        self.output_event = ""
-        self.output_event_args_0 = ""
-        self.output_event_args_1 = ""
-        self.output_event_args_2 = ""
-        self.output_event_args_3 = ""
-        self.output_event_args_4 = ""
-        self.output_event_args_5 = ""
-        self.output_event_args_6 = ""
-        self.output_event_args_7 = ""
-        self.output_event_args_8 = ""
-        self.output_event_args_9 = ""
-        '''self.platform_event_0 = False
-        self.platform_event_1 = False
-        self.platform_event_2 = False
-        self.platform_event_3 = False
-        self.platform_event_4 = False
-        self.platform_event_5 = False
-        self.platform_event_6 = False
-        self.platform_event_7 = False
-        self.platform_event_8 = False
-        self.platform_event_9 = False'''
+        # Storing the last event to avoid repetition
+        self._last_event = self.output_event
 
         return Fmi2Status.ok
 
@@ -495,37 +440,6 @@ class Model:
 
         bytes = pickle.dumps(
             (
-                self.args_equation_0,
-                self.args_equation_1,
-                self.args_equation_2,
-                self.args_equation_3,
-                self.args_equation_4,
-                self.args_equation_5,
-                self.args_equation_6,
-                self.args_equation_7,
-                self.args_equation_8,
-                self.args_equation_9,
-                self.args_action_0,
-                self.args_action_1,
-                self.args_action_2,
-                self.args_action_3,
-                self.args_action_4,
-                self.args_action_5,
-                self.args_action_6,
-                self.args_action_7,
-                self.args_action_8,
-                self.args_action_9,
-                self.operation,
-                self.args_operation_action_0,
-                self.args_operation_action_1,
-                self.args_operation_action_2,
-                self.args_operation_action_3,
-                self.args_operation_action_4,
-                self.args_operation_action_5,
-                self.args_operation_action_6,
-                self.args_operation_action_7,
-                self.args_operation_action_8,
-                self.args_operation_action_9,
                 self.controller_event,
                 self.controller_event_args_0,
                 self.controller_event_args_1,
@@ -607,37 +521,6 @@ class Model:
 
     def fmi2ExtDeserialize(self, bytes) -> int:
         (
-            args_equation_0,
-            args_equation_1,
-            args_equation_2,
-            args_equation_3,
-            args_equation_4,
-            args_equation_5,
-            args_equation_6,
-            args_equation_7,
-            args_equation_8,
-            args_equation_9,
-            args_action_0,
-            args_action_1,
-            args_action_2,
-            args_action_3,
-            args_action_4,
-            args_action_5,
-            args_action_6,
-            args_action_7,
-            args_action_8,
-            args_action_9,
-            operation,
-            args_operation_action_0,
-            args_operation_action_1,
-            args_operation_action_2,
-            args_operation_action_3,
-            args_operation_action_4,
-            args_operation_action_5,
-            args_operation_action_6,
-            args_operation_action_7,
-            args_operation_action_8,
-            args_operation_action_9,
             controller_event,
             controller_event_args_0,
             controller_event_args_1,
@@ -713,37 +596,6 @@ class Model:
             platform_event_9,
 
         ) = pickle.loads(bytes)
-        self.args_equation_0 = args_equation_0
-        self.args_equation_1 = args_equation_1
-        self.args_equation_2 = args_equation_2
-        self.args_equation_3 = args_equation_3
-        self.args_equation_4 = args_equation_4
-        self.args_equation_5 = args_equation_5
-        self.args_equation_6 = args_equation_6
-        self.args_equation_7 = args_equation_7
-        self.args_equation_8 = args_equation_8
-        self.args_equation_9 = args_equation_9
-        self.args_action_0 = args_action_0
-        self.args_action_1 = args_action_1
-        self.args_action_2 = args_action_2
-        self.args_action_3 = args_action_3
-        self.args_action_4 = args_action_4
-        self.args_action_5 = args_action_5
-        self.args_action_6 = args_action_6
-        self.args_action_7 = args_action_7
-        self.args_action_8 = args_action_8
-        self.args_action_9 = args_action_9
-        self.operation = operation
-        self.args_operation_action_0 = args_operation_action_0
-        self.args_operation_action_1 = args_operation_action_1
-        self.args_operation_action_2 = args_operation_action_2
-        self.args_operation_action_3 = args_operation_action_3
-        self.args_operation_action_4 = args_operation_action_4
-        self.args_operation_action_5 = args_operation_action_5
-        self.args_operation_action_6 = args_operation_action_6
-        self.args_operation_action_7 = args_operation_action_7
-        self.args_operation_action_8 = args_operation_action_8
-        self.args_operation_action_9 = args_operation_action_9
         self.controller_event = controller_event
         self.controller_event_args_0 = controller_event_args_0
         self.controller_event_args_1 = controller_event_args_1
@@ -822,6 +674,7 @@ class Model:
 
     def fmi2Terminate(self):
         self.mapping.stop_simulation()
+        return Fmi2Status.ok
 
     def _set_value(self, references, values):
 
@@ -866,10 +719,10 @@ class Fmi2Status:
     pending = 5
 
 
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     m = Model()
     assert m.fmi2DoStep(0.0, 1.0, False) == Fmi2Status.ok
     time.sleep(1.0)
     m.fmi2DoStep(1.0, 1.0, False)
     time.sleep(1.0)
-    m.fmi2Terminate()
+    m.fmi2Terminate()'''

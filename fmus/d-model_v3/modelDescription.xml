@@ -28,114 +28,107 @@
   <DefaultExperiment startTime="0" stopTime="3" stepSize="1e-2"/>
 
   <ModelVariables>
-    <ScalarVariable name="time" valueReference="0" causality="independent" variability="continuous" description="Simulation time">
-      <Real/>
-    </ScalarVariable>
-    <ScalarVariable name="collision" valueReference="1" causality="input" variability="continuous" description="Collision event">
+    <ScalarVariable name="collision" valueReference="0" causality="input" variability="discrete">
       <Boolean start="false"/>
     </ScalarVariable>
-    <ScalarVariable name="gripperOpened" valueReference="2" causality="input" variability="continuous" description="gripperOpened event">
+<ScalarVariable name="gripperOpened" valueReference="1" causality="input" variability="discrete">
       <Boolean start="false"/>
     </ScalarVariable>
-    <ScalarVariable name="closeGripperCommand" valueReference="3" causality="input" variability="continuous" description="closeGripperCommand event">
+<ScalarVariable name="closeGripperCommand" valueReference="2" causality="input" variability="discrete">
       <Boolean start="false"/>
     </ScalarVariable>
-    <ScalarVariable name="robotStopped" valueReference="4" causality="input" variability="continuous" description="robotStopped event">
+<ScalarVariable name="robotStopped" valueReference="3" causality="input" variability="discrete">
       <Boolean start="false"/>
     </ScalarVariable>
-    <ScalarVariable name="moveCompleted" valueReference="5" causality="input" variability="continuous" description="moveCompleted event">
+<ScalarVariable name="moveCompleted" valueReference="4" causality="input" variability="discrete">
       <Boolean start="false"/>
     </ScalarVariable>
-    <ScalarVariable name="gripperClosed" valueReference="6" causality="input" variability="continuous" description="gripperClosed event">
+<ScalarVariable name="gripperClosed" valueReference="5" causality="input" variability="discrete">
       <Boolean start="false"/>
     </ScalarVariable>
-    <ScalarVariable name="feasibleMoveDiscreteCommand" valueReference="7" causality="input" variability="continuous" description="feasibleMoveDiscreteCommand event">
+<ScalarVariable name="feasibleMoveDiscreteCommand" valueReference="6" causality="input" variability="discrete">
       <Boolean start="false"/>
     </ScalarVariable>
-    <ScalarVariable name="openGripperCommand" valueReference="8" causality="input" variability="continuous" description="openGripperCommand event">
+<ScalarVariable name="openGripperCommand" valueReference="7" causality="input" variability="discrete">
       <Boolean start="false"/>
     </ScalarVariable>
-    <ScalarVariable name="moveDiscreteCommand" valueReference="9" causality="input" variability="continuous" description="moveDiscreteCommand event">
+<ScalarVariable name="moveDiscreteCommand" valueReference="8" causality="input" variability="discrete">
       <Boolean start="false"/>
     </ScalarVariable>
-    <ScalarVariable name="nonfeasibleMoveDiscreteCommand" valueReference="10" causality="input" variability="continuous" description="nonfeasibleMoveDiscreteCommand event">
+<ScalarVariable name="nonfeasibleMoveDiscreteCommand" valueReference="9" causality="input" variability="discrete">
       <Boolean start="false"/>
     </ScalarVariable>
-    <ScalarVariable name="target_X" valueReference="12" causality="input" variability="continuous" description="target_X">
-      <Integer start="0"/>
-    </ScalarVariable>
-    <ScalarVariable name="target_Y" valueReference="13" causality="input" variability="continuous" description="target_Y">
-      <Integer start="0"/>
-    </ScalarVariable>
-    <ScalarVariable name="target_Z" valueReference="14" causality="input" variability="continuous" description="target_Z">
-      <Integer start="0"/>
-    </ScalarVariable>
-    <ScalarVariable name="done" valueReference="20" causality="output" variability="continuous" description="done SM">
-      <Boolean/>
-    </ScalarVariable>
-    <ScalarVariable name="state" valueReference="21" causality="output" variability="continuous" description="state SM">
-      <String  />
-    </ScalarVariable>
-    <ScalarVariable name="target_state" valueReference="22" causality="output" variability="continuous" description="target_state SM">
-      <String  />
-    </ScalarVariable>
-    <ScalarVariable name="status" valueReference="23" causality="output" variability="continuous" description="status SM">
-      <String  />
-    </ScalarVariable>
-    <ScalarVariable name="output_command" valueReference="24" causality="output" variability="continuous" description="output command">
-      <String  />
-    </ScalarVariable>
-    <ScalarVariable name="MOTION_VEL" valueReference="30" causality="parameter" variability="fixed" description="MOTION_VEL">
-      <Real start="0.0" />
-    </ScalarVariable>
-    <ScalarVariable name="opening_diameter" valueReference="31" causality="parameter" variability="fixed" description="opening_diameter">
-      <Real start="0.0" />
-    </ScalarVariable>
-    <ScalarVariable name="PI" valueReference="32" causality="parameter" variability="fixed" description="PI">
-      <Real start="0.0" />
-    </ScalarVariable>
-    <ScalarVariable name="av" valueReference="33" causality="parameter" variability="fixed" description="av">
-      <Real start="0.0" />
-    </ScalarVariable>
-    <ScalarVariable name="closing_speed" valueReference="37" causality="parameter" variability="fixed" description="closing_speed">
-      <Real start="0.0" />
-    </ScalarVariable>
-    <ScalarVariable name="closing_force" valueReference="38" causality="parameter" variability="fixed" description="closing_force">
-      <Real start="0.0" />
-    </ScalarVariable>
-    <ScalarVariable name="closing_diameter" valueReference="39" causality="parameter" variability="fixed" description="closing_diameter">
-      <Real start="0.0" />
-    </ScalarVariable>
-    <ScalarVariable name="lv" valueReference="40" causality="parameter" variability="fixed" description="lv">
-      <Real start="0.0" />
-    </ScalarVariable>
-    <ScalarVariable name="opening_speed" valueReference="41" causality="parameter" variability="fixed" description="opening_speed">
-      <Real start="0.0" />
-    </ScalarVariable>
-    <ScalarVariable name="opening_force" valueReference="42" causality="parameter" variability="fixed" description="opening_force">
-      <Real start="0.0" />
-    </ScalarVariable>
-    <ScalarVariable name="TARGET_X" valueReference="34" causality="parameter" variability="fixed" description="TARGET_X">
+<ScalarVariable name="target_X" valueReference="10" causality="input" variability="discrete">
       <Integer start="0" />
     </ScalarVariable>
-    <ScalarVariable name="TARGET_Y" valueReference="35" causality="parameter" variability="fixed" description="TARGET_Y">
+<ScalarVariable name="target_Y" valueReference="11" causality="input" variability="discrete">
       <Integer start="0" />
     </ScalarVariable>
-    <ScalarVariable name="TARGET_Z" valueReference="36" causality="parameter" variability="fixed" description="TARGET_Z">
+<ScalarVariable name="target_Z" valueReference="12" causality="input" variability="discrete">
       <Integer start="0" />
+    </ScalarVariable>
+<ScalarVariable name="MOTION_VEL" valueReference="13" causality="parameter" variability="fixed">
+      <Real start="0.0" />
+    </ScalarVariable>
+<ScalarVariable name="opening_diameter" valueReference="14" causality="parameter" variability="fixed">
+      <Real start="0.0" />
+    </ScalarVariable>
+<ScalarVariable name="PI" valueReference="15" causality="parameter" variability="fixed">
+      <Real start="0.0" />
+    </ScalarVariable>
+<ScalarVariable name="av" valueReference="16" causality="parameter" variability="fixed">
+      <Real start="0.0" />
+    </ScalarVariable>
+<ScalarVariable name="closing_speed" valueReference="17" causality="parameter" variability="fixed">
+      <Real start="0.0" />
+    </ScalarVariable>
+<ScalarVariable name="closing_force" valueReference="18" causality="parameter" variability="fixed">
+      <Real start="0.0" />
+    </ScalarVariable>
+<ScalarVariable name="closing_diameter" valueReference="19" causality="parameter" variability="fixed">
+      <Real start="0.0" />
+    </ScalarVariable>
+<ScalarVariable name="lv" valueReference="20" causality="parameter" variability="fixed">
+      <Real start="0.0" />
+    </ScalarVariable>
+<ScalarVariable name="opening_speed" valueReference="21" causality="parameter" variability="fixed">
+      <Real start="0.0" />
+    </ScalarVariable>
+<ScalarVariable name="opening_force" valueReference="22" causality="parameter" variability="fixed">
+      <Real start="0.0" />
+    </ScalarVariable>
+<ScalarVariable name="done" valueReference="23" causality="output" variability="discrete">
+      <Boolean />
+    </ScalarVariable>
+<ScalarVariable name="state" valueReference="24" variability="discrete" causality="output">
+      <String />
+    </ScalarVariable>
+<ScalarVariable name="target_state" valueReference="25" variability="discrete" causality="output">
+      <String />
+    </ScalarVariable>
+<ScalarVariable name="status" valueReference="26" variability="discrete" causality="output">
+      <String />
+    </ScalarVariable>
+<ScalarVariable name="output_command" valueReference="27" variability="discrete" causality="output">
+      <String />
     </ScalarVariable>
   </ModelVariables>
 
   <ModelStructure>
     <Outputs>
-      <Unknown index="2"/>
-      <Unknown index="3"/>
-      <Unknown index="4"/>
-      <Unknown index="5"/>
-      <Unknown index="6"/>
-      <Unknown index="7"/>
-      <Unknown index="8"/>
+      <Unknown index="24" />
+<Unknown index="25" />
+<Unknown index="26" />
+<Unknown index="27" />
+<Unknown index="28" />
     </Outputs>
+    <InitialUnknowns>
+    <Unknown index="24" />
+<Unknown index="25" />
+<Unknown index="26" />
+<Unknown index="27" />
+<Unknown index="28" />
+    </InitialUnknowns>
 
 
   </ModelStructure>

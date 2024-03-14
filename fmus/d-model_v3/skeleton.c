@@ -77,56 +77,38 @@ void initialize(ModelInstance* comp, const char* location) {
     init(&comp->modelData);
 
 
+    // input events from platform mapping
+    comp->fmiBuffer.booleanBuffer[0] = comp->modelData.collision;
+    comp->fmiBuffer.booleanBuffer[1] = comp->modelData.gripperOpened;
+    comp->fmiBuffer.booleanBuffer[2] = comp->modelData.closeGripperCommand;
+    comp->fmiBuffer.booleanBuffer[3] = comp->modelData.robotStopped;
+    comp->fmiBuffer.booleanBuffer[4] = comp->modelData.moveCompleted;
+    comp->fmiBuffer.booleanBuffer[5] = comp->modelData.gripperClosed;
+    comp->fmiBuffer.booleanBuffer[6] = comp->modelData.feasibleMoveDiscreteCommand;
+    comp->fmiBuffer.booleanBuffer[7] = comp->modelData.openGripperCommand;
+    comp->fmiBuffer.booleanBuffer[8] = comp->modelData.moveDiscreteCommand;
+    comp->fmiBuffer.booleanBuffer[9] = comp->modelData.nonfeasibleMoveDiscreteCommand;
+    // arguments(inputs)
+    comp->fmiBuffer.intBuffer[10] = comp->modelData.target_X;
+    comp->fmiBuffer.intBuffer[11] = comp->modelData.target_Y;
+    comp->fmiBuffer.intBuffer[12] = comp->modelData.target_Z;
     // parameters (i.e. memory)
-    comp->fmiBuffer.realBuffer[30] = comp->modelData.MOTION_VEL;
-    comp->fmiBuffer.realBuffer[31] = comp->modelData.opening_diameter;
-    comp->fmiBuffer.realBuffer[32] = comp->modelData.PI;
-    comp->fmiBuffer.realBuffer[33] = comp->modelData.av;
-    comp->fmiBuffer.intBuffer[34] = comp->modelData.TARGET_X;
-    comp->fmiBuffer.intBuffer[35] = comp->modelData.TARGET_Y;
-    comp->fmiBuffer.intBuffer[36] = comp->modelData.TARGET_Z;
-    comp->fmiBuffer.realBuffer[37] = comp->modelData.closing_speed;
-    comp->fmiBuffer.realBuffer[38] = comp->modelData.closing_force;
-    comp->fmiBuffer.realBuffer[39] = comp->modelData.closing_diameter;
-    comp->fmiBuffer.realBuffer[40] = comp->modelData.lv;
-    comp->fmiBuffer.realBuffer[41] = comp->modelData.opening_speed;
-    comp->fmiBuffer.realBuffer[42] = comp->modelData.opening_force;
-    //comp->fmiBuffer.realBuffer[43] = comp->modelData.margs;
-    comp->fmiBuffer.intBuffer[12] = comp->modelData.target_X;
-    comp->fmiBuffer.intBuffer[13] = comp->modelData.target_Y;
-    comp->fmiBuffer.intBuffer[14] = comp->modelData.target_Z;
-
-    // comp->fmiBuffer.realBuffer[30] = comp->MOTION_VEL;
-    // comp->fmiBuffer.realBuffer[31] = comp->opening_diameter;
-    // comp->fmiBuffer.realBuffer[32] = comp->PI;
-    // comp->fmiBuffer.realBuffer[33] = comp->av;
-    // comp->fmiBuffer.realBuffer[34] = comp->TARGET_X;
-    // comp->fmiBuffer.realBuffer[35] = comp->TARGET_Y;
-    // comp->fmiBuffer.realBuffer[36] = comp->TARGET_Z;
-    // comp->fmiBuffer.realBuffer[37] = comp->closing_speed;
-    // comp->fmiBuffer.realBuffer[38] = comp->closing_force;
-    // comp->fmiBuffer.realBuffer[39] = comp->closing_diameter;
-    // comp->fmiBuffer.realBuffer[40] = comp->lv;
-    // comp->fmiBuffer.realBuffer[41] = comp->opening_speed;
-    // comp->fmiBuffer.realBuffer[42] = comp->opening_force;
-    // //comp->fmiBuffer.realBuffer[43] = comp->margs;
-    // comp->fmiBuffer.intBuffer[44] = comp->margs.target_X;
-    // comp->fmiBuffer.intBuffer[45] = comp->margs.target_Y;
-    // comp->fmiBuffer.intBuffer[46] = comp->margs.target_Z;
-
-    comp->fmiBuffer.booleanBuffer[1] = comp->modelData.collision;
-    comp->fmiBuffer.booleanBuffer[2] = comp->modelData.gripperOpened;
-    comp->fmiBuffer.booleanBuffer[3] = comp->modelData.closeGripperCommand;
-    comp->fmiBuffer.booleanBuffer[4] = comp->modelData.robotStopped;
-    comp->fmiBuffer.booleanBuffer[5] = comp->modelData.moveCompleted;
-    comp->fmiBuffer.booleanBuffer[6] = comp->modelData.gripperClosed;
-    comp->fmiBuffer.booleanBuffer[7] = comp->modelData.feasibleMoveDiscreteCommand;
-    comp->fmiBuffer.booleanBuffer[8] = comp->modelData.openGripperCommand;
-    comp->fmiBuffer.booleanBuffer[9] = comp->modelData.moveDiscreteCommand;
-    comp->fmiBuffer.booleanBuffer[10] = comp->modelData.nonfeasibleMoveDiscreteCommand;
-
-
-
+    comp->fmiBuffer.realBuffer[13] = comp->modelData.MOTION_VEL;
+    comp->fmiBuffer.realBuffer[14] = comp->modelData.opening_diameter;
+    comp->fmiBuffer.realBuffer[15] = comp->modelData.PI;
+    comp->fmiBuffer.realBuffer[16] = comp->modelData.av;
+    comp->fmiBuffer.realBuffer[17] = comp->modelData.closing_speed;
+    comp->fmiBuffer.realBuffer[18] = comp->modelData.closing_force;
+    comp->fmiBuffer.realBuffer[19] = comp->modelData.closing_diameter;
+    comp->fmiBuffer.realBuffer[20] = comp->modelData.lv;
+    comp->fmiBuffer.realBuffer[21] = comp->modelData.opening_speed;
+    comp->fmiBuffer.realBuffer[22] = comp->modelData.opening_force;
+    // outputs to platform mapping
+    comp->fmiBuffer.booleanBuffer[23] = comp->modelData.done;
+    comp->fmiBuffer.stringBuffer[24] = comp->modelData.state;
+    comp->fmiBuffer.stringBuffer[25] = comp->modelData.target_state;
+    comp->fmiBuffer.stringBuffer[26] = comp->modelData.status;
+    comp->fmiBuffer.stringBuffer[27] = comp->modelData.output_command;
 
     comp->first = 0;
     /**/
@@ -142,68 +124,44 @@ void initialize(ModelInstance* comp, const char* location) {
  */
 void doStep(ModelInstance* comp, const char* action) {
   	if(comp->first == 0) {
-      comp->modelData.MOTION_VEL = comp->fmiBuffer.realBuffer[30];
-      comp->modelData.opening_diameter = comp->fmiBuffer.realBuffer[31];
-      comp->modelData.PI = comp->fmiBuffer.realBuffer[32];
-      comp->modelData.av = comp->fmiBuffer.realBuffer[33];
-      comp->modelData.TARGET_X = comp->fmiBuffer.intBuffer[34];
-      comp->modelData.TARGET_Y = comp->fmiBuffer.intBuffer[35];
-      comp->modelData.TARGET_Z = comp->fmiBuffer.intBuffer[36];
-      comp->modelData.closing_speed = comp->fmiBuffer.realBuffer[37];
-      comp->modelData.closing_force = comp->fmiBuffer.realBuffer[38];
-      comp->modelData.closing_diameter = comp->fmiBuffer.realBuffer[39];
-      comp->modelData.lv = comp->fmiBuffer.realBuffer[40];
-      comp->modelData.opening_speed = comp->fmiBuffer.realBuffer[41];
-      comp->modelData.opening_force = comp->fmiBuffer.realBuffer[42];
+      //parameters
+      comp->modelData.MOTION_VEL = comp->fmiBuffer.realBuffer[13];
+      comp->modelData.opening_diameter = comp->fmiBuffer.realBuffer[14];
+      comp->modelData.PI = comp->fmiBuffer.realBuffer[15];
+      comp->modelData.av = comp->fmiBuffer.realBuffer[16];
+      comp->modelData.closing_speed = comp->fmiBuffer.realBuffer[17];
+      comp->modelData.closing_force = comp->fmiBuffer.realBuffer[18];
+      comp->modelData.closing_diameter = comp->fmiBuffer.realBuffer[19];
+      comp->modelData.lv = comp->fmiBuffer.realBuffer[20];
+      comp->modelData.opening_speed = comp->fmiBuffer.realBuffer[21];
+      comp->modelData.opening_force = comp->fmiBuffer.realBuffer[22];
 
       comp->first = 1;
   	}
-    //parameters
+    //inputs and arguments
+    comp->modelData.collision = comp->fmiBuffer.booleanBuffer[0];
+    comp->modelData.gripperOpened = comp->fmiBuffer.booleanBuffer[1];
+    comp->modelData.closeGripperCommand = comp->fmiBuffer.booleanBuffer[2];
+    comp->modelData.robotStopped = comp->fmiBuffer.booleanBuffer[3];
+    comp->modelData.moveCompleted = comp->fmiBuffer.booleanBuffer[4];
+    comp->modelData.gripperClosed = comp->fmiBuffer.booleanBuffer[5];
+    comp->modelData.feasibleMoveDiscreteCommand = comp->fmiBuffer.booleanBuffer[6];
+    comp->modelData.openGripperCommand = comp->fmiBuffer.booleanBuffer[7];
+    comp->modelData.moveDiscreteCommand = comp->fmiBuffer.booleanBuffer[8];
+    comp->modelData.nonfeasibleMoveDiscreteCommand = comp->fmiBuffer.booleanBuffer[9];
+    comp->modelData.target_X = comp->fmiBuffer.intBuffer[10];
+    comp->modelData.target_Y = comp->fmiBuffer.intBuffer[11];
+    comp->modelData.target_Z = comp->fmiBuffer.intBuffer[12];
 
-    /*comp->modelData.MOTION_VEL = comp->fmiBuffer.realBuffer[30];
-    comp->modelData.opening_diameter = comp->fmiBuffer.realBuffer[31];
-    comp->modelData.PI = comp->fmiBuffer.realBuffer[32];
-    comp->modelData.av = comp->fmiBuffer.realBuffer[33];
-    comp->modelData.TARGET_X = comp->fmiBuffer.intBuffer[34];
-    comp->modelData.TARGET_Y = comp->fmiBuffer.intBuffer[35];
-    comp->modelData.TARGET_Z = comp->fmiBuffer.intBuffer[36];
-    comp->modelData.closing_speed = comp->fmiBuffer.realBuffer[37];
-    comp->modelData.closing_force = comp->fmiBuffer.realBuffer[38];
-    comp->modelData.closing_diameter = comp->fmiBuffer.realBuffer[39];
-    comp->modelData.lv = comp->fmiBuffer.realBuffer[40];
-    comp->modelData.opening_speed = comp->fmiBuffer.realBuffer[41];
-    comp->modelData.opening_force = comp->fmiBuffer.realBuffer[42];*/
-    //comp->modelData.margs = comp->fmiBuffer.realBuffer[43];
-    comp->modelData.target_X = comp->fmiBuffer.intBuffer[12];
-    comp->modelData.target_Y = comp->fmiBuffer.intBuffer[13];
-    comp->modelData.target_Z = comp->fmiBuffer.intBuffer[14];
-
-
-    // inputs
-    comp->modelData.collision = comp->fmiBuffer.booleanBuffer[1];
-    comp->modelData.gripperOpened = comp->fmiBuffer.booleanBuffer[2];
-    comp->modelData.closeGripperCommand = comp->fmiBuffer.booleanBuffer[3];
-    comp->modelData.robotStopped = comp->fmiBuffer.booleanBuffer[4];
-    comp->modelData.moveCompleted = comp->fmiBuffer.booleanBuffer[5];
-    comp->modelData.gripperClosed = comp->fmiBuffer.booleanBuffer[6];
-    comp->modelData.feasibleMoveDiscreteCommand = comp->fmiBuffer.booleanBuffer[7];
-    comp->modelData.openGripperCommand = comp->fmiBuffer.booleanBuffer[8];
-    comp->modelData.moveDiscreteCommand = comp->fmiBuffer.booleanBuffer[9];
-    comp->modelData.nonfeasibleMoveDiscreteCommand = comp->fmiBuffer.booleanBuffer[10];
-    //comp->modelData.moveDiscreteCommand_value = comp->fmiBuffer.realBuffer[11];
-    //comp->modelData.moveDiscreteCommand_value.target_X = comp->fmiBuffer.intBuffer[12];
-    //comp->modelData.moveDiscreteCommand_value.target_Y = comp->fmiBuffer.intBuffer[13];
-    //comp->modelData.moveDiscreteCommand_value.target_Z = comp->fmiBuffer.intBuffer[14];
-    //tick(comp->modelData);
+    //step in the module
     tick(&comp->modelData);
 
-    //outputs TO UPDATE
-    comp->fmiBuffer.stringBuffer[24] = comp->modelData.output_command;
-    comp->fmiBuffer.stringBuffer[21] = comp->modelData.state;
-    /*comp->fmiBuffer.stringBuffer[20] = comp->modelData.done;
-    comp->fmiBuffer.stringBuffer[21] = comp->modelData.state;
-    comp->fmiBuffer.stringBuffer[22] = comp->modelData.target_state;
-    comp->fmiBuffer.stringBuffer[23] = comp->modelData.status;*/
+    //outputs
+    comp->fmiBuffer.booleanBuffer[23] = comp->modelData.done;
+    comp->fmiBuffer.stringBuffer[24] = comp->modelData.state;
+    comp->fmiBuffer.stringBuffer[25] = comp->modelData.target_state;
+    comp->fmiBuffer.stringBuffer[26] = comp->modelData.status;
+    comp->fmiBuffer.stringBuffer[27] = comp->modelData.output_command;
 
 
 }

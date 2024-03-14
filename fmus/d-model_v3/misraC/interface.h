@@ -186,6 +186,8 @@ M_DiscreteGrippingArm_input_Enum read_input() {
 
 void write_output(M_DiscreteGrippingArm_output_Enum _output_) {
     fmi_data_interface->output_command = "test command";
+    fmi_data_interface->done = false;
+    fmi_data_interface->status = "ok";
 		//float motion_vel = fmi_data_interface->MOTION_VEL;
     //printf("%s\n", _output_.type);
     //printf("%s\n", _output_.data);
@@ -243,7 +245,7 @@ void write_output(M_DiscreteGrippingArm_output_Enum _output_) {
             }
           }
     else if (_output_.type == M_DiscreteGrippingArm_output_movediscrete) {
-
+            fmi_data_interface->state = "ArmMove";
             int _aux1_ = _output_.data.movediscrete.v1;
             int _aux2_ = _output_.data.movediscrete.v2;
             int _aux3_ = _output_.data.movediscrete.v3;
@@ -286,7 +288,7 @@ void write_output(M_DiscreteGrippingArm_output_Enum _output_) {
             }
           }
     else if (_output_.type == M_DiscreteGrippingArm_output_place) {
-
+            fmi_data_interface->state = "GripperOpen";
             float _aux1_ = _output_.data.place.v1;
             float _aux2_ = _output_.data.place.v2;
             float _aux3_ = _output_.data.place.v3;
@@ -316,7 +318,7 @@ void write_output(M_DiscreteGrippingArm_output_Enum _output_) {
             }
           }
     else if (_output_.type == M_DiscreteGrippingArm_output_stop) {
-
+            fmi_data_interface->state = "ArmStop";
             {
                 sprintf(fmi_data_interface->output_command, "%s", "output stop");
             }
@@ -338,7 +340,7 @@ void write_output(M_DiscreteGrippingArm_output_Enum _output_) {
             }
           }
     else if (_output_.type == M_DiscreteGrippingArm_output_pick) {
-
+            fmi_data_interface->state = "GripperClose";
             float _aux1_ = _output_.data.pick.v1;
             float _aux2_ = _output_.data.pick.v2;
             float _aux3_ = _output_.data.pick.v3;
@@ -368,7 +370,8 @@ void write_output(M_DiscreteGrippingArm_output_Enum _output_) {
             }
           }
     else if (_output_.type == M_DiscreteGrippingArm_output__done_) {
-
+            fmi_data_interface->state = "Idle";
+            fmi_data_interface->done = true;
             }
 }
 

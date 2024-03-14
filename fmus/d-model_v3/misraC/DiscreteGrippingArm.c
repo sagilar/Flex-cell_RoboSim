@@ -217,15 +217,10 @@ int main(int argc, char* argv[]) {
 /***** Specific to FMI *****/
 void setStartValues(ModelData *comp) {
 		comp->terminateSimulation = false;
+		// Parameters
 		M(MOTION_VEL) = 0.0;
 		M(opening_diameter) = 0.0;
 		M(av) = 0.0;
-		M(TARGET_X) = 0;
-		M(TARGET_Y) = 0;
-		M(TARGET_Z) = 0;
-		M(target_X) = 0;
-		M(target_Y) = 0;
-		M(target_Z) = 0;
 		M(closing_speed) = 0.0;
 		M(closing_force) = 0.0;
 		M(closing_diameter) = 0.0;
@@ -233,18 +228,7 @@ void setStartValues(ModelData *comp) {
 		M(opening_speed) = 0.0;
 		M(opening_force) = 0.0;
 
-		M(gripperOpened) = false;
-		M(robotStopped) = false;
-		M(closeGripperCommand) = false;
-		M(collision) = false;
-		M(feasibleMoveDiscreteCommand) = false;
-		M(gripperClosed) = false;
-		M(nonfeasibleMoveDiscreteCommand) = false;
-		M(moveCompleted) = false;
-		M(openGripperCommand) = false;
-		M(moveDiscreteCommand) = false;
-		//sm_is.moveDiscreteCommand_value = false;
-
+		// Intput events
 		M(gripperOpened) = false;
 		M(robotStopped) = false;
 		M(closeGripperCommand) = false;
@@ -256,27 +240,23 @@ void setStartValues(ModelData *comp) {
 		M(openGripperCommand) = false;
 		M(moveDiscreteCommand) = false;
 
-		M(en_SimDiscreteGrippingArmMovement_ArmStop_1_done) = false;
-		M(en_SimDiscreteGrippingArmMovement_ArmStop_1_counter) = 0;
-		M(en_SimDiscreteGrippingArmMovement_GripperOpen_1_done) = false;
-		M(en_SimDiscreteGrippingArmMovement_GripperOpen_1_counter) = 0;
-		M(en_SimDiscreteGrippingArmMovement_GripperClose_1_done) = false;
-		M(en_SimDiscreteGrippingArmMovement_GripperClose_1_counter) = 0;
-		M(en_SimDiscreteGrippingArmMovement_ArmMove_1_done) = false;
-		M(en_SimDiscreteGrippingArmMovement_ArmMove_1_counter) = 0;
+		// Arguments (inputs)
+		M(target_X) = 0;
+		M(target_Y) = 0;
+		M(target_Z) = 0;
 
+		// Outputs
 		M(output_command) = "";
 		M(state) = "Idle";
+		M(target_state) = "";
+		M(status) = "";
+		M(done) = false;
 
 }
 /***** *****/
 
 void init(ModelData* comp) { //Replace for the main function
 		setStartValues(comp);
-		printf("TargetX: %d\n", comp->TARGET_X);
-		printf("TargetY: %d\n", comp->TARGET_Y);
-		printf("TargetZ: %d\n", comp->TARGET_Z);
-
 		printf("Initializing the DiscreteGrippingArm module\n");
 		update_fmi_data(comp);
 		//Infrastructure* state = (Infrastructure*)malloc(sizeof(Infrastructure));
@@ -296,13 +276,8 @@ void init(ModelData* comp) { //Replace for the main function
 
 ModelData* tick(ModelData* comp){
 	printf("Running tick function\n");
-	//printf("target_X_tick: %d\n",comp->target_X);
 	update_fmi_data(comp);
 	printf("output command: %s\n",comp->output_command);
-	//printf("target_Z_tick: %d\n",comp->target_Z);
-	//update comp to the main function
-	//send back the updated comp
-
 	{
 		bool terminate__ = false;
 		if ((!comp->terminateSimulation) || (!terminate__)) {

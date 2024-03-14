@@ -549,7 +549,7 @@ class Mapping():
         print("Placing method to be implemented")
 
     def _calculate_feasibility(self,target_X,target_Y,target_Z):
-        feasible_motion = self.ur_robot_model.compute_ik_validity(self._target_X,self.target_Y,self._target_Z) # feasibleMoveDiscreteCommand
+        feasible_motion = self.ur_robot_model.compute_ik_validity(target_X,target_Y,target_Z) # feasibleMoveDiscreteCommand
         return feasible_motion
 
 '''if __name__=='__main__':

@@ -1,0 +1,717 @@
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Read input on channel start_sm
+DEBUG: NONE (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing initial junction of SimDiscreteGrippingArmMovement
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Read input on channel start_sm
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: ArmMove (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmMove
+DEBUG: Running entry action 1 of state SimDiscreteGrippingArmMovement_ArmMove.
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: ArmMove (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmMove
+DEBUG: Running entry action 1 of state SimDiscreteGrippingArmMovement_ArmMove.
+DEBUG: ArmMove (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmMove
+DEBUG: ArmMove (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state ArmMove
+DEBUG: ArmMove (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state ArmMove
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: ArmMove (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state ArmMove
+DEBUG: ArmMove (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state ArmMove
+DEBUG: ArmMove (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmMove
+DEBUG: Running entry action 1 of state SimDiscreteGrippingArmMovement_ArmMove.
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: ArmMove (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmMove
+DEBUG: Running entry action 1 of state SimDiscreteGrippingArmMovement_ArmMove.
+DEBUG: ArmMove (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmMove
+DEBUG: ArmMove (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state ArmMove
+DEBUG: ArmMove (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state ArmMove
+DEBUG: ArmMove (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state ArmMove
+DEBUG: ArmMove (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state ArmMove
+DEBUG: ArmMoving (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmMoving
+DEBUG: ArmMoving (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state ArmMoving
+DEBUG: ArmMoving (EXECUTE_STATE5)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state ArmMoving
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: ArmMoving (EXIT_CHILDREN5)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state ArmMoving
+DEBUG: ArmMoving (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state ArmMoving
+DEBUG: ArmStop (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmStop
+DEBUG: Running entry action 1 of state SimDiscreteGrippingArmMovement_ArmStop.
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: ArmStop (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmStop
+DEBUG: Running entry action 1 of state SimDiscreteGrippingArmMovement_ArmStop.
+DEBUG: ArmStop (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmStop
+DEBUG: ArmStop (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state ArmStop
+DEBUG: ArmStop (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state ArmStop
+DEBUG: ArmStop (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state ArmStop
+DEBUG: ArmStop (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state ArmStop
+DEBUG: ArmStopping (ENTER_STATE5)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmStopping
+DEBUG: ArmStopping (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state ArmStopping
+DEBUG: ArmStopping (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state ArmStopping
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: ArmStopping (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state ArmStopping
+DEBUG: ArmStopping (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state ArmStopping
+DEBUG: ArmStopping (ENTER_STATE5)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmStopping
+DEBUG: ArmStopping (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state ArmStopping
+DEBUG: ArmStopping (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state ArmStopping
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: ArmStopping (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state ArmStopping
+DEBUG: ArmStopping (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state ArmStopping
+DEBUG: ArmStopping (ENTER_STATE5)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmStopping
+DEBUG: ArmStopping (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state ArmStopping
+DEBUG: ArmStopping (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state ArmStopping
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: ArmStopping (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state ArmStopping
+DEBUG: ArmStopping (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state ArmStopping
+DEBUG: ArmStopping (ENTER_STATE5)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state ArmStopping
+DEBUG: ArmStopping (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state ArmStopping
+DEBUG: ArmStopping (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state ArmStopping
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: ArmStopping (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state ArmStopping
+DEBUG: ArmStopping (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state ArmStopping
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: GripperClose (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state GripperClose
+DEBUG: Running entry action 1 of state SimDiscreteGrippingArmMovement_GripperClose.
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: GripperClose (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state GripperClose
+DEBUG: Running entry action 1 of state SimDiscreteGrippingArmMovement_GripperClose.
+DEBUG: GripperClose (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state GripperClose
+DEBUG: GripperClose (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state GripperClose
+DEBUG: GripperClose (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state GripperClose
+DEBUG: GripperClose (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state GripperClose
+DEBUG: GripperClose (EXIT_STATE5)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state GripperClose
+DEBUG: GripperClosing (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state GripperClosing
+DEBUG: GripperClosing (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state GripperClosing
+DEBUG: GripperClosing (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state GripperClosing
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: GripperClosing (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state GripperClosing
+DEBUG: GripperClosing (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state GripperClosing
+DEBUG: GripperClosing (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state GripperClosing
+DEBUG: GripperClosing (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state GripperClosing
+DEBUG: GripperClosing (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state GripperClosing
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: GripperClosing (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state GripperClosing
+DEBUG: GripperClosing (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state GripperClosing
+DEBUG: GripperClosing (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state GripperClosing
+DEBUG: GripperClosing (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state GripperClosing
+DEBUG: GripperClosing (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state GripperClosing
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: GripperClosing (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state GripperClosing
+DEBUG: GripperClosing (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state GripperClosing
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_DiscreteGrippingArm
+DEBUG: - Read input on channel start_cm
+DEBUG: - Read input on channel start_sm
+DEBUG: Idle (EXIT_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting children of state Idle
+DEBUG: Idle (EXIT_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Exiting state Idle
+DEBUG: Idle (ENTER_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering state Idle
+DEBUG: Idle (ENTER_CHILDREN)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Entering children of state Idle
+DEBUG: Idle (EXECUTE_STATE)
+DEBUG: 		Running step of state machine SimDiscreteGrippingArmMovement
+DEBUG: 		Executing state Idle
+DEBUG: 	Finished reading inputs of controller cm
+DEBUG: 	Started step of controller cm
+DEBUG: 		Sent output _done_ on channel end_sm
+DEBUG: - Waiting for input on channel start_sm
+DEBUG: Finished reading inputs of module DiscreteGrippingArm
+DEBUG: Started step of module DiscreteGrippingArm
+DEBUG: Finished step of module DiscreteGrippingArm
+DEBUG: - Waiting for input on channel start_cm
+DEBUG: - Waiting for input on channel start_DiscreteGrippingArm

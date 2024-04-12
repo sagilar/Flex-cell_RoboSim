@@ -16,7 +16,7 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-fmu_filename = 'DiscreteGrippingArm.fmu'
+fmu_filename = 'dmodelFMU.fmu'
 start_time = 0.0
 threshold = 2.0
 stop_time = 10.0
@@ -83,7 +83,7 @@ while time < stop_time:
 
 
     fmu.doStep(currentCommunicationPoint=time, communicationStepSize=step_size)
-    print("Output command (from d-model): " + str(fmu.getString([vrs["output_command"]])))
+    print("Output command (from d-model): " + str(fmu.getString([vrs["d_model_event"]])))
     print("State (from d-model): " + str(fmu.getString([vrs["state"]])))
     #print("Output arguments (sim): " + str(fmu.getString([28,29,30,31])))
 

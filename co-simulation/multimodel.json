@@ -33,12 +33,6 @@
           "t3",
           "t4",
           "t5",
-          "x",
-          "y",
-          "z",
-          "rx",
-          "ry",
-          "rz",
           "platform_event_0",
           "platform_event_1",
           "platform_event_2",
@@ -52,19 +46,14 @@
         ],
         "{dmodel}.dmodel": [
             "state",
-            "output_command",
+            "d_model_event",
             "d_model_event_args_0",
             "d_model_event_args_1",
-            "d_model_event_args_2",
+            "d_model_event_args_2"
         ]
     },
     "parameters": {
-        "{mapping}.mapping.j0": 0.0,
-        "{mapping}.mapping.j1": 0.0,
-        "{mapping}.mapping.j2": 0.0,
-        "{mapping}.mapping.j3": 0.0,
-        "{mapping}.mapping.j4": 0.0,
-        "{mapping}.mapping.j5": 0.0
+
     },
     "connections": {
         "{rmq}.rmq.controller_event": ["{mapping}.mapping.controller_event"],

@@ -1,0 +1,11 @@
+18:12:31.083 [main] INFO  org.intocps.maestro.parser.MablParserUtil - Parting file: generate/spec.mabl
+18:12:31.672 [main] DEBUG org.intocps.maestro.Mabl - Frameworks: []
+18:12:31.942 [main] DEBUG org.intocps.maestro.Mabl - Type checking
+18:12:32.738 [main] INFO  org.intocps.maestro.interpreter.MableInterpreter - Starting Mable Interpreter...
+18:12:32.804 [main] DEBUG org.intocps.fmi.jnifmuapi.NativeFmu - Load FMU /home/santiago/York/flex-cell/co-simulation/models/mappingFMU.fmu
+18:12:32.805 [main] DEBUG org.intocps.fmi.jnifmuapi.NativeFmu - Extracting: /home/santiago/York/flex-cell/co-simulation/models/mappingFMU.fmu to /tmp/mappingFMU7696942138014331386
+18:12:33.170 [main] DEBUG org.intocps.fmi.jnifmuapi.NativeFmu - Extracted '/home/santiago/York/flex-cell/co-simulation/models/mappingFMU.fmu' to '/tmp/mappingFMU7696942138014331386'
+18:12:33.224 [main] DEBUG org.intocps.fmi.jnifmuapi.shared.NativeLoadManager - Loading FMU library: /tmp/mappingFMU7696942138014331386/binaries/linux64/unifmu.so
+18:12:33.226 [main] DEBUG org.intocps.fmi.jnifmuapi.NativeFmuLibraryLoader - Loading library: lib/Linux-amd64/libfmuapi.so
+18:12:33.227 [main] DEBUG org.intocps.fmi.jnifmuapi.shared.NativeLibraryLoader - Extracting library from: lib/Linux-amd64/libfmuapi.so
+18:12:33.239 [main] DEBUG org.intocps.fmi.jnifmuapi.shared.NativeLibraryLoader - Extracted library: /tmp/jnifmuapi14433971453066208809/jnifmuapi-Linux-amd64/libfmuapi.so

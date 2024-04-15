@@ -120,12 +120,18 @@ void __clean__(__Infrastructure__* state) {
 bool __step__(__Infrastructure__* state) {
 	bool terminate__ = false;
 	{
+		bool eventdone = false;
 		bool inputdone = false;
 		while (!inputdone) {
+			inputdone = eventdone;
 			M_DiscreteGrippingArm_input_Enum aux = read_input();
 			if (aux.type == M_DiscreteGrippingArm_input__done_) {
 				inputdone = true;
-			} else if (aux.type == M_DiscreteGrippingArm_input__terminate_) {
+			}
+			/*else if ((aux.type == M_DiscreteGrippingArm_input_moveCompleted) || (aux.type == M_DiscreteGrippingArm_input_moveDiscreteCommand) || (aux.type == M_DiscreteGrippingArm_input_openGripperCommand) || (aux.type == M_DiscreteGrippingArm_input_nonfeasibleMoveDiscreteCommand) || (aux.type == M_DiscreteGrippingArm_input_gripperOpened) || (aux.type == M_DiscreteGrippingArm_input_feasibleMoveDiscreteCommand) || (aux.type == M_DiscreteGrippingArm_input_collision) || (aux.type == M_DiscreteGrippingArm_input_robotStopped) || (aux.type == M_DiscreteGrippingArm_input_gripperClosed) || (aux.type == M_DiscreteGrippingArm_input_closeGripperCommand)) {
+				eventdone = true;
+			}*/
+			else if (aux.type == M_DiscreteGrippingArm_input__terminate_) {
 				inputdone = true;
 				terminate__ = true;
 			}

@@ -76,9 +76,8 @@
         "{dmodel}.dmodel.d_model_event": ["{mapping}.mapping.d_model_event"],
         "{dmodel}.dmodel.d_model_event_args_0": ["{mapping}.mapping.d_model_event_args_0"],
         "{dmodel}.dmodel.d_model_event_args_1": ["{mapping}.mapping.d_model_event_args_1"],
-        "{dmodel}.dmodel.d_model_event_args_2": ["{mapping}.mapping.d_model_event_args_2"],
-        "{dmodel}.dmodel.d_model_event_args_3": ["{mapping}.mapping.d_model_event_args_3"]
-
+        "{dmodel}.dmodel.d_model_event_args_2": ["{mapping}.mapping.d_model_event_args_3"],
+        "{dmodel}.dmodel.d_model_event_args_3": ["{mapping}.mapping.d_model_event_args_4"]
     },
     "algorithm": {
         "size": 0.5,

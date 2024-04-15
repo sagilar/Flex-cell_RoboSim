@@ -12,7 +12,7 @@ def check_for_events():
     args = {
         "equation_0": ["flexcellAngularPosition[completed]"]
     }
-    result = mapping.get_event("moveCompleted",args=args)
+    result = mapping.get_event("moveCompleted",args=None)
     print("moveCompleted platform event (timer): " + str(result))
     checking_timer.run()
 
@@ -38,13 +38,13 @@ if __name__ == "__main__":
         args = {
             "equation_0": ["flexcellAngularPosition[completed]"]
         }
-        result = mapping.get_event("moveCompleted",args=args)
+        result = mapping.get_event("moveCompleted",args=None)
         print("moveCompleted platform event: " + str(result))
 
         args = {
             "equation_0": ["flexcellAngularPosition[completed]"],
         }
-        result = mapping.get_event("robotStopped",args=args)
+        result = mapping.get_event("robotStopped",args=None)
         print("robotStopped platform event: " + str(result))
 
         args = {

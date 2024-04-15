@@ -54,6 +54,8 @@ idx = 0
 while time < stop_time:
     # NOTE: the FMU.get*() and FMU.set*() functions take lists of
     # value references as arguments and return lists of values
+    fmu.setBoolean([vrs["robotStopped"]],[True]) # moveDiscreteCommand event
+    fmu.setBoolean([vrs["gripperOpened"]],[True]) # moveDiscreteCommand event
     print("Before FMI DoStep idx " + str(idx))
     if idx == 2:
         fmu.setInteger([vrs["target_X"],vrs["target_Y"],vrs["target_Z"]],[4,18,4]) #Update of target_x y and z

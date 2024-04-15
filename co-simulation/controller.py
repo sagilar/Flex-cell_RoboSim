@@ -7,7 +7,7 @@ import time
 
 ## Co-sim properties
 timestep=0.5
-max_time = 15.0
+max_time = 15.0 + 5.0
 
 rabbitmq_host = "localhost"
 rabbitmq_port = 5672
@@ -45,11 +45,11 @@ def publish():
 
     msg = {}
     msg['time']= dt.isoformat()
-    msg['controller_event'] = "moveDiscreteCommand"
-    msg['controller_event_args_0'] = 4.0
-    msg['controller_event_args_1'] = 18.0
-    msg['controller_event_args_2'] = 4.0
-    msg['controller_event_args_3'] = 0.0
+    #msg['controller_event'] = "moveDiscreteCommand"
+    #msg['controller_event_args_0'] = 4.0
+    #msg['controller_event_args_1'] = 18.0
+    #msg['controller_event_args_2'] = 4.0
+    #msg['controller_event_args_3'] = 0.0
 
 
     for i in range(int(max_time/timestep)):
@@ -57,27 +57,39 @@ def publish():
             print("i:" + str(i))
             if (i==2):
                 msg['controller_event'] = "moveDiscreteCommand"
-                msg['controller_event_args_0'] = 4.0
-                msg['controller_event_args_1'] = 18.0
-                msg['controller_event_args_2'] = 4.0
-
-            if (i==11):
-                msg['controller_event'] = "closeGripperCommand"
                 msg['controller_event_args_0'] = 0.0
-                msg['controller_event_args_1'] = 0.0
-                msg['controller_event_args_2'] = 0.0
+                msg['controller_event_args_1'] = 23.0
+                msg['controller_event_args_2'] = 2.0
 
-            if (i==16):
+            elif (i==11):
                 msg['controller_event'] = "moveDiscreteCommand"
-                msg['controller_event_args_0'] = 0.0
+                msg['controller_event_args_0'] = 3.0
                 msg['controller_event_args_1'] = 20.0
                 msg['controller_event_args_2'] = 3.0
 
-            if (i==25):
-                msg['controller_event'] = "closeGripperCommand"
+            elif (i==16):
+                msg['controller_event'] = "moveDiscreteCommand"
+                msg['controller_event_args_0'] = 8.0
+                msg['controller_event_args_1'] = 10.0
+                msg['controller_event_args_2'] = 0.0
+
+            elif (i==25):
+                msg['controller_event'] = "moveDiscreteCommand"
+                msg['controller_event_args_0'] = 11.0
+                msg['controller_event_args_1'] = 16.0
+                msg['controller_event_args_2'] = 4.0
+            else:
+                msg['controller_event'] = ""
                 msg['controller_event_args_0'] = 0.0
                 msg['controller_event_args_1'] = 0.0
                 msg['controller_event_args_2'] = 0.0
+                msg['controller_event_args_3'] = 0.0
+                msg['controller_event_args_4'] = 0.0
+                msg['controller_event_args_5'] = 0.0
+                msg['controller_event_args_6'] = 0.0
+                msg['controller_event_args_7'] = 0.0
+                msg['controller_event_args_8'] = 0.0
+                msg['controller_event_args_9'] = 0.0
 
             channel.basic_publish(exchange='fmi_digital_twin',
                           routing_key='data.to_cosim',

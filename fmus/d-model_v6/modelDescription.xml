@@ -58,14 +58,14 @@
 <ScalarVariable name="nonfeasibleMoveDiscreteCommand" valueReference="9" causality="input" variability="discrete">
       <Boolean start="false"/>
     </ScalarVariable>
-<ScalarVariable name="target_X" valueReference="10" causality="input" variability="discrete">
-      <Integer start="0" />
+<ScalarVariable name="target_X" valueReference="10" causality="input" variability="continuous">
+      <Real start="0.0" />
     </ScalarVariable>
-<ScalarVariable name="target_Y" valueReference="11" causality="input" variability="discrete">
-      <Integer start="0" />
+<ScalarVariable name="target_Y" valueReference="11" causality="input" variability="continuous">
+      <Real start="0.0" />
     </ScalarVariable>
-<ScalarVariable name="target_Z" valueReference="12" causality="input" variability="discrete">
-      <Integer start="0" />
+<ScalarVariable name="target_Z" valueReference="12" causality="input" variability="continuous">
+      <Real start="0.0" />
     </ScalarVariable>
 <ScalarVariable name="MOTION_VEL" valueReference="13" causality="parameter" variability="fixed">
       <Real start="0.0" />

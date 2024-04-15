@@ -18,9 +18,12 @@ typedef struct {
 	float opening_force;
 
   // Arguments (inputs)
-  int target_X;
-  int target_Y;
-	int target_Z;
+  //int target_X;
+  //int target_Y;
+	//int target_Z;
+  float target_X;
+  float target_Y;
+	float target_Z;
 
   // Input events
   bool gripperOpened;

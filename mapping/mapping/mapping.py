@@ -273,9 +273,9 @@ class Mapping():
                 exec_op = op
         if args != None:
             exec_op.update_args(args)
-        print("Executing operation")
+        #print("Executing operation")
         result = exec_op.execute(exec_op.arguments)
-        print("Operation executed")
+        #print("Operation executed")
         return result
 
     def get_event(self,input_event_name,args=None):
@@ -285,9 +285,9 @@ class Mapping():
                 event = ev
         if args != None:
             event.update_args(args)
-        print("Reading event")
+        #print("Reading event")
         result = event.get_event_result(event.arguments)
-        print("Event read")
+        #print("Event read")
         return result
 
     def get_joint_position(self,joint_name):

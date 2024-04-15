@@ -3,5 +3,6 @@
     "endTime": 15.0,
     "reportProgress": true,
     "liveLogInterval": 0,
-    "logLevels": {}
+    "logLevels": {},
+    "loggingOn": true
 }

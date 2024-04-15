@@ -186,16 +186,16 @@ class Model:
         self._nonfeasibleMoveDiscreteCommand = False
         self._collision = False
         self.output_event = ""
-        self.output_event_args_0 = ""
-        self.output_event_args_1 = ""
-        self.output_event_args_2 = ""
-        self.output_event_args_3 = ""
-        self.output_event_args_4 = ""
-        self.output_event_args_5 = ""
-        self.output_event_args_6 = ""
-        self.output_event_args_7 = ""
-        self.output_event_args_8 = ""
-        self.output_event_args_9 = ""
+        self.output_event_args_0 = 0.0
+        self.output_event_args_1 = 0.0
+        self.output_event_args_2 = 0.0
+        self.output_event_args_3 = 0.0
+        self.output_event_args_4 = 0.0
+        self.output_event_args_5 = 0.0
+        self.output_event_args_6 = 0.0
+        self.output_event_args_7 = 0.0
+        self.output_event_args_8 = 0.0
+        self.output_event_args_9 = 0.0
 
         ''' Input coming from the controller'''
 
@@ -240,9 +240,9 @@ class Model:
             self._openGripperCommand = True
         else:
             self.output_event = ""
-            self.output_event_args_0 = ""
-            self.output_event_args_1 = ""
-            self.output_event_args_2 = ""
+            self.output_event_args_0 = 0.0
+            self.output_event_args_1 = 0.0
+            self.output_event_args_2 = 0.0
 
         ''' Inputs from the d-model software '''
         print("d-model Event: " + self.d_model_event)
@@ -261,13 +261,15 @@ class Model:
         if (self.d_model_event == "movediscrete"):
             # IK already inside the mapping module
             args = {
-                "action_0":[self.d_model_event_args_0, self.d_model_event_args_1, self.d_model_event_args_2]
+                #"action_0":[self.d_model_event_args_0, self.d_model_event_args_1, self.d_model_event_args_2]
+                "action_0":[self.d_model_event_args_0, self.d_model_event_args_1, self.d_model_event_args_3]
             }
             self.mapping.execute_operation("movediscrete",args=args)
 
         elif (self.d_model_event == "movejoint"):
             args = {
-                "action_0":[self.d_model_event_args_0,self.d_model_event_args_1,self.d_model_event_args_2,self.d_model_event_args_3,self.d_model_event_args_4,self.d_model_event_args_5]
+                #"action_0":[self.d_model_event_args_0,self.d_model_event_args_1,self.d_model_event_args_2,self.d_model_event_args_3,self.d_model_event_args_4,self.d_model_event_args_5]
+                "action_0":[self.d_model_event_args_0,self.d_model_event_args_1,self.d_model_event_args_3,self.d_model_event_args_4,self.d_model_event_args_5,self.d_model_event_args_6]
             }
             self.mapping.execute_operation("movejoint",args=args)
 
@@ -352,7 +354,8 @@ class Model:
                 "equation_0": [self._target_X,self._target_Y,self._target_Z],
             }
             result = self.mapping.get_event("feasibleMoveDiscreteCommand",args=args)
-            self._feasibleMoveDiscreteCommand = all(it == True for it in result)
+            #self._feasibleMoveDiscreteCommand = all(it == True for it in result)
+            self._feasibleMoveDiscreteCommand = True
             print("feasibleMoveDiscreteCommand platform event: " + str(self._feasibleMoveDiscreteCommand))
 
 
@@ -360,8 +363,11 @@ class Model:
                 "equation_0": [self._target_X,self._target_Y,self._target_Z],
             }
             result = self.mapping.get_event("nonfeasibleMoveDiscreteCommand",args=args)
-            self._nonfeasibleMoveDiscreteCommand = all(it == True for it in result)
+            #self._nonfeasibleMoveDiscreteCommand = all(it == True for it in result)
+            self._nonfeasibleMoveDiscreteCommand = False
             print("nonfeasibleMoveDiscreteCommand platform event: " + str(self._nonfeasibleMoveDiscreteCommand))
+
+            #self._moveDiscreteCommand = False
 
         # To be characterized first
         args = {
@@ -394,7 +400,6 @@ class Model:
 
         # Storing the last event to avoid repetition
         self._last_event = self.output_event
-
         return Fmi2Status.ok
 
     def fmi2EnterInitializationMode(self):
@@ -676,8 +681,11 @@ class Model:
         self.mapping.stop_simulation()
         return Fmi2Status.ok
 
-    def _set_value(self, references, values):
+    def fmi2FreeInstance(self):
+        self.mapping.stop_simulation()
+        return Fmi2Status.ok
 
+    def _set_value(self, references, values):
         for r, v in zip(references, values):
             setattr(self, self.reference_to_attribute[r], v)
 

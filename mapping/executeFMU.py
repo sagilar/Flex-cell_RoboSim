@@ -54,16 +54,18 @@ while time < stop_time:
     if idx == 2:
         fmu.setReal([vrs["controller_event_args_0"],vrs["controller_event_args_1"],vrs["controller_event_args_2"]],[4,18,4]) #Update of target_x y and z
         fmu.setString([vrs["controller_event"]],["moveDiscreteCommand"]) # moveDiscreteCommand event
-
+        fmu.setReal([vrs["d_model_event_args_0"],vrs["d_model_event_args_1"],vrs["d_model_event_args_3"]],[4,18,4]) #Update of target_x y and z
+        fmu.setString([vrs["d_model_event"]],["movediscrete"])
 
 
 
     if idx == 11:
         fmu.setString([vrs["controller_event"]],["closeGripperCommand"]) # closeGripperCommand event
-
+        fmu.setString([vrs["d_model_event"]],["pick"])
 
     if idx == 16:
         fmu.setString([vrs["controller_event"]],["openGripperCommand"]) # openGripperCommand event
+        fmu.setString([vrs["d_model_event"]],["place"])
 
 
     fmu.doStep(currentCommunicationPoint=time, communicationStepSize=step_size)

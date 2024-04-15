@@ -88,9 +88,12 @@ void initialize(ModelInstance* comp, const char* location) {
     comp->fmiBuffer.booleanBuffer[8] = comp->modelData.moveDiscreteCommand;
     comp->fmiBuffer.booleanBuffer[9] = comp->modelData.nonfeasibleMoveDiscreteCommand;
     // arguments(inputs)
-    comp->fmiBuffer.intBuffer[10] = comp->modelData.target_X;
-    comp->fmiBuffer.intBuffer[11] = comp->modelData.target_Y;
-    comp->fmiBuffer.intBuffer[12] = comp->modelData.target_Z;
+    //comp->fmiBuffer.intBuffer[10] = comp->modelData.target_X;
+    //comp->fmiBuffer.intBuffer[11] = comp->modelData.target_Y;
+    //comp->fmiBuffer.intBuffer[12] = comp->modelData.target_Z;
+    comp->fmiBuffer.realBuffer[10] = comp->modelData.target_X;
+    comp->fmiBuffer.realBuffer[11] = comp->modelData.target_Y;
+    comp->fmiBuffer.realBuffer[12] = comp->modelData.target_Z;
     // parameters (i.e. memory)
     comp->fmiBuffer.realBuffer[13] = comp->modelData.MOTION_VEL;
     comp->fmiBuffer.realBuffer[14] = comp->modelData.opening_diameter;
@@ -159,9 +162,9 @@ void doStep(ModelInstance* comp, const char* action) {
     comp->modelData.openGripperCommand = comp->fmiBuffer.booleanBuffer[7];
     comp->modelData.moveDiscreteCommand = comp->fmiBuffer.booleanBuffer[8];
     comp->modelData.nonfeasibleMoveDiscreteCommand = comp->fmiBuffer.booleanBuffer[9];
-    comp->modelData.target_X = comp->fmiBuffer.intBuffer[10];
-    comp->modelData.target_Y = comp->fmiBuffer.intBuffer[11];
-    comp->modelData.target_Z = comp->fmiBuffer.intBuffer[12];
+    comp->modelData.target_X = comp->fmiBuffer.realBuffer[10];
+    comp->modelData.target_Y = comp->fmiBuffer.realBuffer[11];
+    comp->modelData.target_Z = comp->fmiBuffer.realBuffer[12];
 
     //step in the module
     tick(&comp->modelData);

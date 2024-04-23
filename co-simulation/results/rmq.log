@@ -1,384 +1,173 @@
-2024-04-15T16:21:17,594 INFO  - logFmiCall OK rmq FMU: Called instantiate with instance 'rmq' and GUID '{cfc65592-ffff-4563-9705-1581b6e7071c}'
-2024-04-15T16:21:17,597 INFO  - logAll OK rmq FMU: Resource model description file location is '/tmp/rmqfmu2153192751914329503/resources/modelDescription.xml'
-2024-04-15T16:21:17,616 INFO  - logAll OK rmq 'config.communicationtimeout config.communicationtimeout 5 60 1'
-2024-04-15T16:21:17,617 INFO  - logAll OK rmq 'config.exchangename config.exchangename 9 fmi_digital_twin 1'
-2024-04-15T16:21:17,618 INFO  - logAll OK rmq 'config.exchangetype config.exchangetype 10 direct 1'
-2024-04-15T16:21:17,619 INFO  - logAll OK rmq 'config.healthdata.exchangename config.healthdata.exchangename 11 fmi_digital_twin_sh 1'
-2024-04-15T16:21:17,619 INFO  - logAll OK rmq 'config.healthdata.exchangetype config.healthdata.exchangetype 12 direct 1'
-2024-04-15T16:21:17,620 INFO  - logAll OK rmq 'config.hostname config.hostname 0 localhost 1'
-2024-04-15T16:21:17,620 INFO  - logAll OK rmq 'config.lookahead config.lookahead 8 1 1'
-2024-04-15T16:21:17,620 INFO  - logAll OK rmq 'config.maxage config.maxage 7 1000 1'
-2024-04-15T16:21:17,621 INFO  - logAll OK rmq 'config.password config.password 3 guest 1'
-2024-04-15T16:21:17,621 INFO  - logAll OK rmq 'config.port config.port 1 5672 1'
-2024-04-15T16:21:17,622 INFO  - logAll OK rmq 'config.precision config.precision 6 10 1'
-2024-04-15T16:21:17,622 INFO  - logAll OK rmq 'config.queueupperbound config.queueupperbound 17 100 1'
-2024-04-15T16:21:17,627 INFO  - logAll OK rmq 'config.routingkey config.routingkey 4 data.to_cosim 1'
-2024-04-15T16:21:17,627 INFO  - logAll OK rmq 'config.routingkey.from_cosim config.routingkey.from_cosim 13 data.from_cosim 1'
-2024-04-15T16:21:17,628 INFO  - logAll OK rmq 'config.ssl config.ssl 16 0 1'
-2024-04-15T16:21:17,632 INFO  - logAll OK rmq 'config.username config.username 2 guest 1'
-2024-04-15T16:21:17,634 INFO  - logAll OK rmq 'controller_event controller_event 21  1'
-2024-04-15T16:21:17,636 INFO  - logAll OK rmq 'controller_event_args_0 controller_event_args_0 22 0.000000 1'
-2024-04-15T16:21:17,636 INFO  - logAll OK rmq 'controller_event_args_1 controller_event_args_1 23 0.000000 1'
-2024-04-15T16:21:17,637 INFO  - logAll OK rmq 'controller_event_args_2 controller_event_args_2 24 0.000000 1'
-2024-04-15T16:21:17,639 INFO  - logAll OK rmq 'controller_event_args_3 controller_event_args_3 25 0.000000 1'
-2024-04-15T16:21:17,639 INFO  - logAll OK rmq 'controller_event_args_4 controller_event_args_4 26 0.000000 1'
-2024-04-15T16:21:17,640 INFO  - logAll OK rmq 'controller_event_args_5 controller_event_args_5 27 0.000000 1'
-2024-04-15T16:21:17,640 INFO  - logAll OK rmq 'controller_event_args_6 controller_event_args_6 28 0.000000 1'
-2024-04-15T16:21:17,640 INFO  - logAll OK rmq 'controller_event_args_7 controller_event_args_7 29 0.000000 1'
-2024-04-15T16:21:17,659 INFO  - logAll OK rmq 'controller_event_args_8 controller_event_args_8 30 0.000000 1'
-2024-04-15T16:21:17,663 INFO  - logAll OK rmq 'controller_event_args_9 controller_event_args_9 31 0.000000 1'
-2024-04-15T16:21:17,677 INFO  - logAll OK rmq Using Tool:  'RabbitMQ digital twin generator'
-2024-04-15T16:21:17,679 INFO  - logAll OK rmq Parsed model description to obtain name, ref, type triples '/tmp/rmqfmu2153192751914329503/resources/modelDescription.xml'
-2024-04-15T16:21:17,679 INFO  - logAll OK rmq Extracted start values from model description '/tmp/rmqfmu2153192751914329503/resources/modelDescription.xml'
-2024-04-15T16:21:17,680 WARN  - logWarn Warning rmq The seqno output is NOT present with. 
-2024-04-15T16:21:17,681 WARN  - logWarn Warning rmq The enable send input is NOT present with. 
-2024-04-15T16:21:17,681 INFO  - logAll OK rmq Initialization done 'rmq'
-2024-04-15T16:21:17,754 INFO  - logAll OK rmq fmi2SetupExperiment 'rmq'
-2024-04-15T16:21:17,798 INFO  - logAll OK rmq fmi2SetString 'rmq'
-2024-04-15T16:21:17,809 INFO  - logAll OK rmq Setting string ref 0 = localhost
-2024-04-15T16:21:17,826 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
-2024-04-15T16:21:17,827 INFO  - logAll OK rmq Setting integer ref 1 = 5672
-2024-04-15T16:21:17,828 INFO  - logAll OK rmq fmi2SetString 'rmq'
-2024-04-15T16:21:17,829 INFO  - logAll OK rmq Setting string ref 2 = guest
-2024-04-15T16:21:17,829 INFO  - logAll OK rmq fmi2SetString 'rmq'
-2024-04-15T16:21:17,829 INFO  - logAll OK rmq Setting string ref 3 = guest
-2024-04-15T16:21:17,829 INFO  - logAll OK rmq fmi2SetString 'rmq'
-2024-04-15T16:21:17,830 INFO  - logAll OK rmq Setting string ref 4 = data.to_cosim
-2024-04-15T16:21:17,840 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
-2024-04-15T16:21:17,841 INFO  - logAll OK rmq Setting integer ref 5 = 60
-2024-04-15T16:21:17,844 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
-2024-04-15T16:21:17,846 INFO  - logAll OK rmq Setting integer ref 6 = 10
-2024-04-15T16:21:17,862 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
-2024-04-15T16:21:17,863 INFO  - logAll OK rmq Setting integer ref 7 = 1000
-2024-04-15T16:21:17,864 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
-2024-04-15T16:21:17,865 INFO  - logAll OK rmq Setting integer ref 8 = 1
-2024-04-15T16:21:17,868 INFO  - logAll OK rmq fmi2SetString 'rmq'
-2024-04-15T16:21:17,869 INFO  - logAll OK rmq Setting string ref 9 = fmi_digital_twin
-2024-04-15T16:21:17,875 INFO  - logAll OK rmq fmi2SetString 'rmq'
-2024-04-15T16:21:17,875 INFO  - logAll OK rmq Setting string ref 10 = direct
-2024-04-15T16:21:17,876 INFO  - logAll OK rmq fmi2SetString 'rmq'
-2024-04-15T16:21:17,879 INFO  - logAll OK rmq Setting string ref 11 = fmi_digital_twin_sh
-2024-04-15T16:21:17,895 INFO  - logAll OK rmq fmi2SetString 'rmq'
-2024-04-15T16:21:17,898 INFO  - logAll OK rmq Setting string ref 12 = direct
-2024-04-15T16:21:17,899 INFO  - logAll OK rmq fmi2SetString 'rmq'
-2024-04-15T16:21:17,899 INFO  - logAll OK rmq Setting string ref 13 = data.from_cosim
-2024-04-15T16:21:17,931 INFO  - logAll OK rmq fmi2SetBoolean 'rmq'
-2024-04-15T16:21:17,933 INFO  - logAll OK rmq Setting boolean ref 16 = 0
-2024-04-15T16:21:17,938 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
-2024-04-15T16:21:17,938 INFO  - logAll OK rmq Setting integer ref 17 = 100
-2024-04-15T16:21:17,939 INFO  - logAll OK rmq fmi2EnterInitializationMode 'rmq'
-2024-04-15T16:21:17,939 INFO  - logAll OK rmq Preparing initialization. Looking Up configuration parameters
-2024-04-15T16:21:17,939 INFO  - logAll OK rmq Preparing initialization. Hostname='localhost', Port='5672', Username='guest', routingkey='data.to_cosim', communication timeout 60 s, precision 10000000000 (10), SSL 0
-2024-04-15T16:21:17,979 INFO  - logAll OK rmq Sending RabbitMQ ready message
-2024-04-15T16:21:17,989 INFO  - logOk OK rmq Got data '2024-04-15 16:21:17.985', '{"time": "2024-04-15T16:21:17.985+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}'
-2024-04-15T16:21:17,990 INFO  - logOk OK rmq Got data '21' ''
-2024-04-15T16:21:17,991 INFO  - logOk OK rmq Initialization OK
-2024-04-15T16:21:17,991 INFO  - logAll OK rmq Initialization completed with: Hostname='localhost', Port='5672', Username='guest', routingkey='data.to_cosim', starttimestamp='2024-04-15 16:21:17.985', communication timeout 60 s
-2024-04-15T16:21:18,022 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:18,024 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:18,025 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:18,028 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:18,035 INFO  - logAll OK rmq fmi2ExitInitializationMode 'rmq'
-2024-04-15T16:21:18,501 INFO  - logOk OK rmq Got data '2024-04-15 16:21:18.487', '{"time": "2024-04-15T16:21:18.487+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190878489505045'
-2024-04-15T16:21:18,775 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:18,777 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:18,815 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:18,816 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:18,817 INFO  - logAll OK rmq Step time 0.500000 s converted time 500.000000 ms
-2024-04-15T16:21:18,821 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:18.817+00:00"}
-2024-04-15T16:21:18,827 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:18,829 INFO  - logAll OK rmq Step reached target time 500 [ms]
-2024-04-15T16:21:18,829 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:18,994 INFO  - logOk OK rmq Got data '2024-04-15 16:21:18.990', '{"time": "2024-04-15T16:21:18.990+02:00", "controller_event": "moveDiscreteCommand", "controller_event_args_0": 0.0, "controller_event_args_1": 23.0, "controller_event_args_2": 2.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190878992767556'
-2024-04-15T16:21:19,495 INFO  - logOk OK rmq Got data '2024-04-15 16:21:19.493', '{"time": "2024-04-15T16:21:19.493+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190879494980401'
-2024-04-15T16:21:19,998 INFO  - logOk OK rmq Got data '2024-04-15 16:21:19.995', '{"time": "2024-04-15T16:21:19.995+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190879996952489'
-2024-04-15T16:21:20,499 INFO  - logOk OK rmq Got data '2024-04-15 16:21:20.496', '{"time": "2024-04-15T16:21:20.496+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190880498249752'
-2024-04-15T16:21:21,006 INFO  - logOk OK rmq Got data '2024-04-15 16:21:20.998', '{"time": "2024-04-15T16:21:20.998+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190881004376523'
-2024-04-15T16:21:21,513 INFO  - logOk OK rmq Got data '2024-04-15 16:21:21.505', '{"time": "2024-04-15T16:21:21.505+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190881510186187'
-2024-04-15T16:21:22,012 INFO  - logOk OK rmq Got data '2024-04-15 16:21:22.010', '{"time": "2024-04-15T16:21:22.010+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190882011492862'
-2024-04-15T16:21:22,168 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:22,171 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:22,179 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:22,179 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:22,179 INFO  - logAll OK rmq Step time 1.000000 s converted time 1000.000000 ms
-2024-04-15T16:21:22,179 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:22.179+00:00"}
-2024-04-15T16:21:22,182 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:22,189 INFO  - logAll OK rmq Step reached target time 1000 [ms]
-2024-04-15T16:21:22,190 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:22,518 INFO  - logOk OK rmq Got data '2024-04-15 16:21:22.511', '{"time": "2024-04-15T16:21:22.511+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190882515940400'
-2024-04-15T16:21:22,673 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:22,675 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:22,694 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:22,695 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:22,695 INFO  - logAll OK rmq Step time 1.500000 s converted time 1500.000000 ms
-2024-04-15T16:21:22,696 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:22.695+00:00"}
-2024-04-15T16:21:22,696 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:22,698 INFO  - logAll OK rmq Step reached target time 1500 [ms]
-2024-04-15T16:21:22,698 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:23,031 INFO  - logOk OK rmq Got data '2024-04-15 16:21:23.016', '{"time": "2024-04-15T16:21:23.016+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190883019025415'
-2024-04-15T16:21:23,440 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:23,443 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:23,454 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:23,462 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:23,465 INFO  - logAll OK rmq Step time 2.000000 s converted time 2000.000000 ms
-2024-04-15T16:21:23,466 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:23.465+00:00"}
-2024-04-15T16:21:23,466 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:23,471 INFO  - logAll OK rmq Step reached target time 2000 [ms]
-2024-04-15T16:21:23,472 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:23,524 INFO  - logOk OK rmq Got data '2024-04-15 16:21:23.518', '{"time": "2024-04-15T16:21:23.518+02:00", "controller_event": "moveDiscreteCommand", "controller_event_args_0": 3.0, "controller_event_args_1": 20.0, "controller_event_args_2": 3.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190883523513810'
-2024-04-15T16:21:23,648 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:23,648 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:23,659 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:23,660 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:23,660 INFO  - logAll OK rmq Step time 2.500000 s converted time 2500.000000 ms
-2024-04-15T16:21:23,660 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:23.660+00:00"}
-2024-04-15T16:21:23,661 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:23,663 INFO  - logAll OK rmq Step reached target time 2500 [ms]
-2024-04-15T16:21:23,664 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:24,029 INFO  - logOk OK rmq Got data '2024-04-15 16:21:24.027', '{"time": "2024-04-15T16:21:24.027+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190884028456477'
-2024-04-15T16:21:24,538 INFO  - logOk OK rmq Got data '2024-04-15 16:21:24.536', '{"time": "2024-04-15T16:21:24.536+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190884537894861'
-2024-04-15T16:21:25,040 INFO  - logOk OK rmq Got data '2024-04-15 16:21:25.038', '{"time": "2024-04-15T16:21:25.038+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190885039878052'
-2024-04-15T16:21:25,542 INFO  - logOk OK rmq Got data '2024-04-15 16:21:25.540', '{"time": "2024-04-15T16:21:25.540+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190885541896141'
-2024-04-15T16:21:26,023 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:26,023 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:26,028 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:26,029 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:26,029 INFO  - logAll OK rmq Step time 3.000000 s converted time 3000.000000 ms
-2024-04-15T16:21:26,029 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:26.029+00:00"}
-2024-04-15T16:21:26,030 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:26,032 INFO  - logAll OK rmq Step reached target time 3000 [ms]
-2024-04-15T16:21:26,032 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:26,044 INFO  - logOk OK rmq Got data '2024-04-15 16:21:26.041', '{"time": "2024-04-15T16:21:26.041+02:00", "controller_event": "moveDiscreteCommand", "controller_event_args_0": 8.0, "controller_event_args_1": 10.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190886043283555'
-2024-04-15T16:21:26,552 INFO  - logOk OK rmq Got data '2024-04-15 16:21:26.544', '{"time": "2024-04-15T16:21:26.544+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190886548801709'
-2024-04-15T16:21:27,059 INFO  - logOk OK rmq Got data '2024-04-15 16:21:27.054', '{"time": "2024-04-15T16:21:27.054+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190887058027535'
-2024-04-15T16:21:27,063 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:27,063 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:27,067 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:27,067 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:27,067 INFO  - logAll OK rmq Step time 3.500000 s converted time 3500.000000 ms
-2024-04-15T16:21:27,067 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:27.067+00:00"}
-2024-04-15T16:21:27,068 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:27,069 INFO  - logAll OK rmq Step reached target time 3500 [ms]
-2024-04-15T16:21:27,069 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:27,540 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:27,541 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:27,546 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:27,546 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:27,546 INFO  - logAll OK rmq Step time 4.000000 s converted time 4000.000000 ms
-2024-04-15T16:21:27,546 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:27.546+00:00"}
-2024-04-15T16:21:27,546 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:27,548 INFO  - logAll OK rmq Step reached target time 4000 [ms]
-2024-04-15T16:21:27,548 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:27,563 INFO  - logOk OK rmq Got data '2024-04-15 16:21:27.556', '{"time": "2024-04-15T16:21:27.556+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190887558903304'
-2024-04-15T16:21:28,065 INFO  - logOk OK rmq Got data '2024-04-15 16:21:28.059', '{"time": "2024-04-15T16:21:28.059+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190888064574366'
-2024-04-15T16:21:28,142 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:28,143 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:28,160 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:28,167 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:28,170 INFO  - logAll OK rmq Step time 4.500000 s converted time 4500.000000 ms
-2024-04-15T16:21:28,172 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:28.170+00:00"}
-2024-04-15T16:21:28,189 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:28,192 INFO  - logAll OK rmq Step reached target time 4500 [ms]
-2024-04-15T16:21:28,193 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:28,566 INFO  - logOk OK rmq Got data '2024-04-15 16:21:28.561', '{"time": "2024-04-15T16:21:28.561+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190888565594239'
-2024-04-15T16:21:28,792 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:28,793 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:28,797 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:28,797 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:28,797 INFO  - logAll OK rmq Step time 5.000000 s converted time 5000.000000 ms
-2024-04-15T16:21:28,797 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:28.797+00:00"}
-2024-04-15T16:21:28,797 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:28,798 INFO  - logAll OK rmq Step reached target time 5000 [ms]
-2024-04-15T16:21:28,798 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:29,071 INFO  - logOk OK rmq Got data '2024-04-15 16:21:29.064', '{"time": "2024-04-15T16:21:29.064+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190889068932682'
-2024-04-15T16:21:29,234 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:29,234 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:29,244 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:29,244 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:29,244 INFO  - logAll OK rmq Step time 5.500000 s converted time 5500.000000 ms
-2024-04-15T16:21:29,244 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:29.244+00:00"}
-2024-04-15T16:21:29,244 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:29,245 INFO  - logAll OK rmq Step reached target time 5500 [ms]
-2024-04-15T16:21:29,245 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:29,571 INFO  - logOk OK rmq Got data '2024-04-15 16:21:29.567', '{"time": "2024-04-15T16:21:29.567+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190889570623381'
-2024-04-15T16:21:29,879 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:29,880 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:29,887 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:29,887 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:29,888 INFO  - logAll OK rmq Step time 6.000000 s converted time 6000.000000 ms
-2024-04-15T16:21:29,888 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:29.888+00:00"}
-2024-04-15T16:21:29,888 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:29,892 INFO  - logAll OK rmq Step reached target time 6000 [ms]
-2024-04-15T16:21:29,892 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:30,073 INFO  - logOk OK rmq Got data '2024-04-15 16:21:30.070', '{"time": "2024-04-15T16:21:30.070+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190890072825125'
-2024-04-15T16:21:30,192 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:30,192 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:30,205 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:30,207 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:30,207 INFO  - logAll OK rmq Step time 6.500000 s converted time 6500.000000 ms
-2024-04-15T16:21:30,207 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:30.207+00:00"}
-2024-04-15T16:21:30,208 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:30,216 INFO  - logAll OK rmq Step reached target time 6500 [ms]
-2024-04-15T16:21:30,217 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:30,579 INFO  - logOk OK rmq Got data '2024-04-15 16:21:30.572', '{"time": "2024-04-15T16:21:30.572+02:00", "controller_event": "moveDiscreteCommand", "controller_event_args_0": 11.0, "controller_event_args_1": 16.0, "controller_event_args_2": 4.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190890575673298'
-2024-04-15T16:21:30,708 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:30,709 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:30,714 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:30,718 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:30,719 INFO  - logAll OK rmq Step time 7.000000 s converted time 7000.000000 ms
-2024-04-15T16:21:30,720 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:30.719+00:00"}
-2024-04-15T16:21:30,720 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:30,742 INFO  - logAll OK rmq Step reached target time 7000 [ms]
-2024-04-15T16:21:30,747 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:31,079 INFO  - logOk OK rmq Got data '2024-04-15 16:21:31.075', '{"time": "2024-04-15T16:21:31.075+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190891078297464'
-2024-04-15T16:21:31,580 INFO  - logOk OK rmq Got data '2024-04-15 16:21:31.578', '{"time": "2024-04-15T16:21:31.578+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190891579903934'
-2024-04-15T16:21:32,082 INFO  - logOk OK rmq Got data '2024-04-15 16:21:32.080', '{"time": "2024-04-15T16:21:32.080+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190892081670875'
-2024-04-15T16:21:32,585 INFO  - logOk OK rmq Got data '2024-04-15 16:21:32.582', '{"time": "2024-04-15T16:21:32.582+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190892584002524'
-2024-04-15T16:21:33,085 INFO  - logOk OK rmq Got data '2024-04-15 16:21:33.083', '{"time": "2024-04-15T16:21:33.083+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190893084692365'
-2024-04-15T16:21:33,309 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:33,309 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:33,317 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:33,319 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:33,321 INFO  - logAll OK rmq Step time 7.500000 s converted time 7500.000000 ms
-2024-04-15T16:21:33,321 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:33.321+00:00"}
-2024-04-15T16:21:33,325 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:33,327 INFO  - logAll OK rmq Step reached target time 7500 [ms]
-2024-04-15T16:21:33,327 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:33,598 INFO  - logOk OK rmq Got data '2024-04-15 16:21:33.586', '{"time": "2024-04-15T16:21:33.586+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190893588918896'
-2024-04-15T16:21:34,094 INFO  - logOk OK rmq Got data '2024-04-15 16:21:34.090', '{"time": "2024-04-15T16:21:34.090+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190894092745665'
-2024-04-15T16:21:34,250 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:34,250 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:34,254 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:34,255 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:34,255 INFO  - logAll OK rmq Step time 8.000000 s converted time 8000.000000 ms
-2024-04-15T16:21:34,255 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:34.255+00:00"}
-2024-04-15T16:21:34,256 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:34,260 INFO  - logAll OK rmq Step reached target time 8000 [ms]
-2024-04-15T16:21:34,260 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:34,600 INFO  - logOk OK rmq Got data '2024-04-15 16:21:34.593', '{"time": "2024-04-15T16:21:34.593+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190894597870857'
-2024-04-15T16:21:35,100 INFO  - logOk OK rmq Got data '2024-04-15 16:21:35.096', '{"time": "2024-04-15T16:21:35.096+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190895098285749'
-2024-04-15T16:21:35,600 INFO  - logOk OK rmq Got data '2024-04-15 16:21:35.598', '{"time": "2024-04-15T16:21:35.598+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190895600140720'
-2024-04-15T16:21:35,967 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:35,967 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:35,979 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:35,979 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:35,980 INFO  - logAll OK rmq Step time 8.500000 s converted time 8500.000000 ms
-2024-04-15T16:21:35,981 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:35.980+00:00"}
-2024-04-15T16:21:35,981 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:35,982 INFO  - logAll OK rmq Step reached target time 8500 [ms]
-2024-04-15T16:21:35,984 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:36,104 INFO  - logOk OK rmq Got data '2024-04-15 16:21:36.100', '{"time": "2024-04-15T16:21:36.100+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190896103023996'
-2024-04-15T16:21:36,607 INFO  - logOk OK rmq Got data '2024-04-15 16:21:36.602', '{"time": "2024-04-15T16:21:36.602+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190896605115753'
-2024-04-15T16:21:36,876 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:36,876 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:36,884 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:36,885 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:36,885 INFO  - logAll OK rmq Step time 9.000000 s converted time 9000.000000 ms
-2024-04-15T16:21:36,885 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:36.885+00:00"}
-2024-04-15T16:21:36,886 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:36,888 INFO  - logAll OK rmq Step reached target time 9000 [ms]
-2024-04-15T16:21:36,889 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:37,108 INFO  - logOk OK rmq Got data '2024-04-15 16:21:37.105', '{"time": "2024-04-15T16:21:37.105+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190897108175539'
-2024-04-15T16:21:37,612 INFO  - logOk OK rmq Got data '2024-04-15 16:21:37.609', '{"time": "2024-04-15T16:21:37.609+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713190897611835197'
-2024-04-15T16:21:39,212 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:39,212 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:39,220 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:39,223 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:39,223 INFO  - logAll OK rmq Step time 9.500000 s converted time 9500.000000 ms
-2024-04-15T16:21:39,223 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:39.223+00:00"}
-2024-04-15T16:21:39,223 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:39,225 INFO  - logAll OK rmq Step reached target time 9500 [ms]
-2024-04-15T16:21:39,235 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:42,761 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:42,761 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:42,763 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:42,763 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:42,763 INFO  - logAll OK rmq Step time 10.000000 s converted time 10000.000000 ms
-2024-04-15T16:21:42,763 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:42.763+00:00"}
-2024-04-15T16:21:42,763 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:42,763 INFO  - logAll OK rmq Step reached target time 10000 [ms]
-2024-04-15T16:21:42,765 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:44,448 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:44,449 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:44,455 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:44,455 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:44,455 INFO  - logAll OK rmq Step time 10.500000 s converted time 10500.000000 ms
-2024-04-15T16:21:44,455 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:44.455+00:00"}
-2024-04-15T16:21:44,456 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:44,460 INFO  - logAll OK rmq Step reached target time 10500 [ms]
-2024-04-15T16:21:44,460 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:45,041 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:45,041 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:45,046 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:45,046 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:45,046 INFO  - logAll OK rmq Step time 11.000000 s converted time 11000.000000 ms
-2024-04-15T16:21:45,046 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:45.046+00:00"}
-2024-04-15T16:21:45,046 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:45,048 INFO  - logAll OK rmq Step reached target time 11000 [ms]
-2024-04-15T16:21:45,048 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:45,835 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:45,836 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:45,838 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:45,838 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:45,838 INFO  - logAll OK rmq Step time 11.500000 s converted time 11500.000000 ms
-2024-04-15T16:21:45,838 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:45.838+00:00"}
-2024-04-15T16:21:45,839 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:45,839 INFO  - logAll OK rmq Step reached target time 11500 [ms]
-2024-04-15T16:21:45,840 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:46,214 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:46,214 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:46,218 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:46,218 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:46,218 INFO  - logAll OK rmq Step time 12.000000 s converted time 12000.000000 ms
-2024-04-15T16:21:46,218 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:46.218+00:00"}
-2024-04-15T16:21:46,218 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:46,219 INFO  - logAll OK rmq Step reached target time 12000 [ms]
-2024-04-15T16:21:46,219 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:47,287 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:47,288 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:47,291 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:47,291 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:47,291 INFO  - logAll OK rmq Step time 12.500000 s converted time 12500.000000 ms
-2024-04-15T16:21:47,291 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:47.291+00:00"}
-2024-04-15T16:21:47,292 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:47,293 INFO  - logAll OK rmq Step reached target time 12500 [ms]
-2024-04-15T16:21:47,294 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:49,005 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:49,006 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:49,026 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:49,027 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:49,027 INFO  - logAll OK rmq Step time 13.000000 s converted time 13000.000000 ms
-2024-04-15T16:21:49,027 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:49.027+00:00"}
-2024-04-15T16:21:49,027 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:49,027 INFO  - logAll OK rmq Step reached target time 13000 [ms]
-2024-04-15T16:21:49,034 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:49,146 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:49,147 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:49,150 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:49,150 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:49,150 INFO  - logAll OK rmq Step time 13.500000 s converted time 13500.000000 ms
-2024-04-15T16:21:49,150 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:49.150+00:00"}
-2024-04-15T16:21:49,150 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:49,151 INFO  - logAll OK rmq Step reached target time 13500 [ms]
-2024-04-15T16:21:49,151 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:49,274 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:49,274 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:49,283 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:49,283 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:49,283 INFO  - logAll OK rmq Step time 14.000000 s converted time 14000.000000 ms
-2024-04-15T16:21:49,284 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:49.283+00:00"}
-2024-04-15T16:21:49,284 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:49,284 INFO  - logAll OK rmq Step reached target time 14000 [ms]
-2024-04-15T16:21:49,284 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:52,008 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:52,008 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:52,017 INFO  - logAll OK rmq fmi2DoStep 'rmq'
-2024-04-15T16:21:52,017 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
-2024-04-15T16:21:52,017 INFO  - logAll OK rmq Step time 14.500000 s converted time 14500.000000 ms
-2024-04-15T16:21:52,019 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T14:21:52.017+00:00"}
-2024-04-15T16:21:52,020 INFO  - logAll OK rmq Send enabled on this step, for message 
-2024-04-15T16:21:52,024 INFO  - logAll OK rmq Step reached target time 14500 [ms]
-2024-04-15T16:21:52,035 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
-2024-04-15T16:21:53,021 INFO  - logAll OK rmq fmi2GetString 'rmq'
-2024-04-15T16:21:53,021 INFO  - logAll OK rmq fmi2GetReal 'rmq'
-2024-04-15T16:21:53,313 INFO  - logAll OK rmq fmi2Terminate 'rmq'
+2024-04-15T17:34:09,613 INFO  - logFmiCall OK rmq FMU: Called instantiate with instance 'rmq' and GUID '{cfc65592-ffff-4563-9705-1581b6e7071c}'
+2024-04-15T17:34:09,615 INFO  - logAll OK rmq FMU: Resource model description file location is '/tmp/rmqfmu12098411641154497197/resources/modelDescription.xml'
+2024-04-15T17:34:09,623 INFO  - logAll OK rmq 'config.communicationtimeout config.communicationtimeout 5 60 1'
+2024-04-15T17:34:09,635 INFO  - logAll OK rmq 'config.exchangename config.exchangename 9 fmi_digital_twin 1'
+2024-04-15T17:34:09,637 INFO  - logAll OK rmq 'config.exchangetype config.exchangetype 10 direct 1'
+2024-04-15T17:34:09,650 INFO  - logAll OK rmq 'config.healthdata.exchangename config.healthdata.exchangename 11 fmi_digital_twin_sh 1'
+2024-04-15T17:34:09,657 INFO  - logAll OK rmq 'config.healthdata.exchangetype config.healthdata.exchangetype 12 direct 1'
+2024-04-15T17:34:09,658 INFO  - logAll OK rmq 'config.hostname config.hostname 0 localhost 1'
+2024-04-15T17:34:09,659 INFO  - logAll OK rmq 'config.lookahead config.lookahead 8 1 1'
+2024-04-15T17:34:09,659 INFO  - logAll OK rmq 'config.maxage config.maxage 7 1000 1'
+2024-04-15T17:34:09,661 INFO  - logAll OK rmq 'config.password config.password 3 guest 1'
+2024-04-15T17:34:09,661 INFO  - logAll OK rmq 'config.port config.port 1 5672 1'
+2024-04-15T17:34:09,662 INFO  - logAll OK rmq 'config.precision config.precision 6 10 1'
+2024-04-15T17:34:09,663 INFO  - logAll OK rmq 'config.queueupperbound config.queueupperbound 17 100 1'
+2024-04-15T17:34:09,664 INFO  - logAll OK rmq 'config.routingkey config.routingkey 4 data.to_cosim 1'
+2024-04-15T17:34:09,665 INFO  - logAll OK rmq 'config.routingkey.from_cosim config.routingkey.from_cosim 13 data.from_cosim 1'
+2024-04-15T17:34:09,666 INFO  - logAll OK rmq 'config.ssl config.ssl 16 0 1'
+2024-04-15T17:34:09,667 INFO  - logAll OK rmq 'config.username config.username 2 guest 1'
+2024-04-15T17:34:09,668 INFO  - logAll OK rmq 'controller_event controller_event 21  1'
+2024-04-15T17:34:09,681 INFO  - logAll OK rmq 'controller_event_args_0 controller_event_args_0 22 0.000000 1'
+2024-04-15T17:34:09,689 INFO  - logAll OK rmq 'controller_event_args_1 controller_event_args_1 23 0.000000 1'
+2024-04-15T17:34:09,690 INFO  - logAll OK rmq 'controller_event_args_2 controller_event_args_2 24 0.000000 1'
+2024-04-15T17:34:09,692 INFO  - logAll OK rmq 'controller_event_args_3 controller_event_args_3 25 0.000000 1'
+2024-04-15T17:34:09,692 INFO  - logAll OK rmq 'controller_event_args_4 controller_event_args_4 26 0.000000 1'
+2024-04-15T17:34:09,695 INFO  - logAll OK rmq 'controller_event_args_5 controller_event_args_5 27 0.000000 1'
+2024-04-15T17:34:09,695 INFO  - logAll OK rmq 'controller_event_args_6 controller_event_args_6 28 0.000000 1'
+2024-04-15T17:34:09,696 INFO  - logAll OK rmq 'controller_event_args_7 controller_event_args_7 29 0.000000 1'
+2024-04-15T17:34:09,699 INFO  - logAll OK rmq 'controller_event_args_8 controller_event_args_8 30 0.000000 1'
+2024-04-15T17:34:09,699 INFO  - logAll OK rmq 'controller_event_args_9 controller_event_args_9 31 0.000000 1'
+2024-04-15T17:34:09,710 INFO  - logAll OK rmq Using Tool:  'RabbitMQ digital twin generator'
+2024-04-15T17:34:09,714 INFO  - logAll OK rmq Parsed model description to obtain name, ref, type triples '/tmp/rmqfmu12098411641154497197/resources/modelDescription.xml'
+2024-04-15T17:34:09,717 INFO  - logAll OK rmq Extracted start values from model description '/tmp/rmqfmu12098411641154497197/resources/modelDescription.xml'
+2024-04-15T17:34:09,722 WARN  - logWarn Warning rmq The seqno output is NOT present with. 
+2024-04-15T17:34:09,731 WARN  - logWarn Warning rmq The enable send input is NOT present with. 
+2024-04-15T17:34:09,744 INFO  - logAll OK rmq Initialization done 'rmq'
+2024-04-15T17:34:09,789 INFO  - logAll OK rmq fmi2SetupExperiment 'rmq'
+2024-04-15T17:34:09,902 INFO  - logAll OK rmq fmi2SetString 'rmq'
+2024-04-15T17:34:09,903 INFO  - logAll OK rmq Setting string ref 0 = localhost
+2024-04-15T17:34:09,928 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
+2024-04-15T17:34:09,929 INFO  - logAll OK rmq Setting integer ref 1 = 5672
+2024-04-15T17:34:09,931 INFO  - logAll OK rmq fmi2SetString 'rmq'
+2024-04-15T17:34:09,934 INFO  - logAll OK rmq Setting string ref 2 = guest
+2024-04-15T17:34:09,935 INFO  - logAll OK rmq fmi2SetString 'rmq'
+2024-04-15T17:34:09,935 INFO  - logAll OK rmq Setting string ref 3 = guest
+2024-04-15T17:34:09,938 INFO  - logAll OK rmq fmi2SetString 'rmq'
+2024-04-15T17:34:09,939 INFO  - logAll OK rmq Setting string ref 4 = data.to_cosim
+2024-04-15T17:34:09,944 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
+2024-04-15T17:34:09,945 INFO  - logAll OK rmq Setting integer ref 5 = 60
+2024-04-15T17:34:09,955 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
+2024-04-15T17:34:09,958 INFO  - logAll OK rmq Setting integer ref 6 = 10
+2024-04-15T17:34:09,979 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
+2024-04-15T17:34:09,979 INFO  - logAll OK rmq Setting integer ref 7 = 1000
+2024-04-15T17:34:09,979 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
+2024-04-15T17:34:10,008 INFO  - logAll OK rmq Setting integer ref 8 = 1
+2024-04-15T17:34:10,026 INFO  - logAll OK rmq fmi2SetString 'rmq'
+2024-04-15T17:34:10,027 INFO  - logAll OK rmq Setting string ref 9 = fmi_digital_twin
+2024-04-15T17:34:10,027 INFO  - logAll OK rmq fmi2SetString 'rmq'
+2024-04-15T17:34:10,027 INFO  - logAll OK rmq Setting string ref 10 = direct
+2024-04-15T17:34:10,027 INFO  - logAll OK rmq fmi2SetString 'rmq'
+2024-04-15T17:34:10,028 INFO  - logAll OK rmq Setting string ref 11 = fmi_digital_twin_sh
+2024-04-15T17:34:10,028 INFO  - logAll OK rmq fmi2SetString 'rmq'
+2024-04-15T17:34:10,028 INFO  - logAll OK rmq Setting string ref 12 = direct
+2024-04-15T17:34:10,028 INFO  - logAll OK rmq fmi2SetString 'rmq'
+2024-04-15T17:34:10,028 INFO  - logAll OK rmq Setting string ref 13 = data.from_cosim
+2024-04-15T17:34:10,095 INFO  - logAll OK rmq fmi2SetBoolean 'rmq'
+2024-04-15T17:34:10,096 INFO  - logAll OK rmq Setting boolean ref 16 = 0
+2024-04-15T17:34:10,121 INFO  - logAll OK rmq fmi2SetInteger 'rmq'
+2024-04-15T17:34:10,121 INFO  - logAll OK rmq Setting integer ref 17 = 100
+2024-04-15T17:34:10,122 INFO  - logAll OK rmq fmi2EnterInitializationMode 'rmq'
+2024-04-15T17:34:10,123 INFO  - logAll OK rmq Preparing initialization. Looking Up configuration parameters
+2024-04-15T17:34:10,125 INFO  - logAll OK rmq Preparing initialization. Hostname='localhost', Port='5672', Username='guest', routingkey='data.to_cosim', communication timeout 60 s, precision 10000000000 (10), SSL 0
+2024-04-15T17:34:10,226 INFO  - logAll OK rmq Sending RabbitMQ ready message
+2024-04-15T17:34:10,247 INFO  - logOk OK rmq Got data '2024-04-15 17:34:10.233', '{"time": "2024-04-15T17:34:10.233+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}'
+2024-04-15T17:34:10,248 INFO  - logOk OK rmq Got data '21' ''
+2024-04-15T17:34:10,250 INFO  - logOk OK rmq Initialization OK
+2024-04-15T17:34:10,251 INFO  - logAll OK rmq Initialization completed with: Hostname='localhost', Port='5672', Username='guest', routingkey='data.to_cosim', starttimestamp='2024-04-15 17:34:10.233', communication timeout 60 s
+2024-04-15T17:34:10,304 INFO  - logAll OK rmq fmi2GetReal 'rmq'
+2024-04-15T17:34:10,306 INFO  - logAll OK rmq fmi2GetReal 'rmq'
+2024-04-15T17:34:10,310 INFO  - logAll OK rmq fmi2GetString 'rmq'
+2024-04-15T17:34:10,322 INFO  - logAll OK rmq fmi2GetReal 'rmq'
+2024-04-15T17:34:10,344 INFO  - logAll OK rmq fmi2ExitInitializationMode 'rmq'
+2024-04-15T17:34:10,749 INFO  - logOk OK rmq Got data '2024-04-15 17:34:10.744', '{"time": "2024-04-15T17:34:10.744+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195250746982097'
+2024-04-15T17:34:11,252 INFO  - logOk OK rmq Got data '2024-04-15 17:34:11.248', '{"time": "2024-04-15T17:34:11.248+02:00", "controller_event": "moveDiscreteCommand", "controller_event_args_0": 0.0, "controller_event_args_1": 23.0, "controller_event_args_2": 2.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195251251123969'
+2024-04-15T17:34:11,734 INFO  - logAll OK rmq fmi2GetString 'rmq'
+2024-04-15T17:34:11,739 INFO  - logAll OK rmq fmi2GetReal 'rmq'
+2024-04-15T17:34:11,781 INFO  - logOk OK rmq Got data '2024-04-15 17:34:11.753', '{"time": "2024-04-15T17:34:11.753+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195251779090806'
+2024-04-15T17:34:11,822 INFO  - logAll OK rmq fmi2DoStep 'rmq'
+2024-04-15T17:34:11,822 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
+2024-04-15T17:34:11,823 INFO  - logAll OK rmq Step time 0.500000 s converted time 500.000000 ms
+2024-04-15T17:34:11,823 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T15:34:11.823+00:00"}
+2024-04-15T17:34:11,825 INFO  - logAll OK rmq Send enabled on this step, for message 
+2024-04-15T17:34:11,830 INFO  - logAll OK rmq Step reached target time 500 [ms]
+2024-04-15T17:34:11,831 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
+2024-04-15T17:34:12,289 INFO  - logOk OK rmq Got data '2024-04-15 17:34:12.281', '{"time": "2024-04-15T17:34:12.281+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195252287815756'
+2024-04-15T17:34:12,796 INFO  - logOk OK rmq Got data '2024-04-15 17:34:12.789', '{"time": "2024-04-15T17:34:12.789+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195252792066863'
+2024-04-15T17:34:13,304 INFO  - logOk OK rmq Got data '2024-04-15 17:34:13.293', '{"time": "2024-04-15T17:34:13.293+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195253299625066'
+2024-04-15T17:34:13,811 INFO  - logOk OK rmq Got data '2024-04-15 17:34:13.801', '{"time": "2024-04-15T17:34:13.801+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195253807458122'
+2024-04-15T17:34:14,326 INFO  - logOk OK rmq Got data '2024-04-15 17:34:14.310', '{"time": "2024-04-15T17:34:14.310+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195254312694151'
+2024-04-15T17:34:14,824 INFO  - logOk OK rmq Got data '2024-04-15 17:34:14.814', '{"time": "2024-04-15T17:34:14.814+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195254816975802'
+2024-04-15T17:34:15,330 INFO  - logOk OK rmq Got data '2024-04-15 17:34:15.318', '{"time": "2024-04-15T17:34:15.318+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195255329079056'
+2024-04-15T17:34:15,851 INFO  - logOk OK rmq Got data '2024-04-15 17:34:15.834', '{"time": "2024-04-15T17:34:15.834+02:00", "controller_event": "moveDiscreteCommand", "controller_event_args_0": 3.0, "controller_event_args_1": 20.0, "controller_event_args_2": 3.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195255844121830'
+2024-04-15T17:34:16,345 INFO  - logOk OK rmq Got data '2024-04-15 17:34:16.341', '{"time": "2024-04-15T17:34:16.341+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195256343792993'
+2024-04-15T17:34:16,848 INFO  - logOk OK rmq Got data '2024-04-15 17:34:16.844', '{"time": "2024-04-15T17:34:16.844+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195256847570054'
+2024-04-15T17:34:17,351 INFO  - logOk OK rmq Got data '2024-04-15 17:34:17.347', '{"time": "2024-04-15T17:34:17.347+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195257349878412'
+2024-04-15T17:34:17,858 INFO  - logOk OK rmq Got data '2024-04-15 17:34:17.852', '{"time": "2024-04-15T17:34:17.852+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195257857101501'
+2024-04-15T17:34:18,365 INFO  - logOk OK rmq Got data '2024-04-15 17:34:18.358', '{"time": "2024-04-15T17:34:18.358+02:00", "controller_event": "moveDiscreteCommand", "controller_event_args_0": 8.0, "controller_event_args_1": 10.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195258364504722'
+2024-04-15T17:34:18,666 INFO  - logAll OK rmq fmi2GetString 'rmq'
+2024-04-15T17:34:18,667 INFO  - logAll OK rmq fmi2GetReal 'rmq'
+2024-04-15T17:34:18,695 INFO  - logAll OK rmq fmi2DoStep 'rmq'
+2024-04-15T17:34:18,695 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
+2024-04-15T17:34:18,696 INFO  - logAll OK rmq Step time 1.000000 s converted time 1000.000000 ms
+2024-04-15T17:34:18,697 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T15:34:18.696+00:00"}
+2024-04-15T17:34:18,697 INFO  - logAll OK rmq Send enabled on this step, for message 
+2024-04-15T17:34:18,702 INFO  - logAll OK rmq Step reached target time 1000 [ms]
+2024-04-15T17:34:18,702 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
+2024-04-15T17:34:18,867 INFO  - logOk OK rmq Got data '2024-04-15 17:34:18.864', '{"time": "2024-04-15T17:34:18.864+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195258866468269'
+2024-04-15T17:34:19,374 INFO  - logOk OK rmq Got data '2024-04-15 17:34:19.367', '{"time": "2024-04-15T17:34:19.367+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195259371890562'
+2024-04-15T17:34:19,802 INFO  - logAll OK rmq fmi2GetString 'rmq'
+2024-04-15T17:34:19,802 INFO  - logAll OK rmq fmi2GetReal 'rmq'
+2024-04-15T17:34:19,819 INFO  - logAll OK rmq fmi2DoStep 'rmq'
+2024-04-15T17:34:19,819 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
+2024-04-15T17:34:19,820 INFO  - logAll OK rmq Step time 1.500000 s converted time 1500.000000 ms
+2024-04-15T17:34:19,822 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T15:34:19.820+00:00"}
+2024-04-15T17:34:19,822 INFO  - logAll OK rmq Send enabled on this step, for message 
+2024-04-15T17:34:19,823 INFO  - logAll OK rmq Step reached target time 1500 [ms]
+2024-04-15T17:34:19,823 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
+2024-04-15T17:34:19,907 INFO  - logOk OK rmq Got data '2024-04-15 17:34:19.878', '{"time": "2024-04-15T17:34:19.878+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195259906743625'
+2024-04-15T17:34:20,411 INFO  - logOk OK rmq Got data '2024-04-15 17:34:20.400', '{"time": "2024-04-15T17:34:20.400+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195260409009378'
+2024-04-15T17:34:20,911 INFO  - logOk OK rmq Got data '2024-04-15 17:34:20.909', '{"time": "2024-04-15T17:34:20.909+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195260910776773'
+2024-04-15T17:34:21,416 INFO  - logOk OK rmq Got data '2024-04-15 17:34:21.411', '{"time": "2024-04-15T17:34:21.411+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195261414030364'
+2024-04-15T17:34:21,923 INFO  - logOk OK rmq Got data '2024-04-15 17:34:21.914', '{"time": "2024-04-15T17:34:21.914+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195261920924622'
+2024-04-15T17:34:21,944 INFO  - logAll OK rmq fmi2GetString 'rmq'
+2024-04-15T17:34:21,950 INFO  - logAll OK rmq fmi2GetReal 'rmq'
+2024-04-15T17:34:21,973 INFO  - logAll OK rmq fmi2DoStep 'rmq'
+2024-04-15T17:34:21,973 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
+2024-04-15T17:34:21,974 INFO  - logAll OK rmq Step time 2.000000 s converted time 2000.000000 ms
+2024-04-15T17:34:21,974 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T15:34:21.974+00:00"}
+2024-04-15T17:34:21,975 INFO  - logAll OK rmq Send enabled on this step, for message 
+2024-04-15T17:34:21,977 INFO  - logAll OK rmq Step reached target time 2000 [ms]
+2024-04-15T17:34:21,980 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
+2024-04-15T17:34:22,422 INFO  - logOk OK rmq Got data '2024-04-15 17:34:22.419', '{"time": "2024-04-15T17:34:22.419+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195262421477582'
+2024-04-15T17:34:22,925 INFO  - logOk OK rmq Got data '2024-04-15 17:34:22.921', '{"time": "2024-04-15T17:34:22.921+02:00", "controller_event": "moveDiscreteCommand", "controller_event_args_0": 11.0, "controller_event_args_1": 16.0, "controller_event_args_2": 4.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195262923687677'
+2024-04-15T17:34:23,427 INFO  - logOk OK rmq Got data '2024-04-15 17:34:23.423', '{"time": "2024-04-15T17:34:23.423+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195263425994118'
+2024-04-15T17:34:23,833 INFO  - logAll OK rmq fmi2GetString 'rmq'
+2024-04-15T17:34:23,833 INFO  - logAll OK rmq fmi2GetReal 'rmq'
+2024-04-15T17:34:23,854 INFO  - logAll OK rmq fmi2DoStep 'rmq'
+2024-04-15T17:34:23,857 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
+2024-04-15T17:34:23,858 INFO  - logAll OK rmq Step time 2.500000 s converted time 2500.000000 ms
+2024-04-15T17:34:23,859 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T15:34:23.858+00:00"}
+2024-04-15T17:34:23,860 INFO  - logAll OK rmq Send enabled on this step, for message 
+2024-04-15T17:34:23,860 INFO  - logAll OK rmq Step reached target time 2500 [ms]
+2024-04-15T17:34:23,861 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
+2024-04-15T17:34:23,934 INFO  - logOk OK rmq Got data '2024-04-15 17:34:23.928', '{"time": "2024-04-15T17:34:23.928+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195263933114293'
+2024-04-15T17:34:24,441 INFO  - logOk OK rmq Got data '2024-04-15 17:34:24.433', '{"time": "2024-04-15T17:34:24.433+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195264436261129'
+2024-04-15T17:34:24,939 INFO  - logOk OK rmq Got data '2024-04-15 17:34:24.936', '{"time": "2024-04-15T17:34:24.936+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195264937919385'
+2024-04-15T17:34:25,449 INFO  - logOk OK rmq Got data '2024-04-15 17:34:25.439', '{"time": "2024-04-15T17:34:25.439+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195265442622469'
+2024-04-15T17:34:25,944 INFO  - logOk OK rmq Got data '2024-04-15 17:34:25.942', '{"time": "2024-04-15T17:34:25.942+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195265943855577'
+2024-04-15T17:34:26,448 INFO  - logOk OK rmq Got data '2024-04-15 17:34:26.444', '{"time": "2024-04-15T17:34:26.444+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195266447305550'
+2024-04-15T17:34:26,948 INFO  - logOk OK rmq Got data '2024-04-15 17:34:26.946', '{"time": "2024-04-15T17:34:26.946+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195266947692271'
+2024-04-15T17:34:27,451 INFO  - logOk OK rmq Got data '2024-04-15 17:34:27.448', '{"time": "2024-04-15T17:34:27.448+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195267450994605'
+2024-04-15T17:34:27,668 INFO  - logAll OK rmq fmi2GetString 'rmq'
+2024-04-15T17:34:27,669 INFO  - logAll OK rmq fmi2GetReal 'rmq'
+2024-04-15T17:34:27,683 INFO  - logAll OK rmq fmi2DoStep 'rmq'
+2024-04-15T17:34:27,687 INFO  - logAll OK rmq ************ Enter FmuContainer::step ***************
+2024-04-15T17:34:27,687 INFO  - logAll OK rmq Step time 3.000000 s converted time 3000.000000 ms
+2024-04-15T17:34:27,688 INFO  - logAll OK rmq Sending to rabbitmq: COSIM TIME: {"simAtTime":"2024-04-15T15:34:27.687+00:00"}
+2024-04-15T17:34:27,688 INFO  - logAll OK rmq Send enabled on this step, for message 
+2024-04-15T17:34:27,688 INFO  - logAll OK rmq Step reached target time 3000 [ms]
+2024-04-15T17:34:27,688 INFO  - logAll OK rmq ************ Exit 1 FmuContainer::step ***************
+2024-04-15T17:34:27,953 INFO  - logOk OK rmq Got data '2024-04-15 17:34:27.950', '{"time": "2024-04-15T17:34:27.950+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195267952555779'
+2024-04-15T17:34:28,455 INFO  - logOk OK rmq Got data '2024-04-15 17:34:28.452', '{"time": "2024-04-15T17:34:28.452+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195268454816509'
+2024-04-15T17:34:28,979 INFO  - logOk OK rmq Got data '2024-04-15 17:34:28.955', '{"time": "2024-04-15T17:34:28.955+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195268970240005'
+2024-04-15T17:34:29,478 INFO  - logOk OK rmq Got data '2024-04-15 17:34:29.469', '{"time": "2024-04-15T17:34:29.469+02:00", "controller_event": "", "controller_event_args_0": 0.0, "controller_event_args_1": 0.0, "controller_event_args_2": 0.0, "controller_event_args_3": 0.0, "controller_event_args_4": 0.0, "controller_event_args_5": 0.0, "controller_event_args_6": 0.0, "controller_event_args_7": 0.0, "controller_event_args_8": 0.0, "controller_event_args_9": 0.0}', '1713195269474983318'

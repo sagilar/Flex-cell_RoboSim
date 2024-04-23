@@ -6,15 +6,16 @@ echo "-----------------------------"
 maestro_path=/home/santiago/Aarhus/Maestro2 # Change path accordingly
 output_path=results # Change accordingly
 #java -jar $maestro_path/maestro-2.4.1-jar-with-dependencies.jar import sg1 coe.json multimodel.json -output generate 
-java -jar $maestro_path/maestro-2.3.0-jar-with-dependencies.jar import sg1 coe.json multimodel.json -output generate
-#java -jar $maestro_path/maestro-2.3.0-jar-with-dependencies.jar import sg1 coe.json multimodel_normq.json -output generate
+#java -jar $maestro_path/maestro-2.3.0-jar-with-dependencies.jar import sg1 coe.json multimodel.json -output generate
+java -jar $maestro_path/maestro-2.3.0-jar-with-dependencies.jar import sg1 coe.json multimodel_normq.json -output generate
 
 echo "-----------------------------"
 echo "Interpretation"
 echo "-----------------------------"
-python3 controller.py &
+#python3 controller.py &
 #java -jar $maestro_path/maestro-2.4.1-jar-with-dependencies.jar interpret generate/spec.mabl -output $output_path
 java -jar $maestro_path/maestro-2.3.0-jar-with-dependencies.jar interpret generate/spec.mabl -output $output_path
 
 echo "Co-simulation experiment finished. See output results in folder '$output_path'"
+pkill -9 java
 pkill -9 -f controller.py

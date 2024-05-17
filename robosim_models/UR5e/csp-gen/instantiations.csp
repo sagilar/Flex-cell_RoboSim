@@ -1,0 +1,148 @@
+-- generate const_DiscreteGrippingArmMovement_sm_closing_diameter
+const_DiscreteGrippingArmMovement_sm_closing_diameter = 0
+
+-- generate const_SimDiscreteGrippingArmMovement_opening_force
+const_SimDiscreteGrippingArmMovement_opening_force = 0
+
+-- generate const_SimDiscreteGrippingArmMovement_MOTION_VEL
+const_SimDiscreteGrippingArmMovement_MOTION_VEL = 0
+
+-- generate const_SimDiscreteGrippingArmMovement_lv
+const_SimDiscreteGrippingArmMovement_lv = 0
+
+-- generate string
+nametype core_string = LSeq(Char,2)
+
+-- generate const_DiscreteGrippingArmMovement_sm_opening_force
+const_DiscreteGrippingArmMovement_sm_opening_force = 0
+
+-- generate -- OPERATION BOUNDS
+
+-- MODULE CONSTANTS
+
+-- CONTROLLER CONSTANTS
+
+-- STATEMACHINE CONSTANTS
+
+-- OPERATION CONSTANTS
+
+-- BASIC TYPES
+
+-- generate const_SimDiscreteGrippingArmMovement_PI
+const_SimDiscreteGrippingArmMovement_PI = 0
+
+-- generate const_DiscreteGrippingArmMovement_sm_closing_force
+const_DiscreteGrippingArmMovement_sm_closing_force = 0
+
+-- OPERATION CONSTANTS
+
+-- BASIC TYPES
+
+-- generate const_DiscreteGrippingArmMovement_sm_lv
+const_DiscreteGrippingArmMovement_sm_lv = 0
+
+-- generate const_SimDiscreteGrippingArmMovement_av
+const_SimDiscreteGrippingArmMovement_av = 0
+
+-- generate const_DiscreteGrippingArmMovement_sm_opening_speed
+const_DiscreteGrippingArmMovement_sm_opening_speed = 0
+
+-- generate const_SimDiscreteGrippingArmMovement_closing_speed
+const_SimDiscreteGrippingArmMovement_closing_speed = 0
+
+-- generate const_DiscreteGrippingArmMovement_sm_MOTION_VEL
+const_DiscreteGrippingArmMovement_sm_MOTION_VEL = 0
+
+-- generate const_SimDiscreteGrippingArmMovement_TARGET_X
+const_SimDiscreteGrippingArmMovement_TARGET_X = 0
+
+-- generate const_DiscreteGrippingArmMovement_sm_opening_diameter
+const_DiscreteGrippingArmMovement_sm_opening_diameter = 0
+
+-- generate const_SimDiscreteGrippingArmMovement_TARGET_Y
+const_SimDiscreteGrippingArmMovement_TARGET_Y = 0
+
+-- generate const_SimDiscreteGrippingArmMovement_TARGET_Z
+const_SimDiscreteGrippingArmMovement_TARGET_Z = 0
+
+-- generate Plus
+Plus(e1,e2,T) = if member(e1+e2,T) then e1+e2 else e1
+
+-- generate --
+
+-- MODULE CONSTANTS
+
+-- CONTROLLER CONSTANTS
+
+-- STATEMACHINE CONSTANTS
+
+-- generate const_DiscreteGrippingArmMovement_sm_PI
+const_DiscreteGrippingArmMovement_sm_PI = 0
+
+-- generate nat
+nametype core_nat = union({0..2},{calc_type_min(Union(
+			{}))..calc_type_max(Union({}))})
+
+-- generate core_clock_type
+nametype core_clock_type = {0..10}
+
+-- BASIC FUNCTIONS
+
+-- generate const_SimDiscreteGrippingArmMovement_opening_speed
+const_SimDiscreteGrippingArmMovement_opening_speed = 0
+
+-- generate real
+nametype core_real = union({ -2..2},{calc_type_min(Union(
+			{}))..calc_type_max(Union({}))}) 
+
+-- VECTOR TYPES AND OPERATIONS
+
+
+-- CLOCKS
+
+-- generate const_SimDiscreteGrippingArmMovement_closing_diameter
+const_SimDiscreteGrippingArmMovement_closing_diameter = 0
+
+-- generate int
+nametype core_int = union({ -2..2},{calc_type_min(Union(
+			{}))..calc_type_max(Union({}))})
+
+-- generate Div
+Div(e1,e2,T) = if member(e1/e2,T) then e1/e2 else e1
+
+-- generate Neg
+Neg(e1,T) = if member(-e1,T) then -e1 else e1
+
+-- generate boolean
+nametype core_boolean = Bool
+
+-- generate Mult
+Mult(e1,e2,T) = if member(e1*e2,T) then e1*e2 else e1
+
+-- generate const_DiscreteGrippingArmMovement_sm_closing_speed
+const_DiscreteGrippingArmMovement_sm_closing_speed = 0
+
+-- generate Modulus
+Modulus(e1,e2,T) = if member(e1%e2,T) then e1%e2 else e1
+
+-- generate const_SimDiscreteGrippingArmMovement_closing_force
+const_SimDiscreteGrippingArmMovement_closing_force = 0
+
+-- generate const_DiscreteGrippingArmMovement_sm_TARGET_Y
+const_DiscreteGrippingArmMovement_sm_TARGET_Y = 0
+
+-- generate const_DiscreteGrippingArmMovement_sm_TARGET_X
+const_DiscreteGrippingArmMovement_sm_TARGET_X = 0
+
+-- generate const_SimDiscreteGrippingArmMovement_opening_diameter
+const_SimDiscreteGrippingArmMovement_opening_diameter = 0
+
+-- generate const_DiscreteGrippingArmMovement_sm_av
+const_DiscreteGrippingArmMovement_sm_av = 0
+
+-- generate Minus
+Minus(e1,e2,T) = if member(e1-e2,T) then e1-e2 else e1
+
+-- generate const_DiscreteGrippingArmMovement_sm_TARGET_Z
+const_DiscreteGrippingArmMovement_sm_TARGET_Z = 0
+

@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-filename = "outputs_cosim.csv"
+filename = "outputs_cosim_normq3.csv"
 
 font = {'font.family' : 'monospace',
         'font.weight' : 'bold',
@@ -73,7 +73,7 @@ fig.savefig('experiment_plot.pdf', dpi=300)
 fig.savefig('experiment_plot.png', dpi=300)
 '''
 
-df_cosim.columns = df_cosim.columns.str.replace("{mapping}.mapping", "PlatformMappingFMU")
+"""df_cosim.columns = df_cosim.columns.str.replace("{mapping}.mapping", "PlatformMappingFMU")
 df_cosim.columns = df_cosim.columns.str.replace("{rmq}.rmq", "RMQFMU")
 df_cosim.columns = df_cosim.columns.str.replace("{dmodel}.dmodel", "dmodelFMU")
 
@@ -162,4 +162,71 @@ plt.grid()
 plt.tight_layout()
 
 fig.savefig('experiment_plot_rmq.pdf', dpi=300)
-fig.savefig('experiment_plot_rmq.png', dpi=300)
+fig.savefig('experiment_plot_rmq.png', dpi=300)"""
+
+df_cosim.columns = df_cosim.columns.str.replace("{mapping}.mapping", "PlatformMappingFMU")
+df_cosim.columns = df_cosim.columns.str.replace("{controller}.controller", "ControllerFMU")
+df_cosim.columns = df_cosim.columns.str.replace("{dmodel}.dmodel", "dmodelFMU")
+
+fig, axes = plt.subplots(2,2, figsize=(14,14))
+ax321 = plt.subplot(2,2,1)
+
+'''ax321.set_yticks(["", "moveDiscreteCommand"])
+df_cosim.plot(x = "time",y = ["ControllerFMU.controller_event"],
+             figsize=(14,10),
+             title = "Controller commands (ControllerFMU)",
+             ax=axes[0,0],
+             kind="scatter")'''
+x_axis_values = df_cosim["time"].to_list()
+y_axis_values = df_cosim["ControllerFMU.controller_event"].to_list()
+plt.scatter(x_axis_values,y_axis_values,label='ControllerFMU.controller_event')
+plt.title("Controller commands (ControllerFMU)")
+plt.yticks(rotation=90)
+#plt.xlim([0, df_cosim["time"].max()])
+#plt.ylim([0, y_max])
+plt.xlabel('time [s]')
+plt.ylabel('command')
+plt.legend()
+plt.grid()
+plt.tight_layout()
+
+plt.subplot(2,2,2)
+
+df_cosim.plot(x = "time",y = ["ControllerFMU.controller_event_args_0","ControllerFMU.controller_event_args_1",
+                                "ControllerFMU.controller_event_args_2"],
+             figsize=(12,12),
+             title = "Controller target pos.(ControllerFMU)",
+             ax=axes[0,1],
+             width=2,
+             kind="bar")
+plt.xlabel('time [s]')
+plt.ylabel('target position (X,Y,Z)')
+plt.grid()
+plt.tight_layout()
+
+plt.subplot(2,2,3)
+
+df_cosim.plot(x = "time",y = ["dmodelFMU.d_model_event_args_0","dmodelFMU.d_model_event_args_1",
+                                    "dmodelFMU.d_model_event_args_2"],
+             figsize=(12,12),
+             title = "Discrete positions (d-modelFMU)",
+             ax=axes[1,0])
+plt.xlabel('time [s]')
+plt.ylabel('position (X,Y,Z)')
+plt.grid()
+plt.tight_layout()
+
+plt.subplot(2,2,4)
+df_cosim.plot(x = "time",y = ["PlatformMappingFMU.j0","PlatformMappingFMU.j1",
+                                    "PlatformMappingFMU.j2","PlatformMappingFMU.j3",
+                                   "PlatformMappingFMU.j4","PlatformMappingFMU.j5"],
+             figsize=(12,12),
+             title = "Joint positions (CoppeliaSim)",
+             ax=axes[1,1])
+plt.xlabel('time [s]')
+plt.ylabel('position [rad]')
+plt.grid()
+plt.tight_layout()
+
+fig.savefig('experiment_plot_normq.pdf', dpi=300)
+fig.savefig('experiment_plot_normq.png', dpi=300)

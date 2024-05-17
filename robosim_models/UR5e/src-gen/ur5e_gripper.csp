@@ -1,0 +1,14 @@
+include "defs/ur5e_gripper_defs.csp"
+include "instantiations.csp"
+include "defs/robochart_defs.csp"
+
+
+channel r__
+
+			
+
+transparent diamond
+transparent sbisim
+transparent chase
+
+   

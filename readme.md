@@ -15,7 +15,7 @@ To generate the d-model FMU, use the ```makefile``` script through ```make all``
 
 ### p-model
 The implementation for the p-model SDF file is in the folder ```Scenes_CoppeliaSim```, which includes the ```ur5e_gripper_pmodel.sdf``` generated from the p-model and the ```flex-cell-simple.ttt``` CoppeliaSim scene, which is a reduced version of the original (without including the Flex-cell infrastructure due to exceding GitHub's maximum storage capacity) that contains the scripts with the enabled [CoppeliaSim Remote API](https://manual.coppeliarobotics.com/en/remoteApiOverview.htm) to be integrated with the Platform Mapping Interface.
-This implementation requires CoppeliaSim with the plugin that enables the Remote API.
+This implementation requires CoppeliaSim with the plugin that enables the Remote API and the ```Scenes_CoppeliaSim/robots_flexcell``` Python module, which also depends on the [Robotics Toolbox Python Library](https://github.com/petercorke/robotics-toolbox-python).
 
 ### Platform Mapping Interface
 The implementation for the platform mapping model is in the folder ```mapping```, where the Python prototypical implementation of the Platform Mapping Interface is given (in the ```mapping/mapping/mapping.py``` file) and its integration with the FMI Standard is achieved using [UniFMU](https://github.com/INTO-CPS-Association/unifmu) in the folder ```mapping/mappingFMU``` (more precisely in the ```resources/model.py``` file).

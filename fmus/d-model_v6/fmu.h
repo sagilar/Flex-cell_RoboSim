@@ -4,7 +4,7 @@
 
 #include "fmi/fmi2Functions.h"
 #include "FmuGUID.h"
-#include "misraC/defs_fmi.h"
+#include "adapted_C/defs_fmi.h"
 #include <stdbool.h> // for bool
 
 

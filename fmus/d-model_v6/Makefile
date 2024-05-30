@@ -6,7 +6,7 @@ CFLAGS=-I.
 all:
 	gcc -fPIC -Wall -c fmu.c -lpthread
 	gcc -fPIC -Wall -c skeleton.c -lpthread
-	gcc -fPIC -Wall -c misraC/DiscreteGrippingArm.c -lpthread -w
+	gcc -fPIC -Wall -c adapted_C/DiscreteGrippingArm.c -lpthread -w
 	gcc -shared -o DiscreteGrippingArm.so DiscreteGrippingArm.o skeleton.o fmu.o -lpthread
 	rm -rf sources
 	rm -rf binaries
@@ -17,8 +17,8 @@ all:
 	cp FmuGUID.h sources
 	cp fmu.c sources
 	cp skeleton.c sources
-	rm -f misraC/main.c
-	cp -r misraC sources
+	rm -f adapted_C/main.c
+	cp -r adapted_C sources
 	cp -r fmi sources
 	mv DiscreteGrippingArm.so binaries/linux64/
 	

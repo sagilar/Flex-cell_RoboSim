@@ -6,66 +6,7 @@
 #include "fmu.h"
 #include <stdio.h>
 
-/* d-model
-
-
-// States
-(inputstate).collision = false;
-(inputstate).gripperOpened = false;
-(inputstate).closeGripperCommand = false;
-(inputstate).robotStopped = false;
-(inputstate).moveCompleted = false;
-(inputstate).gripperClosed = false;
-(inputstate).feasibleMoveDiscreteCommand = false;
-(inputstate).openGripperCommand = false;
-(inputstate).moveDiscreteCommand = false;
-(inputstate).nonfeasibleMoveDiscreteCommand = false;
-
-// Inputs
-comp->fmiBuffer.realBuffer[1] = comp->sm_inputstate.collision;
-comp->fmiBuffer.realBuffer[2] = comp->sm_inputstate.gripperOpened;
-comp->fmiBuffer.realBuffer[3] = comp->sm_inputstate.closeGripperCommand;
-comp->fmiBuffer.realBuffer[4] = comp->sm_inputstate.robotStopped;
-comp->fmiBuffer.realBuffer[5] = comp->sm_inputstate.moveCompleted;
-comp->fmiBuffer.realBuffer[6] = comp->sm_inputstate.gripperClosed;
-comp->fmiBuffer.realBuffer[7] = comp->sm_inputstate.feasibleMoveDiscreteCommand;
-comp->fmiBuffer.realBuffer[8] = comp->sm_inputstate.openGripperCommand;
-comp->fmiBuffer.realBuffer[9] = comp->sm_inputstate.moveDiscreteCommand;
-comp->fmiBuffer.realBuffer[10] = comp->sm_inputstate.nonfeasibleMoveDiscreteCommand;
-comp->fmiBuffer.realBuffer[11] = comp->sm_inputstate.moveDiscreteCommand_value;
-comp->fmiBuffer.realBuffer[12] = comp->sm_inputstate.moveDiscreteCommand_value.target_X;
-comp->fmiBuffer.realBuffer[13] = comp->sm_inputstate.moveDiscreteCommand_value.target_Y;
-comp->fmiBuffer.realBuffer[14] = comp->sm_inputstate.moveDiscreteCommand_value.target_Z;
-
-// Outputs
-comp->fmiBuffer.realBuffer[20] = comp->sm_state.done;
-comp->fmiBuffer.realBuffer[21] = comp->sm_state.state;
-comp->fmiBuffer.realBuffer[22] = comp->sm_state.target_state;
-comp->fmiBuffer.realBuffer[23] = comp->sm_state.status;
-
-// Memory
-comp->fmiBuffer.realBuffer[30] = comp->sm_memory.MOTION_VEL;
-comp->fmiBuffer.realBuffer[31] = comp->sm_memory.opening_diameter;
-comp->fmiBuffer.realBuffer[32] = comp->sm_memory.PI;
-comp->fmiBuffer.realBuffer[33] = comp->sm_memory.av;
-comp->fmiBuffer.realBuffer[34] = comp->sm_memory.TARGET_X;
-comp->fmiBuffer.realBuffer[35] = comp->sm_memory.TARGET_Y;
-comp->fmiBuffer.realBuffer[36] = comp->sm_memory.TARGET_Z;
-comp->fmiBuffer.realBuffer[37] = comp->sm_memory.closing_speed;
-comp->fmiBuffer.realBuffer[38] = comp->sm_memory.closing_force;
-comp->fmiBuffer.realBuffer[39] = comp->sm_memory.closing_diameter;
-comp->fmiBuffer.realBuffer[40] = comp->sm_memory.lv;
-comp->fmiBuffer.realBuffer[41] = comp->sm_memory.opening_speed;
-comp->fmiBuffer.realBuffer[42] = comp->sm_memory.opening_force;
-comp->fmiBuffer.realBuffer[43] = comp->sm_memory.margs;
-comp->fmiBuffer.realBuffer[44] = comp->sm_memory.margs.target_X;
-comp->fmiBuffer.realBuffer[45] = comp->sm_memory.margs.target_Y;
-comp->fmiBuffer.realBuffer[46] = comp->sm_memory.margs.target_Z;
-
-*/
-
-
- /**
+/**
  * Function for the initialization of the model.
  * It calls the init function of the model and sets the output.
  * It initializes the semaphore and creates the websocket thread.

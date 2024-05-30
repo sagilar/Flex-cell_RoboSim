@@ -2,7 +2,7 @@
 #define DEFSFMI
 #include <stdio.h>
 #include <stdbool.h>
-/**** Update Santiago ****/
+/**** Update ****/
 typedef struct {
   // Parameters
   float MOTION_VEL;

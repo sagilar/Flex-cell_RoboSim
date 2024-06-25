@@ -1,7 +1,7 @@
 {
     "fmus": {
         "{rmq}": "models/rmqfmu.fmu",
-        "{mapping}": "models/mappingFMU.fmu",
+        "{mapping}": "models/mappingFMU_URInterface.fmu",
         "{dmodel}": "models/dmodelFMU.fmu"
     },
     "logVariables": {

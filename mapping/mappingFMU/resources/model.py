@@ -5,7 +5,7 @@ import time
 class Model:
     def __init__(self) -> None:
         self.mapping = mpp.Mapping()
-        self.mapping.start_simulation()
+        self.mapping.start_mapping()
         '''events : prototype for just one event (there may be many concurrent events)'''
         self.controller_event = ""
         self.controller_event_args_0 = 0.0
@@ -678,11 +678,11 @@ class Model:
         return Fmi2Status.ok
 
     def fmi2Terminate(self):
-        self.mapping.stop_simulation()
+        self.mapping.stop_mapping()
         return Fmi2Status.ok
 
     def fmi2FreeInstance(self):
-        self.mapping.stop_simulation()
+        self.mapping.stop_mapping()
         return Fmi2Status.ok
 
     def _set_value(self, references, values):

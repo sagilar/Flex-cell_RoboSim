@@ -17,5 +17,5 @@ echo "-----------------------------"
 java -jar $maestro_path/maestro-2.3.0-jar-with-dependencies.jar interpret generate/spec.mabl -output $output_path
 
 echo "Co-simulation experiment finished. See output results in folder '$output_path'"
-pkill -9 java
+#pkill -9 java
 pkill -9 -f controller.py

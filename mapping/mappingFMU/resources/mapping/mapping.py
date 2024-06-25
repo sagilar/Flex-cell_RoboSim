@@ -131,12 +131,12 @@ class Mapping():
         ## Here the tricky part comes in
         # The functions here should be assigned according to object type and simulation engine API
         actions_movejoint = []
-        actions_movejoint.append(lambda target_q0: self.sim.setJointTargetPosition(self.j0,target_q0))
-        actions_movejoint.append(lambda target_q1: self.sim.setJointTargetPosition(self.j1,target_q1))
-        actions_movejoint.append(lambda target_q2: self.sim.setJointTargetPosition(self.j2,target_q2))
-        actions_movejoint.append(lambda target_q3: self.sim.setJointTargetPosition(self.j3,target_q3))
-        actions_movejoint.append(lambda target_q4: self.sim.setJointTargetPosition(self.j4,target_q4))
-        actions_movejoint.append(lambda target_q5: self.sim.setJointTargetPosition(self.j5,target_q5))
+        actions_movejoint.append(lambda target_q0: self.set_joint_velocity("j0",target_q0))
+        actions_movejoint.append(lambda target_q1: self.set_joint_velocity("j1",target_q1))
+        actions_movejoint.append(lambda target_q2: self.set_joint_velocity("j2",target_q2))
+        actions_movejoint.append(lambda target_q3: self.set_joint_velocity("j3",target_q3))
+        actions_movejoint.append(lambda target_q4: self.set_joint_velocity("j4",target_q4))
+        actions_movejoint.append(lambda target_q5: self.set_joint_velocity("j5",target_q5))
 
 
         actions_movediscrete = [self._movediscrete] # Condensed action. These perhaps require annotations to generate a function
@@ -152,12 +152,12 @@ class Mapping():
         actions_place = [self._place] # Condensed action. These perhaps require annotations to generate a function
 
         actions_setvelocity = []
-        actions_setvelocity.append(lambda target_qd0: self.sim.setJointTargetVelocity(self.j0,target_qd0))
-        actions_setvelocity.append(lambda target_qd1: self.sim.setJointTargetVelocity(self.j1,target_qd1))
-        actions_setvelocity.append(lambda target_qd2: self.sim.setJointTargetVelocity(self.j2,target_qd2))
-        actions_setvelocity.append(lambda target_qd3: self.sim.setJointTargetVelocity(self.j3,target_qd3))
-        actions_setvelocity.append(lambda target_qd4: self.sim.setJointTargetVelocity(self.j4,target_qd4))
-        actions_setvelocity.append(lambda target_qd5: self.sim.setJointTargetVelocity(self.j5,target_qd5))
+        actions_setvelocity.append(lambda target_qd0: self.set_joint_velocity("j0",target_qd0))
+        actions_setvelocity.append(lambda target_qd1: self.set_joint_velocity("j1",target_qd1))
+        actions_setvelocity.append(lambda target_qd2: self.set_joint_velocity("j2",target_qd2))
+        actions_setvelocity.append(lambda target_qd3: self.set_joint_velocity("j3",target_qd3))
+        actions_setvelocity.append(lambda target_qd4: self.set_joint_velocity("j4",target_qd4))
+        actions_setvelocity.append(lambda target_qd5: self.set_joint_velocity("j5",target_qd5))
 
         '''actions_stop = []
         actions_setvelocity.append(lambda: self.sim.setJointTargetVelocity(self.j0,0.0))
@@ -176,12 +176,12 @@ class Mapping():
 
         #equations_moveCompleted = [lambda x: x=="flexcellAngularPosition[completed]"] ## To be corrected
         equations_moveCompleted = []
-        equations_moveCompleted.append(lambda : round(self.sim.getJointPosition(self.j0),2) == round(self.sim.getJointTargetPosition(self.j0),2))
-        equations_moveCompleted.append(lambda : round(self.sim.getJointPosition(self.j1),2) == round(self.sim.getJointTargetPosition(self.j1),2))
-        equations_moveCompleted.append(lambda : round(self.sim.getJointPosition(self.j2),2) == round(self.sim.getJointTargetPosition(self.j2),2))
-        equations_moveCompleted.append(lambda : round(self.sim.getJointPosition(self.j3),2) == round(self.sim.getJointTargetPosition(self.j3),2))
-        equations_moveCompleted.append(lambda : round(self.sim.getJointPosition(self.j4),2) == round(self.sim.getJointTargetPosition(self.j4),2))
-        equations_moveCompleted.append(lambda : round(self.sim.getJointPosition(self.j5),2) == round(self.sim.getJointTargetPosition(self.j5),2))
+        equations_moveCompleted.append(lambda : round(self.get_joint_position("j0"),2) == round(self.get_joint_target_position("j0"),2))
+        equations_moveCompleted.append(lambda : round(self.get_joint_position("j1"),2) == round(self.get_joint_target_position("j1"),2))
+        equations_moveCompleted.append(lambda : round(self.get_joint_position("j2"),2) == round(self.get_joint_target_position("j2"),2))
+        equations_moveCompleted.append(lambda : round(self.get_joint_position("j3"),2) == round(self.get_joint_target_position("j3"),2))
+        equations_moveCompleted.append(lambda : round(self.get_joint_position("j4"),2) == round(self.get_joint_target_position("j4"),2))
+        equations_moveCompleted.append(lambda : round(self.get_joint_position("j5"),2) == round(self.get_joint_target_position("j5"),2))
 
 
         equations_robotStopped = []
@@ -192,12 +192,12 @@ class Mapping():
         #equations_robotStopped.append(lambda qd3: qd3==0.0)
         #equations_robotStopped.append(lambda qd4: qd4==0.0)
         #equations_robotStopped.append(lambda qd5: qd5==0.0)
-        equations_robotStopped.append(lambda : round(self.sim.getJointVelocity(self.j0),2)<0.1)
-        equations_robotStopped.append(lambda : round(self.sim.getJointVelocity(self.j1),2)<0.1)
-        equations_robotStopped.append(lambda : round(self.sim.getJointVelocity(self.j2),2)<0.1)
-        equations_robotStopped.append(lambda : round(self.sim.getJointVelocity(self.j3),2)<0.1)
-        equations_robotStopped.append(lambda : round(self.sim.getJointVelocity(self.j4),2)<0.1)
-        equations_robotStopped.append(lambda : round(self.sim.getJointVelocity(self.j5),2)<0.1)
+        equations_robotStopped.append(lambda : round(self.get_joint_velocity("j0"),2)<0.1)
+        equations_robotStopped.append(lambda : round(self.get_joint_velocity("j1"),2)<0.1)
+        equations_robotStopped.append(lambda : round(self.get_joint_velocity("j2"),2)<0.1)
+        equations_robotStopped.append(lambda : round(self.get_joint_velocity("j3"),2)<0.1)
+        equations_robotStopped.append(lambda : round(self.get_joint_velocity("j4"),2)<0.1)
+        equations_robotStopped.append(lambda : round(self.get_joint_velocity("j5"),2)<0.1)
 
         equations_gripperClosed = []
         equations_gripperClosed.append(lambda rf,opening: rf<(opening/2 + 0.005))
@@ -259,11 +259,11 @@ class Mapping():
                                      self.input_events.gripperOpened,
                                      self.input_events.collision,])
 
-    def start_simulation(self):
-        self.sim.startSimulation()
+    def start_mapping(self):
+        self._start_mapping()
 
-    def stop_simulation(self):
-        self.sim.stopSimulation()
+    def stop_mapping(self):
+        self._stop_mapping()
 
     def execute_operation(self,operation_name,args=None):
         exec_op = None
@@ -299,6 +299,15 @@ class Mapping():
     def get_joint_force(self,joint_name):
         return self._get_joint_force(joint_name)
 
+    def get_joint_target_position(self,joint_name):
+        return self._get_joint_target_position(joint_name)
+
+    def get_joint_target_velocity(self,joint_name):
+        return self._get_joint_target_velocity(joint_name)
+
+    def get_joint_target_force(self,joint_name):
+        return self._get_joint_target_force(joint_name)
+
     def set_joint_position(self,joint_name,val):
         self._set_joint_position(joint_name,val)
 
@@ -311,7 +320,15 @@ class Mapping():
     def get_cartesian_positions(self):
         return self._get_cartesian_positions()
 
+    ### Specific to the remote interface - Update accordingly ###
+
     '''CoppeliaSim Implementations'''
+    def _start_mapping(self):
+        self.sim.startSimulation()
+
+    def _stop_mapping(self):
+        self.sim.stopSimulation()
+
     def _get_joint_position(self,joint_name):
         if (joint_name == "j0"):
             return self.sim.getJointPosition(self.j0)
@@ -527,12 +544,12 @@ class Mapping():
 
     def _movejoint(self,q0,q1,q2,q3,q4,q5):
         # To be initialized manually or with annotations
-        '''self.sim.setJointTargetPosition(self.j0,q0)
+        self.sim.setJointTargetPosition(self.j0,q0)
         self.sim.setJointTargetPosition(self.j1,q1)
         self.sim.setJointTargetPosition(self.j2,q2)
         self.sim.setJointTargetPosition(self.j3,q3)
         self.sim.setJointTargetPosition(self.j4,q4)
-        self.sim.setJointTargetPosition(self.j5,q5)'''
+        self.sim.setJointTargetPosition(self.j5,q5)
 
     def _stop(self): # Method not available
         self.sim.setJointTargetVelocity(self.j0,0.0)
@@ -555,7 +572,7 @@ class Mapping():
 '''if __name__=='__main__':
     mapping = Mapping()
     try:
-        mapping.start_simulation()
+        mapping.start_mapping()
         ## The args should come from the c++ code
         # The args could also come as a dict of dicts (with the variable names)
         args = {
@@ -581,6 +598,6 @@ class Mapping():
         mapping.execute_operation("movejoint",args=args)
         time.sleep(5.0)
     finally:
-        mapping.stop_simulation()
+        mapping.stop_mapping()
         print("Application stopped")
 '''

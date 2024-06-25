@@ -4,6 +4,9 @@ import numpy as np
 import shutil
 import signal
 import sys
+import logging
+
+logging.disable()
 
 def signal_handler(sig, frame):
     print('Ctrl+C pressed')
@@ -14,7 +17,7 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-fmu_filename = 'mappingFMU.fmu'
+fmu_filename = 'mappingFMU.fmu' ## Update according to the specific MappingFMU instance in use
 start_time = 0.0
 threshold = 2.0
 stop_time = 10.0

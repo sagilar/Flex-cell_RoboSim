@@ -1,4 +1,4 @@
-from mapping import mapping as mpp
+from mapping_CoppeliaSim import mapping as mpp
 import time
 from robots_flexcell import robots
 from threading import Timer
@@ -21,7 +21,7 @@ checking_timer.daemon = True
 
 if __name__ == "__main__":
     try:
-        mapping.start_simulation()
+        mapping.start_mapping()
         ## The args should come from the c++ code
         # The args could also come as a dict of dicts (with the variable names)
 
@@ -134,6 +134,6 @@ if __name__ == "__main__":
 
 
     finally:
-        mapping.stop_simulation()
+        mapping.stop_mapping()
         checking_timer.cancel()
         print("Application stopped")

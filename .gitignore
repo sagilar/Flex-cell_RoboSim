@@ -15,6 +15,6 @@ bin/
 
 ## Specific to the project
 code/
-fmus/archive
-fmus/d-model_v6/resources/
+dmodelFMU/archive
+dmodelFMU/d-model_v6/resources/
 *.log

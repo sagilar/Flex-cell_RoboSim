@@ -17,10 +17,10 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-fmu_filename = 'mappingFMU.fmu' ## Update according to the specific MappingFMU instance in use
+fmu_filename = 'mappingFMU_CoppeliaSim_UR3e.fmu' ## Update according to the specific MappingFMU instance in use
 start_time = 0.0
 threshold = 2.0
-stop_time = 10.0
+stop_time = 20.0
 step_size = 0.5
 # read the model description
 model_description = read_model_description(fmu_filename)
@@ -55,20 +55,31 @@ while time < stop_time:
     # value references as arguments and return lists of values
     print("Before FMI DoStep idx " + str(idx))
     if idx == 2:
-        fmu.setReal([vrs["controller_event_args_0"],vrs["controller_event_args_1"],vrs["controller_event_args_2"]],[4,18,4]) #Update of target_x y and z
+        #fmu.setReal([vrs["controller_event_args_0"],vrs["controller_event_args_1"],vrs["controller_event_args_2"]],[4,18,4]) #Update of target_x y and z
+        #fmu.setString([vrs["controller_event"]],["moveDiscreteCommand"]) # moveDiscreteCommand event
+        #fmu.setReal([vrs["d_model_event_args_0"],vrs["d_model_event_args_1"],vrs["d_model_event_args_3"]],[4,18,4]) #Update of target_x y and z
+        fmu.setReal([vrs["controller_event_args_0"],vrs["controller_event_args_1"],vrs["controller_event_args_2"]],[0,0,2]) #Update of target_x y and z
         fmu.setString([vrs["controller_event"]],["moveDiscreteCommand"]) # moveDiscreteCommand event
-        fmu.setReal([vrs["d_model_event_args_0"],vrs["d_model_event_args_1"],vrs["d_model_event_args_3"]],[4,18,4]) #Update of target_x y and z
+        fmu.setReal([vrs["d_model_event_args_0"],vrs["d_model_event_args_1"],vrs["d_model_event_args_3"]],[0,0,2]) #Update of target_x y and z
         fmu.setString([vrs["d_model_event"]],["movediscrete"])
 
 
 
     if idx == 11:
-        fmu.setString([vrs["controller_event"]],["closeGripperCommand"]) # closeGripperCommand event
-        fmu.setString([vrs["d_model_event"]],["pick"])
+        fmu.setReal([vrs["controller_event_args_0"],vrs["controller_event_args_1"],vrs["controller_event_args_2"]],[11,-5,2]) #Update of target_x y and z
+        fmu.setString([vrs["controller_event"]],["moveDiscreteCommand"]) # moveDiscreteCommand event
+        fmu.setReal([vrs["d_model_event_args_0"],vrs["d_model_event_args_1"],vrs["d_model_event_args_3"]],[11,-5,2]) #Update of target_x y and z
+        fmu.setString([vrs["d_model_event"]],["movediscrete"])
+        #fmu.setString([vrs["controller_event"]],["closeGripperCommand"]) # closeGripperCommand event
+        #fmu.setString([vrs["d_model_event"]],["pick"])
 
-    if idx == 16:
-        fmu.setString([vrs["controller_event"]],["openGripperCommand"]) # openGripperCommand event
-        fmu.setString([vrs["d_model_event"]],["place"])
+    if idx == 26:
+        fmu.setReal([vrs["controller_event_args_0"],vrs["controller_event_args_1"],vrs["controller_event_args_2"]],[1,2,1]) #Update of target_x y and z
+        fmu.setString([vrs["controller_event"]],["moveDiscreteCommand"]) # moveDiscreteCommand event
+        fmu.setReal([vrs["d_model_event_args_0"],vrs["d_model_event_args_1"],vrs["d_model_event_args_3"]],[1,2,1]) #Update of target_x y and z
+        fmu.setString([vrs["d_model_event"]],["movediscrete"])
+        #fmu.setString([vrs["controller_event"]],["openGripperCommand"]) # openGripperCommand event
+        #fmu.setString([vrs["d_model_event"]],["place"])
 
 
     fmu.doStep(currentCommunicationPoint=time, communicationStepSize=step_size)

@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-filename = "outputs_cosim_normq3.csv"
+filename = "outputs_UR3e_DTLab.csv"
 
 font = {'font.family' : 'monospace',
         'font.weight' : 'bold',
@@ -168,8 +168,8 @@ df_cosim.columns = df_cosim.columns.str.replace("{mapping}.mapping", "PlatformMa
 df_cosim.columns = df_cosim.columns.str.replace("{controller}.controller", "ControllerFMU")
 df_cosim.columns = df_cosim.columns.str.replace("{dmodel}.dmodel", "dmodelFMU")
 
-fig, axes = plt.subplots(2,2, figsize=(14,14))
-ax321 = plt.subplot(2,2,1)
+fig, axes = plt.subplots(3,2, figsize=(14,14))
+ax321 = plt.subplot(3,2,1)
 
 '''ax321.set_yticks(["", "moveDiscreteCommand"])
 df_cosim.plot(x = "time",y = ["ControllerFMU.controller_event"],
@@ -190,7 +190,7 @@ plt.legend()
 plt.grid()
 plt.tight_layout()
 
-plt.subplot(2,2,2)
+plt.subplot(3,2,2)
 
 df_cosim.plot(x = "time",y = ["ControllerFMU.controller_event_args_0","ControllerFMU.controller_event_args_1",
                                 "ControllerFMU.controller_event_args_2"],
@@ -204,7 +204,7 @@ plt.ylabel('target position (X,Y,Z)')
 plt.grid()
 plt.tight_layout()
 
-plt.subplot(2,2,3)
+plt.subplot(3,2,3)
 
 df_cosim.plot(x = "time",y = ["dmodelFMU.d_model_event_args_0","dmodelFMU.d_model_event_args_1",
                                     "dmodelFMU.d_model_event_args_2"],
@@ -216,17 +216,42 @@ plt.ylabel('position (X,Y,Z)')
 plt.grid()
 plt.tight_layout()
 
-plt.subplot(2,2,4)
+plt.subplot(3,2,4)
 df_cosim.plot(x = "time",y = ["PlatformMappingFMU.j0","PlatformMappingFMU.j1",
                                     "PlatformMappingFMU.j2","PlatformMappingFMU.j3",
                                    "PlatformMappingFMU.j4","PlatformMappingFMU.j5"],
              figsize=(12,12),
-             title = "Joint positions (CoppeliaSim)",
+             title = "Joint positions (UR3e)",
              ax=axes[1,1])
 plt.xlabel('time [s]')
 plt.ylabel('position [rad]')
 plt.grid()
 plt.tight_layout()
 
-fig.savefig('experiment_plot_normq.pdf', dpi=300)
-fig.savefig('experiment_plot_normq.png', dpi=300)
+plt.subplot(3,2,5)
+df_cosim.plot(x = "time",y = ["PlatformMappingFMU.qd0","PlatformMappingFMU.qd1",
+                                    "PlatformMappingFMU.qd2","PlatformMappingFMU.qd3",
+                                   "PlatformMappingFMU.qd4","PlatformMappingFMU.qd5"],
+             figsize=(12,12),
+             title = "Joint velocities (UR3e)",
+             ax=axes[2,0])
+plt.xlabel('time [s]')
+plt.ylabel('velocity [rad/s]')
+plt.grid()
+plt.tight_layout()
+
+plt.subplot(3,2,6)
+df_cosim.plot(x = "time",y = ["PlatformMappingFMU.t0","PlatformMappingFMU.t1",
+                                    "PlatformMappingFMU.t2","PlatformMappingFMU.t3",
+                                   "PlatformMappingFMU.t4","PlatformMappingFMU.t5"],
+             figsize=(12,12),
+             title = "Joint forces (UR3e)",
+             ax=axes[2,1])
+plt.xlabel('time [s]')
+plt.ylabel('force [N]')
+plt.grid()
+plt.tight_layout()
+
+
+fig.savefig('experiment_plot_normq_UR3e_DTLab.pdf', dpi=300)
+fig.savefig('experiment_plot_normq_UR3e_DTLab.png', dpi=300)

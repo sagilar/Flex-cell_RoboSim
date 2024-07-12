@@ -8,8 +8,8 @@ import types
 from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 
 
-'''***** Specific to the flex-cell case study*****'''
-from robots_flexcell import robots # Library for Flex-cell robots -> based on the Robotics Toolbox
+'''***** Specific to the UR3e DT Lab AU*****'''
+from robotDTLab import robotDTLab # Library for UR3e -> based on the Robotics Toolbox
 
 
 
@@ -111,20 +111,19 @@ class Mapping():
         self.client = RemoteAPIClient(host='localhost', port=23000) ### Client
         self.sim = self.client.getObject('sim') ### Sim Object: the objects are handled from this object serialization
 
-        '''Specific to the flex-cell case study'''
-        self.ur_robot_model = robots.UR5e_RoboSim_Simulation(mqtt_enabled=False,zmq_enabled=False)
+        '''Specific to the UR3e case study'''
+        self.ur_robot_model = robotDTLab.UR3e_Sim(mqtt_enabled=False,zmq_enabled=False)
         self.ur_robot_model.set_motion_time(2.0)## Definition of the trajectory time
 
         '''These objects are to be initialized from the mapping generator'''
         self.base_name = "/1_base_link_collision/"
-        self.j0 = self.sim.getObject(self.base_name + "17_shoulder_pan_joint") # J0
+        self.j0 = self.sim.getObject(self.base_name + "10_shoulder_pan_joint") # J0
         self.j1 = self.sim.getObject(self.base_name + "11_shoulder_lift_joint") # J1
-        self.j2 = self.sim.getObject(self.base_name +"16_elbow_joint") # J2
-        self.j3 = self.sim.getObject(self.base_name + "15_wrist_1_joint") # J3
-        self.j4 = self.sim.getObject(self.base_name + "18_wrist_2_joint") # J4
-        self.j5 = self.sim.getObject(self.base_name + "14_wrist_3_joint") # J5
-        self.r_fg = self.sim.getObject(self.base_name + "13_rightFingerGripper") # Right finger gripper (OnRobot 2FG7)
-        self.l_fg = self.sim.getObject(self.base_name + "12_leftFingerGripper") # Left finger gripper (OnRobot 2FG7)
+        self.j2 = self.sim.getObject(self.base_name +"13_elbow_joint") # J2
+        self.j3 = self.sim.getObject(self.base_name + "12_wrist_1_joint") # J3
+        self.j4 = self.sim.getObject(self.base_name + "9_wrist_2_joint") # J4
+        self.j5 = self.sim.getObject(self.base_name + "8_wrist_3_joint") # J5
+
 
 
         '''Actions'''
@@ -342,10 +341,6 @@ class Mapping():
             return self.sim.getJointPosition(self.j4)
         elif (joint_name == "j5"):
             return self.sim.getJointPosition(self.j5)
-        elif (joint_name == "r_fg"):
-            return self.sim.getJointPosition(self.r_fg)
-        elif (joint_name == "l_fg"):
-            return self.sim.getJointPosition(self.l_fg)
         else:
             print("Joint name '" + str(joint_name) + "' does not exist" )
 
@@ -362,10 +357,6 @@ class Mapping():
             return self.sim.getJointVelocity(self.j4)
         elif (joint_name == "j5"):
             return self.sim.getJointVelocity(self.j5)
-        elif (joint_name == "r_fg"):
-            return self.sim.getJointVelocity(self.r_fg)
-        elif (joint_name == "l_fg"):
-            return self.sim.getJointVelocity(self.l_fg)
         else:
             print("Joint name '" + str(joint_name) + "' does not exist" )
 
@@ -382,10 +373,6 @@ class Mapping():
             return self.sim.getJointForce(self.j4)
         elif (joint_name == "j5"):
             return self.sim.getJointForce(self.j5)
-        elif (joint_name == "r_fg"):
-            return self.sim.getJointForce(self.r_fg)
-        elif (joint_name == "l_fg"):
-            return self.sim.getJointForce(self.l_fg)
         else:
             print("Joint name '" + str(joint_name) + "' does not exist" )
 
@@ -402,10 +389,6 @@ class Mapping():
             return self.sim.getJointTargetPosition(self.j4)
         elif (joint_name == "j5"):
             return self.sim.getJointTargetPosition(self.j5)
-        elif (joint_name == "r_fg"):
-            return self.sim.getJointTargetPosition(self.r_fg)
-        elif (joint_name == "l_fg"):
-            return self.sim.getJointTargetPosition(self.l_fg)
         else:
             print("Joint name '" + str(joint_name) + "' does not exist" )
 
@@ -422,10 +405,6 @@ class Mapping():
             return self.sim.getJointTargetVelocity(self.j4)
         elif (joint_name == "j5"):
             return self.sim.getJointTargetVelocity(self.j5)
-        elif (joint_name == "r_fg"):
-            return self.sim.getJointTargetVelocity(self.r_fg)
-        elif (joint_name == "l_fg"):
-            return self.sim.getJointTargetVelocity(self.l_fg)
         else:
             print("Joint name '" + str(joint_name) + "' does not exist" )
 
@@ -442,10 +421,6 @@ class Mapping():
             return self.sim.getJointTargetForce(self.j4)
         elif (joint_name == "j5"):
             return self.sim.getJointTargetForce(self.j5)
-        elif (joint_name == "r_fg"):
-            return self.sim.getJointTargetForce(self.r_fg)
-        elif (joint_name == "l_fg"):
-            return self.sim.getJointTargetForce(self.l_fg)
         else:
             print("Joint name '" + str(joint_name) + "' does not exist" )
 
@@ -462,10 +437,6 @@ class Mapping():
             self.sim.setJointTargetPosition(self.j4,val)
         elif (joint_name == "j5"):
             self.sim.setJointTargetPosition(self.j5,val)
-        elif (joint_name == "r_fg"):
-            self.sim.setJointTargetPosition(self.r_fg,val)
-        elif (joint_name == "l_fg"):
-            self.sim.setJointTargetPosition(self.l_fg,val)
         else:
             print("Joint name '" + str(joint_name) + "' does not exist" )
 
@@ -482,10 +453,6 @@ class Mapping():
             self.sim.setJointTargetVelocity(self.j4,val)
         elif (joint_name == "j5"):
             self.sim.setJointTargetVelocity(self.j5,val)
-        elif (joint_name == "r_fg"):
-            self.sim.setJointTargetVelocity(self.r_fg,val)
-        elif (joint_name == "l_fg"):
-            self.sim.setJointTargetVelocity(self.l_fg,val)
         else:
             print("Joint name '" + str(joint_name) + "' does not exist" )
 
@@ -502,10 +469,6 @@ class Mapping():
             self.sim.setJointTargetForce(self.j4,val)
         elif (joint_name == "j5"):
             self.sim.setJointTargetForce(self.j5,val)
-        elif (joint_name == "r_fg"):
-            self.sim.setJointTargetForce(self.r_fg,val)
-        elif (joint_name == "l_fg"):
-            self.sim.setJointTargetForce(self.l_fg,val)
         else:
             print("Joint name '" + str(joint_name) + "' does not exist" )
 
@@ -522,9 +485,8 @@ class Mapping():
 
     def _movediscrete(self,target_X,target_Y,target_Z):
         # To be initialized manually or with annotations
-        x,yc,zc = self.ur_robot_model.compute_xyz_flexcell(target_X,target_Y,Z=target_Z)
-        yj,zj = self.ur_robot_model.compute_yz_joint(yc,zc)
-        target_position = self.ur_robot_model.compute_q(x,yj,zj)[0]
+        x,yc,zc = self.ur_robot_model.compute_xyz(target_X,target_Y,Z=target_Z)
+        target_position = self.ur_robot_model.compute_q(x,yc,zc)[0]
         self.sim.setJointTargetPosition(self.j0,target_position[0])
         self.sim.setJointTargetPosition(self.j1,target_position[1])
         self.sim.setJointTargetPosition(self.j2,target_position[2])
@@ -568,36 +530,3 @@ class Mapping():
     def _calculate_feasibility(self,target_X,target_Y,target_Z):
         feasible_motion = self.ur_robot_model.compute_ik_validity(target_X,target_Y,target_Z) # feasibleMoveDiscreteCommand
         return feasible_motion
-
-'''if __name__=='__main__':
-    mapping = Mapping()
-    try:
-        mapping.start_mapping()
-        ## The args should come from the c++ code
-        # The args could also come as a dict of dicts (with the variable names)
-        args = {
-            "equation_0": ["flexcellAngularPosition[completed]"]
-        }
-        result = mapping.get_event("moveCompleted",args=args)
-        print(result)
-
-        args = {
-            "equation_0": ["flexcellAngularPosition[completed]"],
-        }
-        result = mapping.get_event("robotStopped",args=args)
-        print(result)
-
-        args = {
-            "action_0":[0],
-            "action_1":[-3.1415/2],
-            "action_2":[-3.1415/2],
-            "action_3":[0],
-            "action_4":[0],
-            "action_5":[0]
-        }
-        mapping.execute_operation("movejoint",args=args)
-        time.sleep(5.0)
-    finally:
-        mapping.stop_mapping()
-        print("Application stopped")
-'''

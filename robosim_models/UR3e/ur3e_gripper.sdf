@@ -1,0 +1,444 @@
+<sdf version="1.6">
+		<model name="ur3e_gripper">
+			<self_collide>true</self_collide>
+			<pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+			
+			
+			
+			
+			
+			<link name="1-base_link">
+					<pose>0.0 0.0 0.0 0.0 0.0 3.1414999961853027</pose>
+					<inertial>
+						<pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+						<inertia>
+							<ixx>1.0</ixx>
+							<ixy>0.0</ixy>
+							<ixz>0.0</ixz>
+							<iyy>1.0</iyy>
+							<iyz>0.0</iyz>
+							<izz>1.0</izz>
+						</inertia>
+						<mass>2.4000000953674316</mass>
+					</inertial>
+					
+					<collision name="1--base_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.06499999761581421</radius>
+								<length>0.09880000352859497</length>
+							</cylinder>
+						</geometry>
+						</collision>
+					<visual name="1--base_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.06499999761581421</radius>
+								<length>0.09880000352859497</length>
+							</cylinder>
+						</geometry>
+						</visual>
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+			</link>	
+			
+			<link name="2-shoulder_link">
+					<pose>0.0 0.0 0.09880000352859497 0.0 0.0 0.0</pose>
+					<inertial>
+						<pose>0.0 0.0 -0.019999999552965164 0.0 0.0 0.0</pose>
+						<inertia>
+							<ixx>1.0</ixx>
+							<ixy>0.0</ixy>
+							<ixz>0.0</ixz>
+							<iyy>1.0</iyy>
+							<iyz>0.0</iyz>
+							<izz>1.0</izz>
+						</inertia>
+						<mass>1.9800000190734863</mass>
+					</inertial>
+					
+					<collision name="2--shoulder_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.0030999965965747833 0.0 0.0 1.5707499980926514</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.04500000178813934</radius>
+								<length>0.10499999672174454</length>
+							</cylinder>
+						</geometry>
+						</collision>
+					<visual name="2--shoulder_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.0030999965965747833 0.0 0.0 1.5707499980926514</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.04500000178813934</radius>
+								<length>0.10499999672174454</length>
+							</cylinder>
+						</geometry>
+						</visual>
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+			</link>	
+			
+			<link name="3-upper_arm_link">
+					<pose>0.0 0.10499999672174454 0.09880000352859497 3.1414999961853027 1.5707499980926514 3.1414999961853027</pose>
+					<inertial>
+						<pose>0.12999999523162842 0.0 0.11569999903440475 0.0 0.0 0.0</pose>
+						<inertia>
+							<ixx>1.0</ixx>
+							<ixy>0.0</ixy>
+							<ixz>0.0</ixz>
+							<iyy>1.0</iyy>
+							<iyz>0.0</iyz>
+							<izz>1.0</izz>
+						</inertia>
+						<mass>3.444499969482422</mass>
+					</inertial>
+					
+					<collision name="3--upper_arm_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.10749999806284904 0.0 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.03500000014901161</radius>
+								<length>0.3199999928474426</length>
+							</cylinder>
+						</geometry>
+						</collision>
+					<visual name="3--upper_arm_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.10749999806284904 0.0 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.03500000014901161</radius>
+								<length>0.3199999928474426</length>
+							</cylinder>
+						</geometry>
+						</visual>
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+			</link>	
+			
+			<link name="4-forearm_link">
+					<pose>0.2199999913573265 0.01499999314546585 0.09880000352859497 3.1414999961853027 1.5707499980926514 3.1414999961853027</pose>
+					<inertial>
+						<pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+						<inertia>
+							<ixx>1.0</ixx>
+							<ixy>0.0</ixy>
+							<ixz>0.0</ixz>
+							<iyy>1.0</iyy>
+							<iyz>0.0</iyz>
+							<izz>1.0</izz>
+						</inertia>
+						<mass>1.437000036239624</mass>
+					</inertial>
+					
+					<collision name="4--forearm_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.1100000012665987 0.0 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.029999999329447746</radius>
+								<length>0.25000000186264515</length>
+							</cylinder>
+						</geometry>
+						</collision>
+					<visual name="4--forearm_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.1100000012665987 0.0 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.029999999329447746</radius>
+								<length>0.25000000186264515</length>
+							</cylinder>
+						</geometry>
+						</visual>
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+			</link>	
+			
+			<link name="5-wrist_1_link">
+					<pose>0.4999999925494194 0.01499999314546585 0.09880000352859497 3.1414999961853027 0.0 3.1414999961853027</pose>
+					<inertial>
+						<pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+						<inertia>
+							<ixx>1.0</ixx>
+							<ixy>0.0</ixy>
+							<ixz>0.0</ixz>
+							<iyy>1.0</iyy>
+							<iyz>0.0</iyz>
+							<izz>1.0</izz>
+						</inertia>
+						<mass>0.8709999918937683</mass>
+					</inertial>
+					
+					<collision name="5--wrist_1_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.0 1.5707499980926514 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.029999999329447746</radius>
+								<length>0.10199999809265137</length>
+							</cylinder>
+						</geometry>
+						</collision>
+					<visual name="5--wrist_1_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.0 1.5707499980926514 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.029999999329447746</radius>
+								<length>0.10199999809265137</length>
+							</cylinder>
+						</geometry>
+						</visual>
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+			</link>	
+			
+			<link name="6-wrist_2_link">
+					<pose>0.4999999925494194 0.11699999123811722 0.09880000352859497 3.1414999961853027 0.0 3.1414999961853027</pose>
+					<inertial>
+						<pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+						<inertia>
+							<ixx>1.0</ixx>
+							<ixy>0.0</ixy>
+							<ixz>0.0</ixz>
+							<iyy>1.0</iyy>
+							<iyz>0.0</iyz>
+							<izz>1.0</izz>
+						</inertia>
+						<mass>0.8050000071525574</mass>
+					</inertial>
+					
+					<collision name="6--wrist_2_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.005000000819563866 0.0 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.029999999329447746</radius>
+								<length>0.07000000029802322</length>
+							</cylinder>
+						</geometry>
+						</collision>
+					<visual name="6--wrist_2_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.005000000819563866 0.0 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.029999999329447746</radius>
+								<length>0.07000000029802322</length>
+							</cylinder>
+						</geometry>
+						</visual>
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+					 If you wish to reflect these aspects in SDF,
+					     please add an appropriate annotation to the sensor. --&gt; 
+			</link>	
+			
+			<link name="7-wrist_3_link">
+					<pose>0.4999999925494194 0.11699999123811722 0.028800003230571747 3.1414999961853027 0.0 3.1414999961853027</pose>
+					<inertial>
+						<pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+						<inertia>
+							<ixx>1.0</ixx>
+							<ixy>0.0</ixy>
+							<ixz>0.0</ixz>
+							<iyy>1.0</iyy>
+							<iyz>0.0</iyz>
+							<izz>1.0</izz>
+						</inertia>
+						<mass>0.26100000739097595</mass>
+					</inertial>
+					
+					<collision name="7--wrist_3_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.005500000901520252 1.5707499980926514 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.029999999329447746</radius>
+								<length>0.04100000113248825</length>
+							</cylinder>
+						</geometry>
+						</collision>
+					<visual name="7--wrist_3_link_collision">
+						<laser_retro>0.0</laser_retro>
+						<pose>0.0 0.0 0.005500000901520252 1.5707499980926514 0.0 0.0</pose>
+						<geometry>
+							<cylinder>
+								<radius>0.029999999329447746</radius>
+								<length>0.04100000113248825</length>
+							</cylinder>
+						</geometry>
+						</visual>
+			</link>	
+			
+			
+			
+			
+			<joint name="8-wrist_3_joint" type="revolute">
+				<pose>5.551115123125783E-17 0.03000648534778043 3.004888109170434E-10 0.0 1.6543612251060553E-24 0.0</pose>
+				<parent>6-wrist_2_link</parent>
+				<child>7-wrist_3_link</child>
+				
+				<axis>
+					<xyz>0 1 0</xyz>
+					<dynamics>
+						<damping>10</damping>
+					</dynamics>
+					<limit>
+						<lower>-6.2829999923706055</lower>
+						<upper>6.2829999923706055</upper>
+						<velocity>1.5707499980926514</velocity>
+						<effort>1000</effort>
+					</limit>
+				</axis>
+				
+			</joint>
+			
+			<joint name="9-wrist_2_joint" type="revolute">
+				<pose>-9.451055067721814E-6 8.757102265555261E-10 0.029990548274420548 0.0 1.6543612251060553E-24 0.0</pose>
+				<parent>5-wrist_1_link</parent>
+				<child>6-wrist_2_link</child>
+				
+				<axis>
+					<xyz>0 0 -1</xyz>
+					<dynamics>
+						<damping>10</damping>
+					</dynamics>
+					<limit>
+						<lower>-6.2829999923706055</lower>
+						<upper>6.2829999923706055</upper>
+						<velocity>1.5707499980926514</velocity>
+						<effort>1000</effort>
+					</limit>
+				</axis>
+				
+			</joint>
+			
+			<joint name="10-shoulder_pan_joint" type="revolute">
+				<pose>0.0 0.0 0.0 0.0 -0.0 3.1414999961853027</pose>
+				<parent>1-base_link</parent>
+				<child>2-shoulder_link</child>
+				
+				<axis>
+					<xyz>0 0 1</xyz>
+					<dynamics>
+						<damping>10</damping>
+					</dynamics>
+					<limit>
+						<lower>-6.2829999923706055</lower>
+						<upper>6.2829999923706055</upper>
+						<velocity>1.5707499980926514</velocity>
+						<effort>1000</effort>
+					</limit>
+				</axis>
+				
+			</joint>
+			
+			<joint name="11-shoulder_lift_joint" type="revolute">
+				<pose>-2.5756181909475373E-10 -0.05999999493360519 -5.966252746838693E-15 3.1415926514434447 -1.5707499980928503 3.1415926514434447</pose>
+				<parent>2-shoulder_link</parent>
+				<child>3-upper_arm_link</child>
+				
+				<axis>
+					<xyz>0 1 0</xyz>
+					<dynamics>
+						<damping>10</damping>
+					</dynamics>
+					<limit>
+						<lower>-6.2829999923706055</lower>
+						<upper>6.2829999923706055</upper>
+						<velocity>1.5707499980926514</velocity>
+						<effort>1000</effort>
+					</limit>
+				</axis>
+				
+			</joint>
+			
+			<joint name="12-wrist_1_joint" type="revolute">
+				<pose>3.004888005087025E-10 -1.201955245402897E-9 1.2972036567901468E-5 1.1070560616774092 -1.5706927326673965 -1.107148716935551</pose>
+				<parent>4-forearm_link</parent>
+				<child>5-wrist_1_link</child>
+				
+				<axis>
+					<xyz>0 1 0</xyz>
+					<dynamics>
+						<damping>10</damping>
+					</dynamics>
+					<limit>
+						<lower>-6.2829999923706055</lower>
+						<upper>6.2829999923706055</upper>
+						<velocity>1.5707499980926514</velocity>
+						<effort>1000</effort>
+					</limit>
+				</axis>
+				
+			</joint>
+			
+			<joint name="13-elbow_joint" type="revolute">
+				<pose>1.0192700388933496E-5 0.055000003427245196 0.009999998149944705 2.0517283354985477E-21 -0.0 0.0</pose>
+				<parent>3-upper_arm_link</parent>
+				<child>4-forearm_link</child>
+				
+				<axis>
+					<xyz>0 1 0</xyz>
+					<dynamics>
+						<damping>10</damping>
+					</dynamics>
+					<limit>
+						<lower>-6.2829999923706055</lower>
+						<upper>6.2829999923706055</upper>
+						<velocity>1.5707499980926514</velocity>
+						<effort>1000</effort>
+					</limit>
+				</axis>
+				
+			</joint>
+			
+			
+			
+			
+		</model>
+</sdf>

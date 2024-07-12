@@ -26,7 +26,7 @@ Use the ```wrap_fmu.sh``` script to wrap the content inside the MappingFMU folde
 
 ## Co-simulation
 The implementation for the co-simulation is in folder ```co-simulation```. Here, the FMUs previously created (which are to be stored in ```co-simulation/models```) and the ControllerFMU (in the folder ```controllerFMU```) or the [RabbitMQFMU](https://github.com/INTO-CPS-Association/fmu-rabbitmq) (in the folder ```co-simulation/rmqfmu```) are orchestrated by the co-simulation engine [Maestro](https://github.com/INTO-CPS-Association/maestro) through the definition of the co-simulation configuration file ```multimodel_"".json```. There are 4 co-simulation files per robot, including combinations with RabbitMQFMU/ControllerFMU and CoppeliaSim/URInterface (**Note:** using RabbitMQFMU requires an active RabbitMQ broker to connect to).
-To execute the co-simulation, the JAR file for Maestro is required ([download it here](https://github.com/INTO-CPS-Association/maestro/releases/latest)), and update the script ```cosimulation_execution_URxe.sh``` to run the co-simulation.
+To execute the co-simulation, the JAR file for Maestro is required ([download it here](https://github.com/INTO-CPS-Association/maestro/releases/latest)), and update the corresponding script ```cosimulation_execution_URxe_"".sh``` to run the co-simulation.
 To stop the co-simulation and background services, use the script ```terminate.sh```.
 
 The output of experiments is generated to the folder ```co-simulation/results``` and the ```tests``` folder provides the ```plot.py``` script to generate some plots using the generated CSV files.

@@ -48,7 +48,7 @@ import SimulationControl;
 		{
 				error "booleanLogic IS NULL ";
 		}
-		mapping = load("FMI2", "77236337-210e-4e9c-8f2c-c1a0677db21b", "file:/home/santiago/York/flex-cell/co-simulation/models/mappingFMU_CoppeliaSim_UR3e.fmu");
+		mapping = load("FMI2", "77236337-210e-4e9c-8f2c-c1a0677db21b", "file:/home/santiago/York/flex-cell/co-simulation/models/mappingFMU_CoppeliaSim_UR5e.fmu");
 		if( (((mapping == null))) )
 		{
 				error "mapping IS NULL ";
@@ -58,7 +58,7 @@ import SimulationControl;
 		{
 				error "dmodel IS NULL ";
 		}
-		controller = load("FMI2", "77236337-210e-4e9c-8f2c-c1a0677db21b", "file:/home/santiago/York/flex-cell/co-simulation/models/controllerFMU_UR3e.fmu");
+		controller = load("FMI2", "77236337-210e-4e9c-8f2c-c1a0677db21b", "file:/home/santiago/York/flex-cell/co-simulation/models/controllerFMU_UR5e.fmu");
 		if( (((controller == null))) )
 		{
 				error "controller IS NULL ";
@@ -82,7 +82,7 @@ import SimulationControl;
 		{
 				real STEP_SIZE = 0.5;
 				real START_TIME = 0.0;
-				real END_TIME = 15.0;
+				real END_TIME = 20.0;
 				int FMI_OK = 0;
 				int FMI_DISCARD = 2;
 				int FMI_ERROR = 3;
@@ -95,20 +95,20 @@ import SimulationControl;
 					{
 							error "Failed load of: booleanLogic1";
 					}
+					real dmodel_1RealShare[4];
 					string dmodel_1StringShare[1];
 					string dmodel_1StringIo[38];
-					real dmodel_1RealShare[4];
-					real mapping_1RealShare[3];
 					bool dmodel_1BoolIo[38];
 					bool mapping_1BoolShare[10];
 					bool mapping_1BoolIo[67];
-					real mapping_1RealIo[67];
-					real controller_1RealShare[3];
-					real controller_1RealIo[4];
+					real mapping_1RealShare[3];
 					string mapping_1StringIo[67];
-					uint mapping_1UintVref[67];
 					string controller_1StringShare[1];
 					string controller_1StringIo[4];
+					real mapping_1RealIo[67];
+					uint mapping_1UintVref[67];
+					real controller_1RealShare[3];
+					real controller_1RealIo[4];
 					uint controller_1UintVref[4];
 					real dmodel_1RealIo[38];
 					uint dmodel_1UintVref[38];
@@ -342,6 +342,36 @@ import SimulationControl;
 							}
 							error "Failed to 'enterInitializationMode' on 'controller_1'";
 					}
+					controller_1UintVref[0] = 2;
+					status = controller_1.getReal(controller_1UintVref, 1, controller_1RealIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "GetReal failed on '%s' with status: FMI_ERROR", controller_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "GetReal failed on '%s' with status: FMI_FATAL", controller_1);
+							}
+							error "Failed to 'getReal' on 'controller_1'";
+					}
+					controller_1RealShare[0] = controller_1RealIo[0];
+					mapping_1UintVref[0] = 2;
+					mapping_1RealIo[0] = controller_1RealShare[0];
+					status = mapping_1.setReal(mapping_1UintVref, 1, mapping_1RealIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "SetReal failed on '%s' with status: FMI_ERROR", mapping_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "SetReal failed on '%s' with status: FMI_FATAL", mapping_1);
+							}
+							error "Failed to 'setReal' on 'mapping_1'";
+					}
 					controller_1UintVref[0] = 0;
 					status = controller_1.getString(controller_1UintVref, 1, controller_1StringIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
@@ -386,38 +416,8 @@ import SimulationControl;
 							}
 							error "Failed to 'getReal' on 'controller_1'";
 					}
-					controller_1RealShare[0] = controller_1RealIo[0];
-					mapping_1UintVref[0] = 3;
-					mapping_1RealIo[0] = controller_1RealShare[0];
-					status = mapping_1.setReal(mapping_1UintVref, 1, mapping_1RealIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "SetReal failed on '%s' with status: FMI_ERROR", mapping_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "SetReal failed on '%s' with status: FMI_FATAL", mapping_1);
-							}
-							error "Failed to 'setReal' on 'mapping_1'";
-					}
-					controller_1UintVref[0] = 2;
-					status = controller_1.getReal(controller_1UintVref, 1, controller_1RealIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "GetReal failed on '%s' with status: FMI_ERROR", controller_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "GetReal failed on '%s' with status: FMI_FATAL", controller_1);
-							}
-							error "Failed to 'getReal' on 'controller_1'";
-					}
 					controller_1RealShare[1] = controller_1RealIo[0];
-					mapping_1UintVref[0] = 2;
+					mapping_1UintVref[0] = 3;
 					mapping_1RealIo[0] = controller_1RealShare[1];
 					status = mapping_1.setReal(mapping_1UintVref, 1, mapping_1RealIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
@@ -462,67 +462,7 @@ import SimulationControl;
 							}
 							error "Failed to 'setReal' on 'mapping_1'";
 					}
-					mapping_1UintVref[0] = 58;
-					status = mapping_1.getBoolean(mapping_1UintVref, 1, mapping_1BoolIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "GetBoolean failed on '%s' with status: FMI_ERROR", mapping_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "GetBoolean failed on '%s' with status: FMI_FATAL", mapping_1);
-							}
-							error "Failed to 'getBoolean' on 'mapping_1'";
-					}
-					mapping_1BoolShare[0] = mapping_1BoolIo[0];
-					dmodel_1UintVref[0] = 2;
-					dmodel_1BoolIo[0] = mapping_1BoolShare[0];
-					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "SetBoolean failed on '%s' with status: FMI_ERROR", dmodel_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "SetBoolean failed on '%s' with status: FMI_FATAL", dmodel_1);
-							}
-							error "Failed to 'setBoolean' on 'dmodel_1'";
-					}
-					mapping_1UintVref[0] = 64;
-					status = mapping_1.getBoolean(mapping_1UintVref, 1, mapping_1BoolIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "GetBoolean failed on '%s' with status: FMI_ERROR", mapping_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "GetBoolean failed on '%s' with status: FMI_FATAL", mapping_1);
-							}
-							error "Failed to 'getBoolean' on 'mapping_1'";
-					}
-					mapping_1BoolShare[1] = mapping_1BoolIo[0];
-					dmodel_1UintVref[0] = 6;
-					dmodel_1BoolIo[0] = mapping_1BoolShare[1];
-					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "SetBoolean failed on '%s' with status: FMI_ERROR", dmodel_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "SetBoolean failed on '%s' with status: FMI_FATAL", dmodel_1);
-							}
-							error "Failed to 'setBoolean' on 'dmodel_1'";
-					}
-					mapping_1UintVref[0] = 47;
+					mapping_1UintVref[0] = 48;
 					status = mapping_1.getReal(mapping_1UintVref, 1, mapping_1RealIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
 					{
@@ -537,7 +477,7 @@ import SimulationControl;
 							error "Failed to 'getReal' on 'mapping_1'";
 					}
 					mapping_1RealShare[0] = mapping_1RealIo[0];
-					dmodel_1UintVref[0] = 10;
+					dmodel_1UintVref[0] = 11;
 					dmodel_1RealIo[0] = mapping_1RealShare[0];
 					status = dmodel_1.setReal(dmodel_1UintVref, 1, dmodel_1RealIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
@@ -566,8 +506,68 @@ import SimulationControl;
 							}
 							error "Failed to 'getBoolean' on 'mapping_1'";
 					}
-					mapping_1BoolShare[2] = mapping_1BoolIo[0];
+					mapping_1BoolShare[0] = mapping_1BoolIo[0];
 					dmodel_1UintVref[0] = 4;
+					dmodel_1BoolIo[0] = mapping_1BoolShare[0];
+					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "SetBoolean failed on '%s' with status: FMI_ERROR", dmodel_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "SetBoolean failed on '%s' with status: FMI_FATAL", dmodel_1);
+							}
+							error "Failed to 'setBoolean' on 'dmodel_1'";
+					}
+					mapping_1UintVref[0] = 58;
+					status = mapping_1.getBoolean(mapping_1UintVref, 1, mapping_1BoolIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "GetBoolean failed on '%s' with status: FMI_ERROR", mapping_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "GetBoolean failed on '%s' with status: FMI_FATAL", mapping_1);
+							}
+							error "Failed to 'getBoolean' on 'mapping_1'";
+					}
+					mapping_1BoolShare[1] = mapping_1BoolIo[0];
+					dmodel_1UintVref[0] = 2;
+					dmodel_1BoolIo[0] = mapping_1BoolShare[1];
+					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "SetBoolean failed on '%s' with status: FMI_ERROR", dmodel_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "SetBoolean failed on '%s' with status: FMI_FATAL", dmodel_1);
+							}
+							error "Failed to 'setBoolean' on 'dmodel_1'";
+					}
+					mapping_1UintVref[0] = 62;
+					status = mapping_1.getBoolean(mapping_1UintVref, 1, mapping_1BoolIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "GetBoolean failed on '%s' with status: FMI_ERROR", mapping_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "GetBoolean failed on '%s' with status: FMI_FATAL", mapping_1);
+							}
+							error "Failed to 'getBoolean' on 'mapping_1'";
+					}
+					mapping_1BoolShare[2] = mapping_1BoolIo[0];
+					dmodel_1UintVref[0] = 1;
 					dmodel_1BoolIo[0] = mapping_1BoolShare[2];
 					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
@@ -612,7 +612,7 @@ import SimulationControl;
 							}
 							error "Failed to 'setReal' on 'dmodel_1'";
 					}
-					mapping_1UintVref[0] = 59;
+					mapping_1UintVref[0] = 63;
 					status = mapping_1.getBoolean(mapping_1UintVref, 1, mapping_1BoolIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
 					{
@@ -627,8 +627,38 @@ import SimulationControl;
 							error "Failed to 'getBoolean' on 'mapping_1'";
 					}
 					mapping_1BoolShare[3] = mapping_1BoolIo[0];
-					dmodel_1UintVref[0] = 7;
+					dmodel_1UintVref[0] = 5;
 					dmodel_1BoolIo[0] = mapping_1BoolShare[3];
+					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "SetBoolean failed on '%s' with status: FMI_ERROR", dmodel_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "SetBoolean failed on '%s' with status: FMI_FATAL", dmodel_1);
+							}
+							error "Failed to 'setBoolean' on 'dmodel_1'";
+					}
+					mapping_1UintVref[0] = 61;
+					status = mapping_1.getBoolean(mapping_1UintVref, 1, mapping_1BoolIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "GetBoolean failed on '%s' with status: FMI_ERROR", mapping_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "GetBoolean failed on '%s' with status: FMI_FATAL", mapping_1);
+							}
+							error "Failed to 'getBoolean' on 'mapping_1'";
+					}
+					mapping_1BoolShare[4] = mapping_1BoolIo[0];
+					dmodel_1UintVref[0] = 3;
+					dmodel_1BoolIo[0] = mapping_1BoolShare[4];
 					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
 					{
@@ -656,38 +686,8 @@ import SimulationControl;
 							}
 							error "Failed to 'getBoolean' on 'mapping_1'";
 					}
-					mapping_1BoolShare[4] = mapping_1BoolIo[0];
-					dmodel_1UintVref[0] = 0;
-					dmodel_1BoolIo[0] = mapping_1BoolShare[4];
-					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "SetBoolean failed on '%s' with status: FMI_ERROR", dmodel_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "SetBoolean failed on '%s' with status: FMI_FATAL", dmodel_1);
-							}
-							error "Failed to 'setBoolean' on 'dmodel_1'";
-					}
-					mapping_1UintVref[0] = 63;
-					status = mapping_1.getBoolean(mapping_1UintVref, 1, mapping_1BoolIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "GetBoolean failed on '%s' with status: FMI_ERROR", mapping_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "GetBoolean failed on '%s' with status: FMI_FATAL", mapping_1);
-							}
-							error "Failed to 'getBoolean' on 'mapping_1'";
-					}
 					mapping_1BoolShare[5] = mapping_1BoolIo[0];
-					dmodel_1UintVref[0] = 5;
+					dmodel_1UintVref[0] = 0;
 					dmodel_1BoolIo[0] = mapping_1BoolShare[5];
 					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
@@ -732,7 +732,7 @@ import SimulationControl;
 							}
 							error "Failed to 'setBoolean' on 'dmodel_1'";
 					}
-					mapping_1UintVref[0] = 62;
+					mapping_1UintVref[0] = 59;
 					status = mapping_1.getBoolean(mapping_1UintVref, 1, mapping_1BoolIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
 					{
@@ -747,7 +747,7 @@ import SimulationControl;
 							error "Failed to 'getBoolean' on 'mapping_1'";
 					}
 					mapping_1BoolShare[7] = mapping_1BoolIo[0];
-					dmodel_1UintVref[0] = 1;
+					dmodel_1UintVref[0] = 7;
 					dmodel_1BoolIo[0] = mapping_1BoolShare[7];
 					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
@@ -761,6 +761,66 @@ import SimulationControl;
 									logger.log(4, "SetBoolean failed on '%s' with status: FMI_FATAL", dmodel_1);
 							}
 							error "Failed to 'setBoolean' on 'dmodel_1'";
+					}
+					mapping_1UintVref[0] = 64;
+					status = mapping_1.getBoolean(mapping_1UintVref, 1, mapping_1BoolIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "GetBoolean failed on '%s' with status: FMI_ERROR", mapping_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "GetBoolean failed on '%s' with status: FMI_FATAL", mapping_1);
+							}
+							error "Failed to 'getBoolean' on 'mapping_1'";
+					}
+					mapping_1BoolShare[8] = mapping_1BoolIo[0];
+					dmodel_1UintVref[0] = 6;
+					dmodel_1BoolIo[0] = mapping_1BoolShare[8];
+					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "SetBoolean failed on '%s' with status: FMI_ERROR", dmodel_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "SetBoolean failed on '%s' with status: FMI_FATAL", dmodel_1);
+							}
+							error "Failed to 'setBoolean' on 'dmodel_1'";
+					}
+					mapping_1UintVref[0] = 47;
+					status = mapping_1.getReal(mapping_1UintVref, 1, mapping_1RealIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "GetReal failed on '%s' with status: FMI_ERROR", mapping_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "GetReal failed on '%s' with status: FMI_FATAL", mapping_1);
+							}
+							error "Failed to 'getReal' on 'mapping_1'";
+					}
+					mapping_1RealShare[2] = mapping_1RealIo[0];
+					dmodel_1UintVref[0] = 10;
+					dmodel_1RealIo[0] = mapping_1RealShare[2];
+					status = dmodel_1.setReal(dmodel_1UintVref, 1, dmodel_1RealIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "SetReal failed on '%s' with status: FMI_ERROR", dmodel_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "SetReal failed on '%s' with status: FMI_FATAL", dmodel_1);
+							}
+							error "Failed to 'setReal' on 'dmodel_1'";
 					}
 					mapping_1UintVref[0] = 65;
 					status = mapping_1.getBoolean(mapping_1UintVref, 1, mapping_1BoolIo);
@@ -776,38 +836,8 @@ import SimulationControl;
 							}
 							error "Failed to 'getBoolean' on 'mapping_1'";
 					}
-					mapping_1BoolShare[8] = mapping_1BoolIo[0];
-					dmodel_1UintVref[0] = 9;
-					dmodel_1BoolIo[0] = mapping_1BoolShare[8];
-					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "SetBoolean failed on '%s' with status: FMI_ERROR", dmodel_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "SetBoolean failed on '%s' with status: FMI_FATAL", dmodel_1);
-							}
-							error "Failed to 'setBoolean' on 'dmodel_1'";
-					}
-					mapping_1UintVref[0] = 61;
-					status = mapping_1.getBoolean(mapping_1UintVref, 1, mapping_1BoolIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "GetBoolean failed on '%s' with status: FMI_ERROR", mapping_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "GetBoolean failed on '%s' with status: FMI_FATAL", mapping_1);
-							}
-							error "Failed to 'getBoolean' on 'mapping_1'";
-					}
 					mapping_1BoolShare[9] = mapping_1BoolIo[0];
-					dmodel_1UintVref[0] = 3;
+					dmodel_1UintVref[0] = 9;
 					dmodel_1BoolIo[0] = mapping_1BoolShare[9];
 					status = dmodel_1.setBoolean(dmodel_1UintVref, 1, dmodel_1BoolIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
@@ -821,66 +851,6 @@ import SimulationControl;
 									logger.log(4, "SetBoolean failed on '%s' with status: FMI_FATAL", dmodel_1);
 							}
 							error "Failed to 'setBoolean' on 'dmodel_1'";
-					}
-					mapping_1UintVref[0] = 48;
-					status = mapping_1.getReal(mapping_1UintVref, 1, mapping_1RealIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "GetReal failed on '%s' with status: FMI_ERROR", mapping_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "GetReal failed on '%s' with status: FMI_FATAL", mapping_1);
-							}
-							error "Failed to 'getReal' on 'mapping_1'";
-					}
-					mapping_1RealShare[2] = mapping_1RealIo[0];
-					dmodel_1UintVref[0] = 11;
-					dmodel_1RealIo[0] = mapping_1RealShare[2];
-					status = dmodel_1.setReal(dmodel_1UintVref, 1, dmodel_1RealIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "SetReal failed on '%s' with status: FMI_ERROR", dmodel_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "SetReal failed on '%s' with status: FMI_FATAL", dmodel_1);
-							}
-							error "Failed to 'setReal' on 'dmodel_1'";
-					}
-					dmodel_1UintVref[0] = 30;
-					status = dmodel_1.getReal(dmodel_1UintVref, 1, dmodel_1RealIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "GetReal failed on '%s' with status: FMI_ERROR", dmodel_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "GetReal failed on '%s' with status: FMI_FATAL", dmodel_1);
-							}
-							error "Failed to 'getReal' on 'dmodel_1'";
-					}
-					dmodel_1RealShare[0] = dmodel_1RealIo[0];
-					mapping_1UintVref[0] = 39;
-					mapping_1RealIo[0] = dmodel_1RealShare[0];
-					status = mapping_1.setReal(mapping_1UintVref, 1, mapping_1RealIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "SetReal failed on '%s' with status: FMI_ERROR", mapping_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "SetReal failed on '%s' with status: FMI_FATAL", mapping_1);
-							}
-							error "Failed to 'setReal' on 'mapping_1'";
 					}
 					dmodel_1UintVref[0] = 27;
 					status = dmodel_1.getString(dmodel_1UintVref, 1, dmodel_1StringIo);
@@ -912,36 +882,6 @@ import SimulationControl;
 							}
 							error "Failed to 'setString' on 'mapping_1'";
 					}
-					dmodel_1UintVref[0] = 28;
-					status = dmodel_1.getReal(dmodel_1UintVref, 1, dmodel_1RealIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "GetReal failed on '%s' with status: FMI_ERROR", dmodel_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "GetReal failed on '%s' with status: FMI_FATAL", dmodel_1);
-							}
-							error "Failed to 'getReal' on 'dmodel_1'";
-					}
-					dmodel_1RealShare[1] = dmodel_1RealIo[0];
-					mapping_1UintVref[0] = 36;
-					mapping_1RealIo[0] = dmodel_1RealShare[1];
-					status = mapping_1.setReal(mapping_1UintVref, 1, mapping_1RealIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "SetReal failed on '%s' with status: FMI_ERROR", mapping_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "SetReal failed on '%s' with status: FMI_FATAL", mapping_1);
-							}
-							error "Failed to 'setReal' on 'mapping_1'";
-					}
 					dmodel_1UintVref[0] = 31;
 					status = dmodel_1.getReal(dmodel_1UintVref, 1, dmodel_1RealIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
@@ -956,9 +896,9 @@ import SimulationControl;
 							}
 							error "Failed to 'getReal' on 'dmodel_1'";
 					}
-					dmodel_1RealShare[2] = dmodel_1RealIo[0];
+					dmodel_1RealShare[0] = dmodel_1RealIo[0];
 					mapping_1UintVref[0] = 40;
-					mapping_1RealIo[0] = dmodel_1RealShare[2];
+					mapping_1RealIo[0] = dmodel_1RealShare[0];
 					status = mapping_1.setReal(mapping_1UintVref, 1, mapping_1RealIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
 					{
@@ -986,8 +926,68 @@ import SimulationControl;
 							}
 							error "Failed to 'getReal' on 'dmodel_1'";
 					}
-					dmodel_1RealShare[3] = dmodel_1RealIo[0];
+					dmodel_1RealShare[1] = dmodel_1RealIo[0];
 					mapping_1UintVref[0] = 37;
+					mapping_1RealIo[0] = dmodel_1RealShare[1];
+					status = mapping_1.setReal(mapping_1UintVref, 1, mapping_1RealIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "SetReal failed on '%s' with status: FMI_ERROR", mapping_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "SetReal failed on '%s' with status: FMI_FATAL", mapping_1);
+							}
+							error "Failed to 'setReal' on 'mapping_1'";
+					}
+					dmodel_1UintVref[0] = 28;
+					status = dmodel_1.getReal(dmodel_1UintVref, 1, dmodel_1RealIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "GetReal failed on '%s' with status: FMI_ERROR", dmodel_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "GetReal failed on '%s' with status: FMI_FATAL", dmodel_1);
+							}
+							error "Failed to 'getReal' on 'dmodel_1'";
+					}
+					dmodel_1RealShare[2] = dmodel_1RealIo[0];
+					mapping_1UintVref[0] = 36;
+					mapping_1RealIo[0] = dmodel_1RealShare[2];
+					status = mapping_1.setReal(mapping_1UintVref, 1, mapping_1RealIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "SetReal failed on '%s' with status: FMI_ERROR", mapping_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "SetReal failed on '%s' with status: FMI_FATAL", mapping_1);
+							}
+							error "Failed to 'setReal' on 'mapping_1'";
+					}
+					dmodel_1UintVref[0] = 30;
+					status = dmodel_1.getReal(dmodel_1UintVref, 1, dmodel_1RealIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "GetReal failed on '%s' with status: FMI_ERROR", dmodel_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "GetReal failed on '%s' with status: FMI_FATAL", dmodel_1);
+							}
+							error "Failed to 'getReal' on 'dmodel_1'";
+					}
+					dmodel_1RealShare[3] = dmodel_1RealIo[0];
+					mapping_1UintVref[0] = 39;
 					mapping_1RealIo[0] = dmodel_1RealShare[3];
 					status = mapping_1.setReal(mapping_1UintVref, 1, mapping_1RealIo);
 					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
@@ -1076,22 +1076,22 @@ import SimulationControl;
 					bool dmodel_1CurrentTimeFullStep = true;
 					real dmodel_1CurrentTime = 0.0;
 					bool dmodel_1BoolIo[38];
-					real controller_1RealShare[3];
-					string controller_1StringShare[1];
 					real dmodel_1RealShare[4];
 					string dmodel_1StringShare[2];
 					real mapping_1RealShare[27];
 					bool mapping_1BoolShare[10];
 					string mapping_1StringShare[3];
-					real controller_1RealIo[4];
+					real controller_1RealShare[3];
+					string controller_1StringShare[1];
 					string controller_1StringIo[4];
+					real controller_1RealIo[4];
 					uint controller_1UintVref[4];
-					string mapping_1StringIo[67];
 					bool mapping_1BoolIo[67];
 					real mapping_1RealIo[67];
+					string mapping_1StringIo[67];
 					uint mapping_1UintVref[67];
-					real dmodel_1RealIo[38];
 					string dmodel_1StringIo[38];
+					real dmodel_1RealIo[38];
 					uint dmodel_1UintVref[38];
 					real jac_current_step_size = 0.0;
 					real jac_step_size = 0.0;
@@ -1104,21 +1104,6 @@ import SimulationControl;
 					jac_end_time = END_TIME;
 					string datawriter_headers[50] = { "{dmodel}.dmodel.state" , "{dmodel}.dmodel.d_model_event" , "{dmodel}.dmodel.d_model_event_args_0" , "{dmodel}.dmodel.d_model_event_args_1" , "{dmodel}.dmodel.d_model_event_args_2" , "{dmodel}.dmodel.d_model_event_args_3" , "{mapping}.mapping.controller_event" , "{mapping}.mapping.j0" , "{mapping}.mapping.j1" , "{mapping}.mapping.j2" , "{mapping}.mapping.j3" , "{mapping}.mapping.j4" , "{mapping}.mapping.j5" , "{mapping}.mapping.qd0" , "{mapping}.mapping.qd1" , "{mapping}.mapping.qd2" , "{mapping}.mapping.qd3" , "{mapping}.mapping.qd4" , "{mapping}.mapping.qd5" , "{mapping}.mapping.qdd0" , "{mapping}.mapping.qdd1" , "{mapping}.mapping.qdd2" , "{mapping}.mapping.qdd3" , "{mapping}.mapping.qdd4" , "{mapping}.mapping.qdd5" , "{mapping}.mapping.t0" , "{mapping}.mapping.t1" , "{mapping}.mapping.t2" , "{mapping}.mapping.t3" , "{mapping}.mapping.t4" , "{mapping}.mapping.t5" , "{mapping}.mapping.d_model_event" , "{mapping}.mapping.output_event" , "{mapping}.mapping.output_event_args_0" , "{mapping}.mapping.output_event_args_1" , "{mapping}.mapping.output_event_args_2" , "{mapping}.mapping.platform_event_0" , "{mapping}.mapping.platform_event_1" , "{mapping}.mapping.platform_event_2" , "{mapping}.mapping.platform_event_3" , "{mapping}.mapping.platform_event_4" , "{mapping}.mapping.platform_event_5" , "{mapping}.mapping.platform_event_6" , "{mapping}.mapping.platform_event_7" , "{mapping}.mapping.platform_event_8" , "{mapping}.mapping.platform_event_9" , "{controller}.controller.controller_event" , "{controller}.controller.controller_event_args_0" , "{controller}.controller.controller_event_args_1" , "{controller}.controller.controller_event_args_2" };
 					DataWriterConfig datawriter_configuration = dataWriter1.writeHeader(datawriter_headers);
-					dmodel_1UintVref[0] = 24;
-					dmodel_1UintVref[1] = 27;
-					status = dmodel_1.getString(dmodel_1UintVref, 2, dmodel_1StringIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", dmodel_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", dmodel_1);
-							}
-							error "Failed to 'getString' on 'dmodel_1'";
-					}
 					dmodel_1UintVref[0] = 28;
 					dmodel_1UintVref[1] = 29;
 					dmodel_1UintVref[2] = 30;
@@ -1135,6 +1120,37 @@ import SimulationControl;
 									logger.log(4, "GetReal failed on '%s' with status: FMI_FATAL", dmodel_1);
 							}
 							error "Failed to 'getReal' on 'dmodel_1'";
+					}
+					dmodel_1UintVref[0] = 24;
+					dmodel_1UintVref[1] = 27;
+					status = dmodel_1.getString(dmodel_1UintVref, 2, dmodel_1StringIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", dmodel_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", dmodel_1);
+							}
+							error "Failed to 'getString' on 'dmodel_1'";
+					}
+					mapping_1UintVref[0] = 0;
+					mapping_1UintVref[1] = 35;
+					mapping_1UintVref[2] = 46;
+					status = mapping_1.getString(mapping_1UintVref, 3, mapping_1StringIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", mapping_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", mapping_1);
+							}
+							error "Failed to 'getString' on 'mapping_1'";
 					}
 					mapping_1UintVref[0] = 11;
 					mapping_1UintVref[1] = 12;
@@ -1199,36 +1215,6 @@ import SimulationControl;
 							}
 							error "Failed to 'getBoolean' on 'mapping_1'";
 					}
-					mapping_1UintVref[0] = 0;
-					mapping_1UintVref[1] = 35;
-					mapping_1UintVref[2] = 46;
-					status = mapping_1.getString(mapping_1UintVref, 3, mapping_1StringIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", mapping_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", mapping_1);
-							}
-							error "Failed to 'getString' on 'mapping_1'";
-					}
-					controller_1UintVref[0] = 0;
-					status = controller_1.getString(controller_1UintVref, 1, controller_1StringIo);
-					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-					{
-							if( ((status == FMI_ERROR)) )
-							{
-									logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", controller_1);
-							}
-							if( ((status == FMI_FATAL)) )
-							{
-									logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", controller_1);
-							}
-							error "Failed to 'getString' on 'controller_1'";
-					}
 					controller_1UintVref[0] = 1;
 					controller_1UintVref[1] = 2;
 					controller_1UintVref[2] = 3;
@@ -1245,6 +1231,24 @@ import SimulationControl;
 							}
 							error "Failed to 'getReal' on 'controller_1'";
 					}
+					controller_1UintVref[0] = 0;
+					status = controller_1.getString(controller_1UintVref, 1, controller_1StringIo);
+					if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+					{
+							if( ((status == FMI_ERROR)) )
+							{
+									logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", controller_1);
+							}
+							if( ((status == FMI_FATAL)) )
+							{
+									logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", controller_1);
+							}
+							error "Failed to 'getString' on 'controller_1'";
+					}
+					controller_1StringShare[0] = controller_1StringIo[0];
+					controller_1RealShare[0] = controller_1RealIo[0];
+					controller_1RealShare[1] = controller_1RealIo[1];
+					controller_1RealShare[2] = controller_1RealIo[2];
 					mapping_1StringShare[0] = mapping_1StringIo[0];
 					mapping_1StringShare[1] = mapping_1StringIo[1];
 					mapping_1StringShare[2] = mapping_1StringIo[2];
@@ -1291,10 +1295,6 @@ import SimulationControl;
 					dmodel_1RealShare[1] = dmodel_1RealIo[1];
 					dmodel_1RealShare[2] = dmodel_1RealIo[2];
 					dmodel_1RealShare[3] = dmodel_1RealIo[3];
-					controller_1StringShare[0] = controller_1StringIo[0];
-					controller_1RealShare[0] = controller_1RealIo[0];
-					controller_1RealShare[1] = controller_1RealIo[1];
-					controller_1RealShare[2] = controller_1RealIo[2];
 					real fmu_communicationpoints[3];
 					dataWriter1.writeDataPoint(datawriter_configuration, jac_current_communication_point, dmodel_1StringShare[0], dmodel_1StringShare[1], dmodel_1RealShare[0], dmodel_1RealShare[1], dmodel_1RealShare[2], dmodel_1RealShare[3], mapping_1StringShare[0], mapping_1RealShare[0], mapping_1RealShare[1], mapping_1RealShare[2], mapping_1RealShare[3], mapping_1RealShare[4], mapping_1RealShare[5], mapping_1RealShare[6], mapping_1RealShare[7], mapping_1RealShare[8], mapping_1RealShare[9], mapping_1RealShare[10], mapping_1RealShare[11], mapping_1RealShare[12], mapping_1RealShare[13], mapping_1RealShare[14], mapping_1RealShare[15], mapping_1RealShare[16], mapping_1RealShare[17], mapping_1RealShare[18], mapping_1RealShare[19], mapping_1RealShare[20], mapping_1RealShare[21], mapping_1RealShare[22], mapping_1RealShare[23], mapping_1StringShare[1], mapping_1StringShare[2], mapping_1RealShare[24], mapping_1RealShare[25], mapping_1RealShare[26], mapping_1BoolShare[0], mapping_1BoolShare[1], mapping_1BoolShare[2], mapping_1BoolShare[3], mapping_1BoolShare[4], mapping_1BoolShare[5], mapping_1BoolShare[6], mapping_1BoolShare[7], mapping_1BoolShare[8], mapping_1BoolShare[9], controller_1StringShare[0], controller_1RealShare[0], controller_1RealShare[1], controller_1RealShare[2]);
 					bool any_discards = false;
@@ -1499,6 +1499,52 @@ import SimulationControl;
 								logger.log(1, "## FMU: '%s' DISCARDED step at sim-time: %f for step-size: %f and proposed sim-time: %.15f", "controller_1", jac_current_communication_point, jac_current_step_size, controller_1CurrentTime);
 								any_discards = any_discards || !controller_1CurrentTimeFullStep;
 						}
+						controller_1UintVref[0] = 1;
+						controller_1UintVref[1] = 2;
+						controller_1UintVref[2] = 3;
+						status = controller_1.getReal(controller_1UintVref, 3, controller_1RealIo);
+						if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+						{
+								if( ((status == FMI_ERROR)) )
+								{
+										logger.log(4, "GetReal failed on '%s' with status: FMI_ERROR", controller_1);
+								}
+								if( ((status == FMI_FATAL)) )
+								{
+										logger.log(4, "GetReal failed on '%s' with status: FMI_FATAL", controller_1);
+								}
+								error "Failed to 'getReal' on 'controller_1'";
+						}
+						controller_1UintVref[0] = 0;
+						status = controller_1.getString(controller_1UintVref, 1, controller_1StringIo);
+						if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+						{
+								if( ((status == FMI_ERROR)) )
+								{
+										logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", controller_1);
+								}
+								if( ((status == FMI_FATAL)) )
+								{
+										logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", controller_1);
+								}
+								error "Failed to 'getString' on 'controller_1'";
+						}
+						mapping_1UintVref[0] = 0;
+						mapping_1UintVref[1] = 35;
+						mapping_1UintVref[2] = 46;
+						status = mapping_1.getString(mapping_1UintVref, 3, mapping_1StringIo);
+						if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
+						{
+								if( ((status == FMI_ERROR)) )
+								{
+										logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", mapping_1);
+								}
+								if( ((status == FMI_FATAL)) )
+								{
+										logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", mapping_1);
+								}
+								error "Failed to 'getString' on 'mapping_1'";
+						}
 						mapping_1UintVref[0] = 11;
 						mapping_1UintVref[1] = 12;
 						mapping_1UintVref[2] = 13;
@@ -1562,37 +1608,6 @@ import SimulationControl;
 								}
 								error "Failed to 'getBoolean' on 'mapping_1'";
 						}
-						mapping_1UintVref[0] = 0;
-						mapping_1UintVref[1] = 35;
-						mapping_1UintVref[2] = 46;
-						status = mapping_1.getString(mapping_1UintVref, 3, mapping_1StringIo);
-						if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-						{
-								if( ((status == FMI_ERROR)) )
-								{
-										logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", mapping_1);
-								}
-								if( ((status == FMI_FATAL)) )
-								{
-										logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", mapping_1);
-								}
-								error "Failed to 'getString' on 'mapping_1'";
-						}
-						dmodel_1UintVref[0] = 24;
-						dmodel_1UintVref[1] = 27;
-						status = dmodel_1.getString(dmodel_1UintVref, 2, dmodel_1StringIo);
-						if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-						{
-								if( ((status == FMI_ERROR)) )
-								{
-										logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", dmodel_1);
-								}
-								if( ((status == FMI_FATAL)) )
-								{
-										logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", dmodel_1);
-								}
-								error "Failed to 'getString' on 'dmodel_1'";
-						}
 						dmodel_1UintVref[0] = 28;
 						dmodel_1UintVref[1] = 29;
 						dmodel_1UintVref[2] = 30;
@@ -1610,36 +1625,25 @@ import SimulationControl;
 								}
 								error "Failed to 'getReal' on 'dmodel_1'";
 						}
-						controller_1UintVref[0] = 0;
-						status = controller_1.getString(controller_1UintVref, 1, controller_1StringIo);
+						dmodel_1UintVref[0] = 24;
+						dmodel_1UintVref[1] = 27;
+						status = dmodel_1.getString(dmodel_1UintVref, 2, dmodel_1StringIo);
 						if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
 						{
 								if( ((status == FMI_ERROR)) )
 								{
-										logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", controller_1);
+										logger.log(4, "GetString failed on '%s' with status: FMI_ERROR", dmodel_1);
 								}
 								if( ((status == FMI_FATAL)) )
 								{
-										logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", controller_1);
+										logger.log(4, "GetString failed on '%s' with status: FMI_FATAL", dmodel_1);
 								}
-								error "Failed to 'getString' on 'controller_1'";
+								error "Failed to 'getString' on 'dmodel_1'";
 						}
-						controller_1UintVref[0] = 1;
-						controller_1UintVref[1] = 2;
-						controller_1UintVref[2] = 3;
-						status = controller_1.getReal(controller_1UintVref, 3, controller_1RealIo);
-						if( (((status == FMI_ERROR) || (status == FMI_FATAL))) )
-						{
-								if( ((status == FMI_ERROR)) )
-								{
-										logger.log(4, "GetReal failed on '%s' with status: FMI_ERROR", controller_1);
-								}
-								if( ((status == FMI_FATAL)) )
-								{
-										logger.log(4, "GetReal failed on '%s' with status: FMI_FATAL", controller_1);
-								}
-								error "Failed to 'getReal' on 'controller_1'";
-						}
+						controller_1StringShare[0] = controller_1StringIo[0];
+						controller_1RealShare[0] = controller_1RealIo[0];
+						controller_1RealShare[1] = controller_1RealIo[1];
+						controller_1RealShare[2] = controller_1RealIo[2];
 						mapping_1StringShare[0] = mapping_1StringIo[0];
 						mapping_1StringShare[1] = mapping_1StringIo[1];
 						mapping_1StringShare[2] = mapping_1StringIo[2];
@@ -1686,10 +1690,6 @@ import SimulationControl;
 						dmodel_1RealShare[1] = dmodel_1RealIo[1];
 						dmodel_1RealShare[2] = dmodel_1RealIo[2];
 						dmodel_1RealShare[3] = dmodel_1RealIo[3];
-						controller_1StringShare[0] = controller_1StringIo[0];
-						controller_1RealShare[0] = controller_1RealIo[0];
-						controller_1RealShare[1] = controller_1RealIo[1];
-						controller_1RealShare[2] = controller_1RealIo[2];
 						if( ((!any_discards)) )
 						{
 								jac_current_communication_point = jac_current_communication_point + jac_current_step_size;

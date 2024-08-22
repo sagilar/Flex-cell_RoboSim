@@ -6,8 +6,7 @@ echo "-----------------------------"
 maestro_path=/home/santiago/Aarhus/Maestro2 # Change path accordingly
 output_path=results # Change accordingly
 #java -jar $maestro_path/maestro-2.4.1-jar-with-dependencies.jar import sg1 coe.json multimodel.json -output generate 
-#java -jar $maestro_path/maestro-2.3.0-jar-with-dependencies.jar import sg1 coe.json multimodel.json -output generate
-java -jar $maestro_path/maestro-2.3.0-jar-with-dependencies.jar import sg1 coe.json multimodel_normq_UR3e_CoppeliaSim.json -output generate ## Update according to the experiment to run
+java -jar $maestro_path/maestro-2.3.0-jar-with-dependencies.jar import sg1 coe.json multimodel_normq_UR3e_CoppeliaSim.json -output generate ## Update the json specification according to the experiment to run
 
 echo "-----------------------------"
 echo "Interpretation"

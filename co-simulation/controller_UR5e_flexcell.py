@@ -7,7 +7,7 @@ import time
 
 ## Co-sim properties
 timestep=0.5
-max_time = 15.0 + 5.0
+max_time = 20.0
 
 rabbitmq_host = "localhost"
 rabbitmq_port = 5672
@@ -59,13 +59,13 @@ def publish():
                 msg['controller_event'] = "moveDiscreteCommand"
                 msg['controller_event_args_0'] = 0.0
                 msg['controller_event_args_1'] = 23.0
-                msg['controller_event_args_2'] = 2.0
+                msg['controller_event_args_2'] = 1.0
 
             elif (i==11):
                 msg['controller_event'] = "moveDiscreteCommand"
                 msg['controller_event_args_0'] = 3.0
                 msg['controller_event_args_1'] = 20.0
-                msg['controller_event_args_2'] = 3.0
+                msg['controller_event_args_2'] = 2.0
 
             elif (i==16):
                 msg['controller_event'] = "moveDiscreteCommand"
@@ -73,11 +73,11 @@ def publish():
                 msg['controller_event_args_1'] = 10.0
                 msg['controller_event_args_2'] = 0.0
 
-            elif (i==25):
+            elif (i==30):
                 msg['controller_event'] = "moveDiscreteCommand"
-                msg['controller_event_args_0'] = 11.0
-                msg['controller_event_args_1'] = 16.0
-                msg['controller_event_args_2'] = 4.0
+                msg['controller_event_args_0'] = 1.0
+                msg['controller_event_args_1'] = 13.0
+                msg['controller_event_args_2'] = 0.0
             else:
                 msg['controller_event'] = ""
                 msg['controller_event_args_0'] = 0.0

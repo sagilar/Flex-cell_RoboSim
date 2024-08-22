@@ -23,23 +23,23 @@ class Model:
             self.controller_event = "moveDiscreteCommand"
             self.controller_event_args_0 = 0.0
             self.controller_event_args_1 = 23.0
-            self.controller_event_args_2 = 2.0
+            self.controller_event_args_2 = 1.0
         elif (idx==11):
             self.controller_event = "moveDiscreteCommand"
             self.controller_event_args_0 = 3.0
             self.controller_event_args_1 = 20.0
-            self.controller_event_args_2 = 3.0
+            self.controller_event_args_2 = 2.0
 
         elif (idx==16):
             self.controller_event = "moveDiscreteCommand"
             self.controller_event_args_0 = 8.0
             self.controller_event_args_1 = 10.0
             self.controller_event_args_2 = 0.0
-        elif (idx==25):
+        elif (idx==30):
             self.controller_event = "moveDiscreteCommand"
-            self.controller_event_args_0 = 11.0
-            self.controller_event_args_1 = 16.0
-            self.controller_event_args_2 = 4.0
+            self.controller_event_args_0 = 1.0
+            self.controller_event_args_1 = 13.0
+            self.controller_event_args_2 = 0.0
         else:
             self.controller_event = ""
             self.controller_event_args_0 = 0.0

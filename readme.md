@@ -9,6 +9,10 @@ git clone git@github.com:sagilar/Flex-cell_RoboSim.git
 </pre>
 2. Install CoppeillaSim (Ubuntu 22.04):
   https://www.coppeliarobotics.com/
+3 Install ZeroMQ to communicate remotely with Coppeila:
+<pre>
+  python3 -m pip install coppeliasim-zmqremoteapi-client
+</pre>
 
 
 ## Models

@@ -2,6 +2,19 @@
 
 This repository contains the source code to create a model-based Digital Twin implementation for the Universal Robots UR3e and UR5e robotic arm in a co-simulation setting using [RoboStar](https://github.com/UoY-RoboStar) technology and [CoppeliaSim](https://github.com/CoppeliaRobotics). This case study has been used in another setup, the [Flex-cell](https://github.com/INTO-CPS-Association/DTaaS-examples/tree/main/digital_twins/flex-cell), this time only including the UR5e and not the Kuka LBR iiwa 7.
 
+## Installation
+1. Clone this repository.
+<pre>
+git clone git@github.com:sagilar/Flex-cell_RoboSim.git
+</pre>
+2. Install CoppeillaSim (Ubuntu 22.04):
+  https://www.coppeliarobotics.com/
+3 Install ZeroMQ to communicate remotely with Coppeila:
+<pre>
+  python3 -m pip install coppeliasim-zmqremoteapi-client
+</pre>
+
+
 ## Models
 The RoboSim models are available in the folders ```robosim_models/UR3e``` and ```robosim_models/UR5e```. More precisely, the ```p-model``` is contained in the file ```ur5e_gripper.pm```, the ```d-model``` in the file ```ur5e_gripper.rst```, and the ```platform mapping model``` in the file ```mapping.pm```. [RoboTool](https://robostar.cs.york.ac.uk/robotool/) is required to access the models using the Eclipse Modeling Framework.
 

@@ -24,11 +24,6 @@ sensor VelocitySensor {
 	equation input_vel == output_vel
 }
 
-sensor AngularPositionSensor {
-	input input_angle: real
-	output output_angle: real
-	equation input_angle == output_angle
-}
 
 sensor PositionSensor {
 	input input_position: real
@@ -72,16 +67,7 @@ pmodel ur5e_gripper {
 	const MASS5: real = 1.3
 	const MASS6: real = 0.365 
 
-	// OnRobot 2FG7 gripper
-	const GRIPPER_BODY_LENGTH: real = 0.071
-	const GRIPPER_BODY_WIDTH: real = 0.09
-	const GRIPPER_BODY_HEIGHT: real = 0.1445
-	const GRIPPER_FINGER_LENGTH: real = 0.032
-	const GRIPPER_FINGER_WIDTH: real = 0.005
-	const GRIPPER_FINGER_HEIGHT: real = 0.045	
-	const GRIP_WIDTH_MAX: real = 0.073
-	const GRIP_WIDTH_MIN: real = 0.035
-	const GRIPPER_MASS: real = 1.1
+	
 	
 
 
@@ -139,7 +125,7 @@ pmodel ur5e_gripper {
 		sref FSJ1 = ForceSensor
 		sref VSJ1 = VelocitySensor
 		sref TSJ1 = TorqueSensor
-		sref APSJ1 = AngularPositionSensor
+		sref PSJ1 = PositionSensor
 		pose {
 			x = 0.0
 			y = 0.0
@@ -209,7 +195,7 @@ pmodel ur5e_gripper {
 		sref FSJ2 = ForceSensor
 		sref VSJ2 = VelocitySensor
 		sref TSJ2 = TorqueSensor
-		sref APSJ2 = AngularPositionSensor
+		sref PSJ2 = PositionSensor
 		pose {
 			x = 0.0
 			y = 0.0//-0.13387
@@ -278,7 +264,7 @@ pmodel ur5e_gripper {
 		sref FSJ3 = ForceSensor
 		sref VSJ3 = VelocitySensor
 		sref TSJ3 = TorqueSensor
-		sref APSJ3 = AngularPositionSensor
+		sref PSJ3 = PositionSensor
 		pose {
 			x = 0.0
 			y = 0.13585
@@ -340,7 +326,7 @@ pmodel ur5e_gripper {
 		sref FSJ4 = ForceSensor
 		sref VSJ4 = VelocitySensor
 		sref TSJ4 = TorqueSensor
-		sref APSJ4 = AngularPositionSensor
+		sref PSJ4 = PositionSensor
 		pose {
 			x = 0.425
 			y = 0.01615
@@ -401,7 +387,7 @@ pmodel ur5e_gripper {
 		sref FSJ5 = ForceSensor
 		sref VSJ5 = VelocitySensor
 		sref TSJ5 = TorqueSensor
-		sref APSJ5 = AngularPositionSensor
+		sref PSJ5 = PositionSensor
 		pose {
 			x = 0.81725
 			y = 0.01615
@@ -462,7 +448,7 @@ pmodel ur5e_gripper {
 		sref FSJ6 = ForceSensor
 		sref VSJ6 = VelocitySensor
 		sref TSJ6 = TorqueSensor
-		sref APSJ6 = AngularPositionSensor
+		sref PSJ6 = PositionSensor
 		pose {
 			x = 0.81725
 			y = 0.10915
@@ -473,6 +459,7 @@ pmodel ur5e_gripper {
 		}
 	}
 	local link wrist_3_link {
+		fixed to link_2fg7_base in Gripper
 		def {
 		inertial information {
 				mass MASS6 kg
@@ -499,9 +486,57 @@ pmodel ur5e_gripper {
 			pitch = 0.0
 			yaw = PI
 		}
-		fixed to link_2fg7_base		
+	}
+	part Gripper = Gripper {
+		
 	}
 	
+	
+
+}
+
+actuator Gripper {
+}
+
+actuator ServoMotor {
+	
+	input dangle: real 
+	input angular_vel: real //modified
+	output T: real
+	local Tm: real, Vemf: real, Tf: real 
+	local V: real, i: real
+	output theta: real, av: real, e: real
+	
+	const b: real, Ke: real, Kt: real
+	const R: real, L: real
+	const Kp: real, Ki: real, Kd: real
+	
+	//equation av == derivative(theta)
+	equation av == angular_vel
+	//if angular_vel == 0 then av == 0
+	equation Tm == Kt*i
+	equation Vemf == Ke*av
+	equation Tf == b*av
+	equation T == Tm - Tf
+	equation V == i*R+L*derivative(i)+Vemf 
+	equation e == dangle-theta //das - av
+	equation V == Kp*e+Ki*integral(e,0,t)+Kd*derivative(e)
+}
+
+pmodel Gripper {
+	//From rest of model TODO need to ensure information is not duplicated!
+	const WRIST3_RADIUS: real = 0.075/2
+	const PI: real = 3.1415	
+	// OnRobot 2FG7 gripper
+	const GRIPPER_BODY_LENGTH: real = 0.071
+	const GRIPPER_BODY_WIDTH: real = 0.09
+	const GRIPPER_BODY_HEIGHT: real = 0.1445
+	const GRIPPER_FINGER_LENGTH: real = 0.032
+	const GRIPPER_FINGER_WIDTH: real = 0.005
+	const GRIPPER_FINGER_HEIGHT: real = 0.045	
+	const GRIP_WIDTH_MAX: real = 0.073
+	const GRIP_WIDTH_MIN: real = 0.035
+	const GRIPPER_MASS: real = 1.1
 	local link link_2fg7_base {
 		def {
 		inertial information {
@@ -664,33 +699,4 @@ pmodel ur5e_gripper {
 		
 		
 	}
-
-}
-
-actuator Gripper {
-}
-
-actuator ServoMotor {
-	
-	input dangle: real 
-	input angular_vel: real //modified
-	output T: real
-	local Tm: real, Vemf: real, Tf: real 
-	local V: real, i: real
-	output theta: real, av: real, e: real
-	
-	const b: real, Ke: real, Kt: real
-	const R: real, L: real
-	const Kp: real, Ki: real, Kd: real
-	
-	//equation av == derivative(theta)
-	equation av == angular_vel
-	//if angular_vel == 0 then av == 0
-	equation Tm == Kt*i
-	equation Vemf == Ke*av
-	equation Tf == b*av
-	equation T == Tm - Tf
-	equation V == i*R+L*derivative(i)+Vemf 
-	equation e == dangle-theta //das - av
-	equation V == Kp*e+Ki*integral(e,0,t)+Kd*derivative(e)
 }

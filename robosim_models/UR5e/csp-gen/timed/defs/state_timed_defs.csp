@@ -20,6 +20,8 @@ channel share__, timed_share__
 -- Definition of RUN that includes tock
 CRUN(x__) = RUN(union(x__,{tock}))
 
+TRUN(x__) = CRUN(x__)
+
 -- Timed version of SStop
 SStop = CRUN({|share__|})
 

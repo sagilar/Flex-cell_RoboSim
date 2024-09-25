@@ -88,10 +88,23 @@ pmodel ur5e_gripper {
 				z = 0.0
 				roll = 0.0
 				pitch = 0.0
-				yaw = 0.0 //
+				yaw = 0.0//
 			}
 		}
 		jref shoulder_pan_joint = Revolute {
+			instantiation AXIS = (|0,0,1|)
+			aref M1 = ServoMotor {
+				relation shoulder_pan_joint.tau == M1.T
+			}
+			flexibly connected to shoulder_link
+			pose {
+				x = 0.0
+				y = 0.0//0.13387//0.0
+				z = 0.0988//0.0//0.0988
+				roll = 0.0
+				pitch = 0.0
+				yaw = 0.0
+			}
 			annotation Revolute  {
 				axis=Axis{
 					xyz = (|0,0,1|)
@@ -108,19 +121,6 @@ pmodel ur5e_gripper {
 				}
 			}
 			
-		instantiation AXIS = (|0,0,1|)
-			aref M1 = ServoMotor {
-				relation shoulder_pan_joint.tau == M1.T
-			}
-			flexibly connected to shoulder_link
-			pose {
-				x = 0.0
-				y = 0.0 //0.13387//0.0
-				z = 0.0988 //0.0//0.0988
-				roll = 0.0
-				pitch = 0.0
-				yaw = 0.0
-			}
 		}
 		sref FSJ1 = ForceSensor
 		sref VSJ1 = VelocitySensor
@@ -156,14 +156,27 @@ pmodel ur5e_gripper {
 			}
 			pose {
 				x = 0.0
-				y = 0.0 //0.00193
-				z = SHOULDER_LINK_LENGTH/2 - BASELEN/2 //-0.02561
+				y = 0.0//0.00193
+				z = SHOULDER_LINK_LENGTH/2 - BASELEN/2//-0.02561
 				roll = 0.0
 				pitch = 0.0
 				yaw = PI/2
 			}
 		}
 		jref shoulder_lift_joint = Revolute {
+			instantiation AXIS = (|0,1,0|)//(|0,1,0|)
+			aref M2 = ServoMotor {
+				relation shoulder_lift_joint.tau == M2.T
+			}
+			flexibly connected to upper_arm_link
+			pose {
+				x = 0.0
+				y = SHOULDER_RADIUS
+				z = 0.0
+				roll = 0.0
+				pitch = 0.0
+				yaw = 0.0
+			}
 			annotation Revolute  {
 				axis=Axis{
 					xyz = (|0,1,0|)
@@ -178,19 +191,6 @@ pmodel ur5e_gripper {
 					}
 				}
 			}
-		instantiation AXIS = (|0,1,0|) //(|0,1,0|)
-			aref M2 = ServoMotor {
-				relation shoulder_lift_joint.tau == M2.T
-			}
-			flexibly connected to upper_arm_link
-			pose {
-				x = 0.0
-				y = SHOULDER_RADIUS
-				z = 0.0
-				roll = 0.0
-				pitch = 0.0
-				yaw = 0.0
-			}
 		}
 		sref FSJ2 = ForceSensor
 		sref VSJ2 = VelocitySensor
@@ -198,7 +198,7 @@ pmodel ur5e_gripper {
 		sref PSJ2 = PositionSensor
 		pose {
 			x = 0.0
-			y = 0.0 //-0.13387
+			y = 0.0//-0.13387
 			z = 0.089159
 			roll = 0.0
 			pitch = 0.0
@@ -226,13 +226,26 @@ pmodel ur5e_gripper {
 			pose {
 				x = 0.0
 				y = 0.0
-				z = UPPER_ARM_LINK_LENGTH/2 - SHOULDER_LINK_LENGTH/2 //0.2125
+				z = UPPER_ARM_LINK_LENGTH/2 - SHOULDER_LINK_LENGTH/2//0.2125
 				roll = 0.0
 				pitch = 0.0
 				yaw = 0.0
 			}
 		}
 		jref elbow_joint = Revolute {
+			instantiation AXIS = (|0,1,0|)
+			aref M3 = ServoMotor {
+				relation elbow_joint.tau == M3.T
+			}
+			flexibly connected to forearm_link
+			pose {
+				x = 0.0
+				y = -UPPERARM_RADIUS
+				z = (UPPER_ARM_LINK_LENGTH-2*SHOULDER_RADIUS)
+				roll = 0.0
+				pitch = 0.0
+				yaw = 0.0
+			}
 			annotation Revolute  {
 				axis=Axis{
 					xyz = (|0,1,0|)
@@ -246,19 +259,6 @@ pmodel ur5e_gripper {
 						effort = 1000
 					}
 				}
-			}
-		instantiation AXIS = (|0,1,0|)
-			aref M3 = ServoMotor {
-				relation elbow_joint.tau == M3.T
-			}
-			flexibly connected to forearm_link
-			pose {
-				x = 0.0
-				y = -UPPERARM_RADIUS
-				z = (UPPER_ARM_LINK_LENGTH-2*SHOULDER_RADIUS)
-				roll = 0.0
-				pitch = 0.0
-				yaw = 0.0
 			}
 		}
 		sref FSJ3 = ForceSensor
@@ -295,6 +295,19 @@ pmodel ur5e_gripper {
 			}
 		}
 		jref wrist_1_joint = Revolute {
+			instantiation AXIS = (|0,1,0|)
+			aref M4 = ServoMotor {
+				relation wrist_1_joint.tau == M4.T
+			}
+			flexibly connected to wrist_1_link
+			pose {
+				x = 0.0
+				y = 0.0//2*FOREARM_RADIUS
+				z = (FOREARM_LINK_LENGTH-2.5*FOREARM_RADIUS)
+				roll = 0.0
+				pitch = 0.0
+				yaw = 0.0
+			}
 			annotation Revolute  {
 				axis=Axis{
 					xyz = (|0,1,0|)
@@ -308,19 +321,6 @@ pmodel ur5e_gripper {
 						effort = 1000
 					}
 				}
-			}
-		instantiation AXIS = (|0,1,0|)
-			aref M4 = ServoMotor {
-				relation wrist_1_joint.tau == M4.T
-			}
-			flexibly connected to wrist_1_link
-			pose {
-				x = 0.0
-				y = 0.0 //2*FOREARM_RADIUS
-				z = (FOREARM_LINK_LENGTH-2.5*FOREARM_RADIUS)
-				roll = 0.0
-				pitch = 0.0
-				yaw = 0.0
 			}
 		}
 		sref FSJ4 = ForceSensor
@@ -356,6 +356,19 @@ pmodel ur5e_gripper {
 			}
 		}
 		jref wrist_2_joint = Revolute {
+			instantiation AXIS = (|0,0,-1|)
+			aref M5 = ServoMotor {
+				relation wrist_2_joint.tau == M5.T
+			}
+			flexibly connected to wrist_2_link
+			pose {
+				x = 0.0
+				y = WRIST1_LINK_LENGTH-WRIST2_RADIUS/6
+				z = WRIST1_RADIUS
+				roll = 0.0
+				pitch = 0.0
+				yaw = 0.0
+			}
 			annotation Revolute  {
 				axis=Axis{
 					xyz = (|0,0,-1|)
@@ -369,19 +382,6 @@ pmodel ur5e_gripper {
 						effort = 1000
 					}
 				}
-			}
-		instantiation AXIS = (|0,0,-1|)
-			aref M5 = ServoMotor {
-				relation wrist_2_joint.tau == M5.T
-			}
-			flexibly connected to wrist_2_link
-			pose {
-				x = 0.0
-				y = WRIST1_LINK_LENGTH-WRIST2_RADIUS/6
-				z = WRIST1_RADIUS
-				roll = 0.0
-				pitch = 0.0
-				yaw = 0.0
 			}
 		}
 		sref FSJ5 = ForceSensor
@@ -417,6 +417,19 @@ pmodel ur5e_gripper {
 			}
 		}
 		jref wrist_3_joint = Revolute {
+			instantiation AXIS = (|0,1,0|)
+			aref M6 = ServoMotor {
+				relation wrist_3_joint.tau == M6.T
+			}
+			flexibly connected to wrist_3_link
+			pose {
+				x = 0.0
+				y = WRIST2_RADIUS
+				z = WRIST2_LINK_LENGTH
+				roll = 0.0
+				pitch = 0.0
+				yaw = 0.0
+			}
 			annotation Revolute  {
 				axis=Axis{
 					xyz = (|0,1,0|)
@@ -430,19 +443,6 @@ pmodel ur5e_gripper {
 						effort = 1000
 					}
 				}
-			}
-		instantiation AXIS = (|0,1,0|)
-			aref M6 = ServoMotor {
-				relation wrist_3_joint.tau == M6.T
-			}
-			flexibly connected to wrist_3_link
-			pose {
-				x = 0.0
-				y = WRIST2_RADIUS
-				z = WRIST2_LINK_LENGTH
-				roll = 0.0
-				pitch = 0.0
-				yaw = 0.0
 			}
 		}
 		sref FSJ6 = ForceSensor
@@ -495,6 +495,34 @@ pmodel ur5e_gripper {
 
 }
 
+actuator Gripper {
+}
+
+actuator ServoMotor {
+	
+	input dangle: real 
+	input angular_vel: real //modified
+	output T: real
+	local Tm: real, Vemf: real, Tf: real 
+	local V: real, i: real
+	output theta: real, av: real, e: real
+	
+	const b: real, Ke: real, Kt: real
+	const R: real, L: real
+	const Kp: real, Ki: real, Kd: real
+	
+	//equation av == derivative(theta)
+	equation av == angular_vel
+	//if angular_vel == 0 then av == 0
+	equation Tm == Kt*i
+	equation Vemf == Ke*av
+	equation Tf == b*av
+	equation T == Tm - Tf
+	equation V == i*R+L*derivative(i)+Vemf 
+	equation e == dangle-theta //das - av
+	equation V == Kp*e+Ki*integral(e,0,t)+Kd*derivative(e)
+}
+
 pmodel Gripper {
 	//From rest of model TODO need to ensure information is not duplicated!
 	const WRIST3_RADIUS: real = 0.075/2
@@ -539,6 +567,19 @@ pmodel Gripper {
 		aref GR1 = Gripper //perhaps not needed if the finger joints are successfully added
 		
 		jref leftFingerGripper = Prismatic {
+			instantiation AXIS = (|0,0,-1|)
+			aref leftFingerMotor = ServoMotor {
+				relation leftFingerGripper.tau == leftFingerMotor.T
+			}
+			pose {
+				x = 0.0
+				y = -0.032239 
+				z = GRIPPER_BODY_HEIGHT/2
+				roll = -PI/2//0.0
+				pitch = 0.0
+				yaw = 0.0
+			}
+			flexibly connected to leftFingerLink
 			annotation Prismatic  {
 				axis=Axis{
 					xyz = (|0,0,-1|)
@@ -553,19 +594,6 @@ pmodel Gripper {
 					}
 				}
 			}
-		instantiation AXIS = (|0,0,-1|)
-			aref leftFingerMotor = ServoMotor {
-				relation leftFingerGripper.tau == leftFingerMotor.T
-			}
-			pose {
-				x = 0.0
-				y = -0.032239 
-				z = GRIPPER_BODY_HEIGHT/2
-				roll = -PI/2 //0.0
-				pitch = 0.0
-				yaw = 0.0
-			}
-			flexibly connected to leftFingerLink
 		}
 		sref FSLF = ForceSensor
 		sref VSLF = VelocitySensor
@@ -573,6 +601,20 @@ pmodel Gripper {
 		sref PSLF = PositionSensor
 		
 		jref rightFingerGripper = Prismatic {
+			instantiation AXIS = (|0,0,1|)
+			aref rightFingerMotor = ServoMotor {
+				relation rightFingerGripper.tau == rightFingerMotor.T
+			}
+			
+			pose {
+				x = 0.0
+				y = 0.032239
+				z = GRIPPER_BODY_HEIGHT/2
+				roll = -PI/2
+				pitch = 0.0
+				yaw = 0.0
+			}
+			flexibly connected to rightFingerLink
 			annotation Prismatic  {
 				axis=Axis{
 					xyz = (|0,0,1|)
@@ -587,20 +629,6 @@ pmodel Gripper {
 					}
 				}
 			}
-		instantiation AXIS = (|0,0,1|)
-			aref rightFingerMotor = ServoMotor {
-				relation rightFingerGripper.tau == rightFingerMotor.T
-			}
-			
-			pose {
-				x = 0.0
-				y = 0.032239
-				z = GRIPPER_BODY_HEIGHT/2
-				roll = -PI/2
-				pitch = 0.0
-				yaw = 0.0
-			}
-			flexibly connected to rightFingerLink
 		}
 		sref FSRF = ForceSensor
 		sref VSRF = VelocitySensor
@@ -671,30 +699,4 @@ pmodel Gripper {
 		
 		
 	}
-}actuator Gripper {
-}
-
-actuator ServoMotor {
-	
-	input dangle: real 
-	input angular_vel: real //modified
-	output T: real
-	local Tm: real, Vemf: real, Tf: real 
-	local V: real, i: real
-	output theta: real, av: real, e: real
-	
-	const b: real, Ke: real, Kt: real
-	const R: real, L: real
-	const Kp: real, Ki: real, Kd: real
-	
-	//equation av == derivative(theta)
-	equation av == angular_vel
-	//if angular_vel == 0 then av == 0
-	equation Tm == Kt*i
-	equation Vemf == Ke*av
-	equation Tf == b*av
-	equation T == Tm - Tf
-	equation V == i*R+L*derivative(i)+Vemf 
-	equation e == dangle-theta //das - av
-	equation V == Kp*e+Ki*integral(e,0,t)+Kd*derivative(e)
 }

@@ -80,6 +80,12 @@ TimeOut_1(P__,Q__) = (USTOP[+{tock}+]P__) [] (tock -> Q__)
 
 TimedInterrupt_1(P__) = (USTOP[+{tock}+]P__) /\ (tock -> TSKIP)
 
+TimedInterruptSeq(e__,d__,Q__) =
+	let
+		TT(n__) = if n__ < d__ then TimeOut_1(e__ -> SKIP,TT(n__ + 1)) else Q__
+	within
+		TT(0)
+
 -- The following process TCHAOS is a version of CHAOS suitable for use
 -- in tick-tock: it offers the events in S__ non-deterministically and
 -- can either timelock or deadlock. Note that tock does not need to

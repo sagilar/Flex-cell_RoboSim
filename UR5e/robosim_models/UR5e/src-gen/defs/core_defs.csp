@@ -1,0 +1,5 @@
+LSeq(X,0) = {<>}
+LSeq(X,n) = let s = LSeq(X,n-1) within union(s,{<x>^xs|x<-X,xs<-s})
+
+ILSeq(X,0) = {<>}
+ILSeq(X,n) = let s = ILSeq(X,n-1) within union(s,{<x>^xs|x<-X,xs<-s,not elem(x,xs)})

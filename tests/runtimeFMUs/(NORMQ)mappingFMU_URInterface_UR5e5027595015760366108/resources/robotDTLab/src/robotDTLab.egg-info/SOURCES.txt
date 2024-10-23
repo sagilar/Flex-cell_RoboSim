@@ -1,5 +1,0 @@
-setup.py
-src/robotDTLab.egg-info/PKG-INFO
-src/robotDTLab.egg-info/SOURCES.txt
-src/robotDTLab.egg-info/dependency_links.txt
-src/robotDTLab.egg-info/top_level.txt

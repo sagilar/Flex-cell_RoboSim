@@ -1,0 +1,43 @@
+{
+    "fmus": {
+        "{rmqfmu}": "../controller/rmqfmu.fmu",
+        "{mapping}": "../mappingFMU/mappingFMU.fmu",
+        "{dmodel}": "../../dmodelFMU/dmodelFMU.fmu"
+    },
+    "logVariables": {
+        "{rmqfmu}.rmqfmu":[
+            "someCommand",
+            "someArgument_1",
+            "someArgument_2",
+            "someArgument_3"
+        ],
+        "{mapping}.mapping": [
+          "..."
+        ],
+        "{dmodel}.dmodel": [
+            "..."
+        ]
+    },
+    "parameters": {
+    },
+    "connections": {
+        "{rmqfmu}.rmqfmu.someCommand" : ["{dmodel}.dmodel.someCommand"],
+        "{rmqfmu}.rmqfmu.someArgument_1" : ["{dmodel}.dmodel.someArgument_1"],
+        "{rmqfmu}.rmqfmu.someArgument_2" : ["{dmodel}.dmodel.someArgument_2"],
+        "{rmqfmu}.rmqfmu.someArgument_3" : ["{dmodel}.dmodel.someArgument_3"],
+        "{mapping}.mapping.someEvent" : ["{dmodel}.dmodel.someEvent"],
+        "{mapping}.mapping.someEventArgument" : ["{dmodel}.dmodel.someEventArgument"],
+        "{dmodel}.dmodel.someOperation" : ["{mapping}.mapping.someOperation"],
+        "{dmodel}.dmodel.someOperationArgument" : ["{mapping}.mapping.someOperationArgument"]
+    },
+    "algorithm": {
+        "size": 0.5,
+        "type": "fixed-step"
+    },
+    "startTime": 0,
+    "endTime": 20.0,
+    "reportProgress": true,
+    "liveLogInterval": 0,
+    "logLevels": {},
+    "loggingOn": true
+}

@@ -1,0 +1,7 @@
+{
+  "environment_variables" : { },
+  "DataWriter" : [ {
+    "filename" : "outputs.csv",
+    "type" : "CSV"
+  } ]
+}

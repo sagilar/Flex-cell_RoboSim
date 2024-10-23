@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<fmiModelDescription fmiVersion="2.0" modelName="unifmu" guid="77236337-210e-4e9c-8f2c-c1a0677db21b" author="Santiago Gil" generationDateAndTime="2020-10-23T19:51:25Z" variableNamingConvention="flat" generationTool="unifmu">
+  <CoSimulation modelIdentifier="unifmu" needsExecutionTool="true" canNotUseMemoryManagementFunctions="false" canHandleVariableCommunicationStepSize="true" />
+  <LogCategories>
+    <Category name="logStatusWarning" />
+    <Category name="logStatusDiscard" />
+    <Category name="logStatusError" />
+    <Category name="logStatusFatal" />
+    <Category name="logStatusPending" />
+    <Category name="logAll" />
+  </LogCategories>
+  <ModelVariables>
+    <!--Index of variable = "1"-->
+    <ScalarVariable name="var0_float" valueReference="0" causality="input" variability="continuous">
+              <Real start="0.0"/>
+            </ScalarVariable>
+    <!--Index of variable = "2"-->
+    <ScalarVariable name="var1_boolean" valueReference="1" causality="output" variability="discrete">
+              <Real />
+            </ScalarVariable>
+    <!--Index of variable = "3"-->
+    <ScalarVariable name="var2_string" valueReference="2" causality="output" variability="discrete">
+              <String />
+            </ScalarVariable>
+    <!--Index of variable = "4"-->
+    <ScalarVariable name="var3_int" valueReference="3" causality="input" variability="continuous">
+              <Integer start="0"/>
+            </ScalarVariable>
+    <!--Index of variable = "5"-->
+    <ScalarVariable name="var4_boolean" valueReference="4" causality="input" variability="discrete">
+      <Boolean start="false" />
+    </ScalarVariable>
+    <!--Index of variable = "6"-->
+    <ScalarVariable name="var5_boolean" valueReference="5" causality="input" variability="discrete">
+      <Boolean start="false" />
+    </ScalarVariable>
+    </ModelVariables>
+  <ModelStructure>
+    <Outputs>
+      <Unknown index="2" />
+      <Unknown index="3" />
+    </Outputs>
+    <InitialUnknowns>
+      <Unknown index="2" />
+      <Unknown index="3" />
+    </InitialUnknowns>
+  </ModelStructure>
+</fmiModelDescription>

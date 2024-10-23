@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription
+  fmiVersion="2.0"
+  modelName="Template"
+  description="Controller software (d-model) template"
+  generationTool="Reference FMUs (development build)"
+  guid="{1AE5E10D-9521-4DE3-80B9-D0EAAA7D5AF1}"
+  numberOfEventIndicators="1">
+
+  <CoSimulation
+    modelIdentifier="Template"
+    canHandleVariableCommunicationStepSize="true"
+    canNotUseMemoryManagementFunctions="true"
+    canGetAndSetFMUstate="true"
+    canSerializeFMUstate="true">
+    <SourceFiles>
+      	<File name="fmu.c" />
+	<File name="skeleton.c" />
+	<File name="adapted_C/main.c" />
+    </SourceFiles>
+  </CoSimulation>
+
+  <LogCategories>
+    <Category name="logEvents" description="Log events"/>
+    <Category name="logStatusError" description="Log error messages"/>
+  </LogCategories>
+
+  <DefaultExperiment startTime="0" stopTime="3" stepSize="1e-2"/>
+
+  <ModelVariables>
+    <!--Index of variable = "1"-->
+    <ScalarVariable name="var0_float" valueReference="0" causality="output" variability="continuous">
+      <Real/>
+    </ScalarVariable>
+    <!--Index of variable = "2"-->
+    <ScalarVariable name="var1_boolean" valueReference="1" causality="input" variability="discrete">
+          <Real start="false"/>
+        </ScalarVariable>
+    <!--Index of variable = "3"-->
+    <ScalarVariable name="var2_string" valueReference="2" causality="input" variability="discrete">
+          <String start="" />
+        </ScalarVariable>
+    <!--Index of variable = "4"-->
+    <ScalarVariable name="var3_int" valueReference="3" causality="output" variability="continuous">
+          <Integer/>
+        </ScalarVariable>
+    <!--Index of variable = "5"-->
+    <ScalarVariable name="var4_boolean" valueReference="4" causality="output" variability="discrete">
+    <Boolean />
+    </ScalarVariable>
+    <!--Index of variable = "6"-->
+    <ScalarVariable name="var5_boolean" valueReference="5" causality="output" variability="discrete">
+    <Boolean />
+    </ScalarVariable>
+  </ModelVariables>
+
+  <ModelStructure>
+    <Outputs>
+      <Unknown index="1" />
+      <Unknown index="4" />
+      <Unknown index="5" />
+      <Unknown index="6" />
+    </Outputs>
+    <InitialUnknowns>
+      <Unknown index="1" />
+      <Unknown index="4" />
+      <Unknown index="5" />
+      <Unknown index="6" />
+    </InitialUnknowns>
+
+
+  </ModelStructure>
+
+</fmiModelDescription>

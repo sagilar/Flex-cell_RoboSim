@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='utf-8'?>
+<fmiModelDescription fmiVersion="2.0" modelName="unifmu" guid="77236337-210e-4e9c-8f2c-c1a0677db21b" author="Santiago Gil" generationDateAndTime="2020-10-23T19:51:25Z" variableNamingConvention="flat" generationTool="unifmu">
+  <CoSimulation modelIdentifier="unifmu" needsExecutionTool="true" canNotUseMemoryManagementFunctions="false" canHandleVariableCommunicationStepSize="true" />
+  <LogCategories>
+    <Category name="logStatusWarning" />
+    <Category name="logStatusDiscard" />
+    <Category name="logStatusError" />
+    <Category name="logStatusFatal" />
+    <Category name="logStatusPending" />
+    <Category name="logAll" />
+  </LogCategories>
+  <ModelVariables>
+    <ScalarVariable name="feasibleMoveDiscreteCommand" valueReference="0" causality="output" variability="discrete">
+          <Boolean />
+        </ScalarVariable>
+    <ScalarVariable name="robotStopped" valueReference="1" causality="output" variability="discrete">
+          <Boolean />
+        </ScalarVariable>
+    <ScalarVariable name="gripperOpened" valueReference="2" causality="output" variability="discrete">
+          <Boolean />
+        </ScalarVariable>
+    <ScalarVariable name="collision" valueReference="3" causality="output" variability="discrete">
+          <Boolean />
+        </ScalarVariable>
+    <ScalarVariable name="closeGripperCommand" valueReference="4" causality="input" variability="discrete">
+          <Boolean start="false"/>
+        </ScalarVariable>
+    <ScalarVariable name="gripperClosed" valueReference="5" causality="output" variability="discrete">
+          <Boolean />
+        </ScalarVariable>
+    <ScalarVariable name="nonfeasibleMoveDiscreteCommand" valueReference="6" causality="output" variability="discrete">
+          <Boolean />
+        </ScalarVariable>
+    <ScalarVariable name="moveCompleted" valueReference="7" causality="output" variability="discrete">
+          <Boolean />
+        </ScalarVariable>
+    <ScalarVariable name="openGripperCommand" valueReference="8" causality="input" variability="discrete">
+          <Boolean start="false"/>
+        </ScalarVariable>
+    <ScalarVariable name="moveDiscreteCommand" valueReference="9" causality="input" variability="discrete">
+          <Boolean start="false"/>
+        </ScalarVariable>
+    <ScalarVariable name="MovementArgs_target_X" valueReference="10" causality="input" variability="discrete">
+          <Integer start="0" />
+        </ScalarVariable>
+    <ScalarVariable name="MovementArgs_target_Y" valueReference="11" causality="input" variability="discrete">
+          <Integer start="0" />
+        </ScalarVariable>
+    <ScalarVariable name="MovementArgs_target_Z" valueReference="12" causality="input" variability="discrete">
+          <Integer start="0" />
+        </ScalarVariable>
+    <ScalarVariable name="movediscrete" valueReference="13" causality="input" variability="discrete">
+          <Boolean start="false"/>
+        </ScalarVariable>
+    <ScalarVariable name="pick" valueReference="14" causality="input" variability="discrete">
+          <Boolean start="false"/>
+        </ScalarVariable>
+    <ScalarVariable name="place" valueReference="15" causality="input" variability="discrete">
+          <Boolean start="false"/>
+        </ScalarVariable>
+    <ScalarVariable name="target_X" valueReference="16" causality="input" variability="discrete">
+          <Integer start="0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_Y" valueReference="17" causality="input" variability="discrete">
+          <Integer start="0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_Z" valueReference="18" causality="input" variability="discrete">
+          <Integer start="0" />
+        </ScalarVariable>
+    <ScalarVariable name="closing_diameter" valueReference="19" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="closing_speed" valueReference="20" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="closing_force" valueReference="21" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="opening_diameter" valueReference="22" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="opening_speed" valueReference="23" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="opening_force" valueReference="24" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="stop" valueReference="25" causality="input" variability="discrete">
+          <Boolean start="false"/>
+        </ScalarVariable>
+    <ScalarVariable name="movejoint" valueReference="26" causality="input" variability="discrete">
+          <Boolean start="false"/>
+        </ScalarVariable>
+    <ScalarVariable name="target_q0" valueReference="27" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_q1" valueReference="28" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_q2" valueReference="29" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_q3" valueReference="30" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_q4" valueReference="31" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_q5" valueReference="32" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="movecartesian" valueReference="33" causality="input" variability="discrete">
+          <Boolean start="false"/>
+        </ScalarVariable>
+    <ScalarVariable name="target_x" valueReference="34" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_y" valueReference="35" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_z" valueReference="36" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_rx" valueReference="37" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_ry" valueReference="38" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="target_rz" valueReference="39" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="setvelocity" valueReference="40" causality="input" variability="discrete">
+          <Boolean start="false"/>
+        </ScalarVariable>
+    <ScalarVariable name="target_v" valueReference="41" causality="input" variability="continuous">
+          <Real start="0.0" />
+        </ScalarVariable>
+    <ScalarVariable name="q0" valueReference="42" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="q1" valueReference="43" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="q2" valueReference="44" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="q3" valueReference="45" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="q4" valueReference="46" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="q5" valueReference="47" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qd0" valueReference="48" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qd1" valueReference="49" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qd2" valueReference="50" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qd3" valueReference="51" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qd4" valueReference="52" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qd5" valueReference="53" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qdd0" valueReference="54" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qdd1" valueReference="55" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qdd2" valueReference="56" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qdd3" valueReference="57" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qdd4" valueReference="58" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="qdd5" valueReference="59" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="t0" valueReference="60" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="t1" valueReference="61" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="t2" valueReference="62" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="t3" valueReference="63" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="t4" valueReference="64" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="t5" valueReference="65" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="x" valueReference="66" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="y" valueReference="67" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="z" valueReference="68" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="rx" valueReference="69" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="ry" valueReference="70" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    <ScalarVariable name="rz" valueReference="71" causality="output" variability="continuous">
+          <Real />
+        </ScalarVariable>
+    </ModelVariables>
+    
+    
+    
+    <ModelStructure>
+      <Outputs>
+      <Unknown index="1" />
+      <Unknown index="2" />
+      <Unknown index="3" />
+      <Unknown index="4" />
+      <Unknown index="6" />
+      <Unknown index="7" />
+      <Unknown index="8" />
+      <Unknown index="43" />
+      <Unknown index="44" />
+      <Unknown index="45" />
+      <Unknown index="46" />
+      <Unknown index="47" />
+      <Unknown index="48" />
+      <Unknown index="49" />
+      <Unknown index="50" />
+      <Unknown index="51" />
+      <Unknown index="52" />
+      <Unknown index="53" />
+      <Unknown index="54" />
+      <Unknown index="55" />
+      <Unknown index="56" />
+      <Unknown index="57" />
+      <Unknown index="58" />
+      <Unknown index="59" />
+      <Unknown index="60" />
+      <Unknown index="61" />
+      <Unknown index="62" />
+      <Unknown index="63" />
+      <Unknown index="64" />
+      <Unknown index="65" />
+      <Unknown index="66" />
+      <Unknown index="67" />
+      <Unknown index="68" />
+      <Unknown index="69" />
+      <Unknown index="70" />
+      <Unknown index="71" />
+      <Unknown index="72" />
+      
+      </Outputs>
+      <InitialUnknowns>
+      <Unknown index="1" />
+      <Unknown index="2" />
+      <Unknown index="3" />
+      <Unknown index="4" />
+      <Unknown index="6" />
+      <Unknown index="7" />
+      <Unknown index="8" />
+      <Unknown index="43" />
+      <Unknown index="44" />
+      <Unknown index="45" />
+      <Unknown index="46" />
+      <Unknown index="47" />
+      <Unknown index="48" />
+      <Unknown index="49" />
+      <Unknown index="50" />
+      <Unknown index="51" />
+      <Unknown index="52" />
+      <Unknown index="53" />
+      <Unknown index="54" />
+      <Unknown index="55" />
+      <Unknown index="56" />
+      <Unknown index="57" />
+      <Unknown index="58" />
+      <Unknown index="59" />
+      <Unknown index="60" />
+      <Unknown index="61" />
+      <Unknown index="62" />
+      <Unknown index="63" />
+      <Unknown index="64" />
+      <Unknown index="65" />
+      <Unknown index="66" />
+      <Unknown index="67" />
+      <Unknown index="68" />
+      <Unknown index="69" />
+      <Unknown index="70" />
+      <Unknown index="71" />
+      <Unknown index="72" />
+      
+      </InitialUnknowns>
+      </ModelStructure>
+</fmiModelDescription>

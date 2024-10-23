@@ -14,7 +14,10 @@ bin/
 .DS_Store
 
 ## Specific to the project
-code/
-dmodelFMU/archive
-dmodelFMU/d-model_v6/resources/
 *.log
+UR3e_archive
+UR5e_archive
+tests_archive
+videos_archive
+comparison_implementations_robotics
+

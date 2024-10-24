@@ -10,7 +10,7 @@ We also provide [examples](#implementation-for-the-ur5eur3e) for the instantiati
 0. Java and Python must be installed.
 1. Clone this repository.
 <pre>
-git clone https://github.com/sagilar/DigitalTwins_RoboSim.git
+git clone https://github.com/INTO-CPS-Association/DigitalTwins_RoboSim.git
 </pre>
 2. Install CoppeliaSim:
   https://www.coppeliarobotics.com/

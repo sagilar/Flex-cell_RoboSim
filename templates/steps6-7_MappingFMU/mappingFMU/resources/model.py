@@ -11,7 +11,7 @@ class Model:
         self.var1_boolean = False # To d-model FMU
         self.var2_string = ""
         self.var3_int = 0
-        self.var4_boolean = False # From controller FMU
+        self.var4_boolean = False # From d-model FMU
         self.var5_boolean = False # From d-model FMU 
 
 
@@ -29,15 +29,6 @@ class Model:
         '''Resetting outputs'''
         self.var1_boolean = False
         self.var2_string = ""
-
-        ''' Input coming from the controller'''
-
-        # Here, you should process the inputs from the controller FMU according to your case study
-        # if self.var4_boolean:
-        #     # Do something
-
-        ''' Forward commands to the d-model FMU '''
-        # Here, you should forward the commands coming from the controller FMU to the d-model FMU
 
         ''' Inputs from the d-model software '''
         # Here, you should receive the operations from the d-model and the execute them on the robotic platform using the platform mapping interface

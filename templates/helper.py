@@ -104,7 +104,7 @@ vars_log_pmFMU_list = list(vars_log_pmFMU)
 
 def create_mappingfmu_skeleton():
 
-    print("*** (MappingFMU) For def __init__***")
+    print("*** (MappingFMU - model.py) For def __init__***")
     for k,v in vars.items():
         if v[0] == "Boolean":
             print("self." + k + " = False")
@@ -127,7 +127,7 @@ def create_mappingfmu_skeleton():
                 print('self.' + k + ' = ""')
         
 
-    print("*** (MappingFMU) For self.reference_to_attribute***")
+    print("*** (MappingFMU - model.py) For self.reference_to_attribute***")
     for k,v in vars.items():
         print(str(vars_list.index(k)) + ': "' + k + '",')
     
@@ -137,7 +137,7 @@ def create_mappingfmu_skeleton():
 
 
 
-    print("*** (MappingFMU) For def fmi2ExtSerialize***")
+    print("*** (MappingFMU - model.py) For def fmi2ExtSerialize***")
     for k,v in vars.items():
         print('self.' + k + ',')
     
@@ -145,7 +145,7 @@ def create_mappingfmu_skeleton():
         for k,v in vars_log_pmFMU.items():
             print('self.' + k + ',')
 
-    print("*** (MappingFMU) For def fmi2ExtDeserialize (1st part)***")
+    print("*** (MappingFMU - model.py) For def fmi2ExtDeserialize (1st part)***")
     for k,v in vars.items():
         print(k + ',')
 
@@ -153,7 +153,7 @@ def create_mappingfmu_skeleton():
         for k,v in vars_log_pmFMU.items():
             print(k + ',')
 
-    print("*** (MappingFMU) For def fmi2ExtDeserialize (2nd part)***")
+    print("*** (MappingFMU - model.py) For def fmi2ExtDeserialize (2nd part)***")
     for k,v in vars.items():
         print('self.' + k + ' = ' + k)
     
@@ -434,38 +434,47 @@ def create_setStartValues():
     print(setStartValues_structure.format("done",'false'))
     print("}")
 
-read_input_structure = '''if (fmi_data_interface->{0}) {{
+read_input_structure = '''{2}if (fmi_data_interface->{0}) {{
         {{
             char _s0[256];
             sprintf(_s0, "%%s", "Found event {0}");
             printf("%%s", _s0);}}
         {{
-            fmi_data_interface->{0} = false;
+            fmi_data_interface->{0} = false; // reset memory
             return create_M_{1}_input_{0}();
         }}
     }}'''
+final_read_input_structure = '''else {{
+        return create_M_{}_input__done_();
+    }}'''
 def set_read_input_interface():
     print("*** For read_input function in interface.h in dmodelFMU - NOTE: Update the arguments ***")
-    for k,v in vars.items():
+    idx = 0
+    s = lambda idx: "else " if idx>0 else ""
+    for k,v in vars.items():        
         if "InputEvent" == v[1]:
-            print(read_input_structure.format(k,robosim_module_name))
+            print(read_input_structure.format(k,robosim_module_name,s(idx)))
+        idx += 1
+    print(final_read_input_structure.format(robosim_module_name))
 
-write_output_structure = '''if (_output_.type == M_{0}_output_{1}) {{
+write_output_structure = '''{2}if (_output_.type == M_{0}_output_{1}) {{
         {{
             fmi_data_interface->state = "some_state"; // update accordingly;
             fmi_data_interface->{1} = "some_value" // update accordingly;
         }}
     }}
 '''
+final_write_output_structure = '''else if (_output_.type == M_{}_output__done_) {{
+    }}'''
 def set_write_output_interface():
     print("*** For write_output function in interface.h in dmodelFMU - NOTE: Update the arguments ***")
-    print("// Reset memories when initializing the write_output function")
-    for k,v in vars.items():        
-        if "Operation" == v[1]:
-            print("fmi_data_interface->{} = false;".format(k))
+    idx = 0
+    s = lambda idx: "else " if idx>0 else ""
     for k,v in vars.items():
         if "Operation" == v[1]:
-            print(write_output_structure.format(robosim_module_name,k))
+            print(write_output_structure.format(robosim_module_name,k,s(idx)))
+        idx += 1
+    print(final_write_output_structure.format(robosim_module_name))
 
 
 def create_controllerfmu_mdxml():
@@ -518,7 +527,7 @@ def create_controllerfmu_mdxml():
 
 def create_controllerfmu_skeleton():
 
-    print("*** (controllerFMU) For def __init__***")
+    print("*** (controllerFMU - model.py) For def __init__***")
     for k,v in vars.items():
         if k in vars_controller:
             if v[0] == "Boolean":
@@ -530,22 +539,22 @@ def create_controllerfmu_skeleton():
             elif v[0] == "String":
                 print('self.' + k + ' = ""')
 
-    print("*** (ControllerFMU) For self.reference_to_attribute***")
+    print("*** (controllerFMU - model.py) For self.reference_to_attribute***")
     for k,v in vars.items():
         if k in vars_controller:
             print(str(vars_list.index(k)) + ': "' + k + '",')
 
-    print("*** For def fmi2ExtSerialize***")
+    print("*** (controllerFMU - model.py) For def fmi2ExtSerialize***")
     for k,v in vars.items():
         if k in vars_controller:
             print('self.' + k + ',')
 
-    print("*** For def fmi2ExtDeserialize (1st part)***")
+    print("*** (controllerFMU - model.py) For def fmi2ExtDeserialize (1st part)***")
     for k,v in vars.items():
         if k in vars_controller:
             print(k + ',')
 
-    print("*** For def fmi2ExtDeserialize (2nd part)***")
+    print("*** (controllerFMU - model.py) For def fmi2ExtDeserialize (2nd part)***")
     for k,v in vars.items():
         if k in vars_controller:
             print('self.' + k + ' = ' + k)
@@ -568,33 +577,39 @@ def create_connections(rmqfmu=False):
     print(controller_connections[:-1])
     print(struct_connections[:-2])
 
-def spacing():
-    print()
-    print()
-    print()
-    print()
-
 if __name__=='__main__':
-
-    create_mappingfmu_skeleton()
-    spacing()
-    create_mappingfmu_mdxml()
-    spacing()
-    create_dmodelfmu_data_struct()
-    spacing()
-    create_dmodelfmu_mdxml()
-    spacing()
-    create_dmodel_skeleton_c()
-    spacing()
-    create_setStartValues()
-    spacing()
-    set_read_input_interface()
-    spacing()
-    set_write_output_interface()
-    spacing()
-    create_controllerfmu_mdxml()
-    spacing()
-    create_controllerfmu_skeleton()
-    spacing()
+    print("Miscellaneous 1 - Step 5\n")
     create_connections()
-    spacing()
+    
+    print("\n\n\n\nMiscellaneous 2 - Step 6\n")
+    create_mappingfmu_mdxml()
+    
+    print("\n\n\n\nMiscellaneous 3 - Steps 6 and 7\n")
+    create_mappingfmu_skeleton()
+    
+    print("\n\n\n\nMiscellaneous 4 - Step 8\n")
+    create_dmodelfmu_mdxml()
+    
+    print("\n\n\n\nMiscellaneous 5 - Step 9\n")
+    create_dmodelfmu_data_struct()
+    
+    print("\n\n\n\nMiscellaneous 6 - Step 10\n")
+    set_read_input_interface()
+    
+    print("\n\n\n\nMiscellaneous 7 - Step 10\n")
+    set_write_output_interface()
+    
+    print("\n\n\n\nMiscellaneous 8 - Step 11\n")
+    create_dmodel_skeleton_c()
+    
+    print("\n\n\n\nMiscellaneous 9 - Step 11\n")
+    create_setStartValues()
+    
+    print("\n\n\n\nMiscellaneous 10 - Steps 12 and 13\n")
+    create_controllerfmu_skeleton()
+    
+    print("\n\n\n\nMiscellaneous 11 - Step 13\n")
+    create_controllerfmu_mdxml()
+    
+    
+    
